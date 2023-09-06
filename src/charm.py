@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-# Copyright 2023 Mariyan Dimitrov
+
+# Copyright 2023 Canonical Ltd.
 # See LICENSE file for licensing details.
-#
+
 # Learn more at: https://juju.is/docs/sdk
 
 """Charm the service.
