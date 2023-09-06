@@ -1,0 +1,28 @@
+header:
+  license:
+    spdx-id: Apache-2.0
+    copyright-owner: Canonical Ltd.
+    content: |
+      Copyright 2023 Mariyan Dimitrov
+      See LICENSE file for licensing details.
+  paths:
+    - '**'
+  paths-ignore:
+    - '.github/files/**'
+    - '**/*.j2'
+    - '**/*.json'
+    - '**/*.md'
+    - '**/*.txt'
+    - '**/*.xml'
+    - '**/.codespellignore'
+    - '**/.dockerignore'
+    - '**/.flake8'
+    - '**/.jujuignore'
+    - '**/.gitignore'
+    - '**/.licenserc.yaml'
+    - '**/.trivyignore'
+    - '**/CODEOWNERS'
+    - '**/icon.svg'
+    - '**/LICENSE'
+    - '**/trivy.yaml'
+  comment: on-failure
