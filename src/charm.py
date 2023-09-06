@@ -27,6 +27,11 @@ class IsCharmsTemplateCharm(ops.CharmBase):
     """Charm the service."""
 
     def __init__(self, *args):
+        """Construct.
+
+        Args:
+            args: Arguments passed to the CharmBase parent constructor.
+        """
         super().__init__(*args)
         self.framework.observe(self.on.httpbin_pebble_ready, self._on_httpbin_pebble_ready)
         self.framework.observe(self.on.config_changed, self._on_config_changed)
