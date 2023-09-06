@@ -16,8 +16,5 @@ on:
 
 jobs:
   publish-to-edge:
-    uses: canonical/operator-workflows/.github/workflows/test_and_publish_charm.yaml@main
+    uses: canonical/operator-workflows/.github/workflows/publish_charm.yaml@main
     secrets: inherit
-    with:
-      integration-test-extra-arguments: -m "not (requires_secrets)"
-      trivy-image-config: "trivy.yaml"
