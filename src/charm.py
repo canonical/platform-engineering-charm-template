@@ -43,6 +43,9 @@ class IsCharmsTemplateCharm(ops.CharmBase):
         environment configuration for your specific workload.
 
         Learn more about interacting with Pebble at at https://juju.is/docs/sdk/pebble.
+
+        Args:
+            event: event triggering the handler.
         """
         # Get a reference the container attribute on the PebbleReadyEvent
         container = event.workload
@@ -61,6 +64,9 @@ class IsCharmsTemplateCharm(ops.CharmBase):
         this method.
 
         Learn more about config at https://juju.is/docs/sdk/config
+
+        Args:
+            event: event triggering the handler.
         """
         # Fetch the new config value
         log_level = self.model.config["log-level"].lower()
@@ -106,4 +112,4 @@ class IsCharmsTemplateCharm(ops.CharmBase):
 
 
 if __name__ == "__main__":  # pragma: nocover
-    ops.main(IsCharmsTemplateCharm)
+    ops.main.main(IsCharmsTemplateCharm)

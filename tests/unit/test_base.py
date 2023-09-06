@@ -3,15 +3,22 @@
 
 # Learn more about testing at: https://juju.is/docs/sdk/testing
 
+# pylint: disable=duplicate-code,missing-function-docstring
+"""Unit tests."""
+
 import unittest
 
 import ops
 import ops.testing
+
 from charm import IsCharmsTemplateCharm
 
 
 class TestCharm(unittest.TestCase):
+    """Test class."""
+
     def setUp(self):
+        """Set up the testing environment."""
         self.harness = ops.testing.Harness(IsCharmsTemplateCharm)
         self.addCleanup(self.harness.cleanup)
         self.harness.begin()

@@ -3,6 +3,8 @@
 # Copyright 2023 Canonical Ltd.
 # See LICENSE file for licensing details.
 
+"""Integration tests."""
+
 import asyncio
 import logging
 from pathlib import Path
@@ -13,7 +15,7 @@ from pytest_operator.plugin import OpsTest
 
 logger = logging.getLogger(__name__)
 
-METADATA = yaml.safe_load(Path("./metadata.yaml").read_text())
+METADATA = yaml.safe_load(Path("./metadata.yaml").read_text(encoding="utf-8"))
 APP_NAME = METADATA["name"]
 
 
@@ -28,6 +30,7 @@ async def test_build_and_deploy(ops_test: OpsTest):
     resources = {"httpbin-image": METADATA["resources"]["httpbin-image"]["upstream-source"]}
 
     # Deploy the charm and wait for active/idle status
+    assert ops_test.model
     await asyncio.gather(
         ops_test.model.deploy(charm, resources=resources, application_name=APP_NAME),
         ops_test.model.wait_for_idle(
