@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-# Copyright 2023 Mariyan Dimitrov
+
+# Copyright 2023 Canonical Ltd.
 # See LICENSE file for licensing details.
-#
+
 # Learn more at: https://juju.is/docs/sdk
 
 """Charm the service.
@@ -26,6 +27,11 @@ class IsCharmsTemplateCharm(ops.CharmBase):
     """Charm the service."""
 
     def __init__(self, *args):
+        """Construct.
+
+        Args:
+            args: Arguments passed to the CharmBase parent constructor.
+        """
         super().__init__(*args)
         self.framework.observe(self.on.httpbin_pebble_ready, self._on_httpbin_pebble_ready)
         self.framework.observe(self.on.config_changed, self._on_config_changed)
@@ -37,6 +43,9 @@ class IsCharmsTemplateCharm(ops.CharmBase):
         environment configuration for your specific workload.
 
         Learn more about interacting with Pebble at at https://juju.is/docs/sdk/pebble.
+
+        Args:
+            event: event triggering the handler.
         """
         # Get a reference the container attribute on the PebbleReadyEvent
         container = event.workload
@@ -55,6 +64,9 @@ class IsCharmsTemplateCharm(ops.CharmBase):
         this method.
 
         Learn more about config at https://juju.is/docs/sdk/config
+
+        Args:
+            event: event triggering the handler.
         """
         # Fetch the new config value
         log_level = self.model.config["log-level"].lower()
@@ -100,4 +112,4 @@ class IsCharmsTemplateCharm(ops.CharmBase):
 
 
 if __name__ == "__main__":  # pragma: nocover
-    ops.main(IsCharmsTemplateCharm)
+    ops.main.main(IsCharmsTemplateCharm)
