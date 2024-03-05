@@ -14,8 +14,10 @@ https://discourse.charmhub.io/t/4208
 """
 
 import logging
+import typing
 
 import ops
+from ops import pebble
 
 # Log messages can be retrieved using juju debug-log
 logger = logging.getLogger(__name__)
@@ -26,7 +28,7 @@ VALID_LOG_LEVELS = ["info", "debug", "warning", "error", "critical"]
 class IsCharmsTemplateCharm(ops.CharmBase):
     """Charm the service."""
 
-    def __init__(self, *args):
+    def __init__(self, *args: typing.Any):
         """Construct.
 
         Args:
@@ -36,7 +38,7 @@ class IsCharmsTemplateCharm(ops.CharmBase):
         self.framework.observe(self.on.httpbin_pebble_ready, self._on_httpbin_pebble_ready)
         self.framework.observe(self.on.config_changed, self._on_config_changed)
 
-    def _on_httpbin_pebble_ready(self, event: ops.PebbleReadyEvent):
+    def _on_httpbin_pebble_ready(self, event: ops.PebbleReadyEvent) -> None:
         """Define and start a workload using the Pebble API.
 
         Change this example to suit your needs. You'll need to specify the right entrypoint and
@@ -57,7 +59,7 @@ class IsCharmsTemplateCharm(ops.CharmBase):
         # https://juju.is/docs/sdk/constructs#heading--statuses
         self.unit.status = ops.ActiveStatus()
 
-    def _on_config_changed(self, event: ops.ConfigChangedEvent):
+    def _on_config_changed(self, event: ops.ConfigChangedEvent) -> None:
         """Handle changed configuration.
 
         Change this example to suit your needs. If you don't need to handle config, you can remove
@@ -92,7 +94,7 @@ class IsCharmsTemplateCharm(ops.CharmBase):
             self.unit.status = ops.BlockedStatus("invalid log level: '{log_level}'")
 
     @property
-    def _pebble_layer(self):
+    def _pebble_layer(self) -> typing.Union[pebble.LayerDict]:
         """Return a dictionary representing a Pebble layer."""
         return {
             "summary": "httpbin layer",
