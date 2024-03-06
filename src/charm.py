@@ -94,7 +94,7 @@ class IsCharmsTemplateCharm(ops.CharmBase):
             self.unit.status = ops.BlockedStatus("invalid log level: '{log_level}'")
 
     @property
-    def _pebble_layer(self) -> typing.Union[pebble.LayerDict]:
+    def _pebble_layer(self) -> pebble.LayerDict:
         """Return a dictionary representing a Pebble layer."""
         return {
             "summary": "httpbin layer",
