@@ -71,7 +71,7 @@ class IsCharmsTemplateCharm(ops.CharmBase):
             event: event triggering the handler.
         """
         # Fetch the new config value
-        log_level = self.model.config["log-level"].lower()
+        log_level = str(self.model.config["log-level"]).lower()
 
         # Do some validation of the configuration option
         if log_level in VALID_LOG_LEVELS:
