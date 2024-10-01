@@ -1,17 +1,17 @@
-# < Charm name > Operator
+# <charm-name> Operator
 
 <!-- A single sentence that says what the product is, succinctly and memorably. Add a 1-2 sentence description of what the charm software does. -->
 
-A [Juju](https://juju.is/) [charm](https://juju.is/docs/olm/charmed-operators) deploying and managing < Charm software > on 
+A [Juju](https://juju.is/) [charm](https://juju.is/docs/olm/charmed-operators) deploying and managing <Charm software> on 
 Kubernetes. 
 
 <!-- A paragraph of 2-5 short sentences, that describes what the product does and what need the product meets. -->
 
 Like any Juju charm, this charm supports one-line deployment, configuration, integration, scaling, and more. 
-For < Charm name >, this includes:
+For <charm-name>, this includes:
 * list or summary of app-specific features
 
-The < Charm name > charm allows for deployment on many different Kubernetes platforms, from [MicroK8s](https://microk8s.io/) to 
+The <charm-name> charm allows for deployment on many different Kubernetes platforms, from [MicroK8s](https://microk8s.io/) to 
 [Charmed Kubernetes](https://ubuntu.com/kubernetes) to public cloud Kubernetes offerings.
 
 <!-- Finally, a paragraph that describes whom the product is useful for. -->
@@ -39,7 +39,7 @@ If there's a particular area of documentation that you'd like to see that's miss
 
 ## Project and community
 
-The < Charm name > Operator is a member of the Ubuntu family. It's an open-source project that warmly welcomes community 
+The <charm-name> Operator is a member of the Ubuntu family. It's an open-source project that warmly welcomes community 
 projects, contributions, suggestions, fixes, and constructive feedback.
 
 - [Code of conduct](https://ubuntu.com/community/code-of-conduct)
@@ -47,7 +47,7 @@ projects, contributions, suggestions, fixes, and constructive feedback.
 - [Join our online chat](https://matrix.to/#/#charmhub-charmdev:ubuntu.com)
 - [Contribute](link to Contribute page)
 
-Thinking about using the < Charm > Operator for your next project? 
+Thinking about using the <charm-name> Operator for your next project? 
 [Get in touch](https://matrix.to/#/#charmhub-charmdev:ubuntu.com)!
 
 # Contents
