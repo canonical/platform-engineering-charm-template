@@ -1,5 +1,11 @@
 # Charm architecture
 
+<!-- Add overview material here:
+1) What kind of application is it? What kind of software does it use?
+2) Describe Pebble services
+-->
+
+<!-- Example: Indico
 At its core, [Indico](https://getindico.io/) is a [Flask](https://flask.palletsprojects.com/) application that integrates with [PostgreSQL](https://www.postgresql.org/), [Redis](https://redis.io/), and [Celery](https://docs.celeryq.dev/en/stable/).
 
 The charm design leverages the [sidecar](https://kubernetes.io/blog/2015/06/the-distributed-system-toolkit-patterns/#example-1-sidecar-containers) pattern to allow multiple containers in each pod with [Pebble](https://juju.is/docs/sdk/pebble) running as the workload container’s entrypoint.
@@ -22,39 +28,28 @@ indico-0                         3/3     Running   0         6h4m
 This shows there are 4 containers - the three named above, as well as a container for the charm code itself.
 
 And if you run `kubectl describe pod indico-0`, all the containers will have as Command ```/charm/bin/pebble```. That's because Pebble is responsible for the processes startup as explained above.
+-->
 
 ## OCI images
 
-We use [Rockcraft](https://canonical-rockcraft.readthedocs-hosted.com/en/latest/) to build OCI Images for Indico and NGINX. 
-The images are defined in [NGINX rock](https://github.com/canonical/indico-operator/tree/main/nginx_rock/) and [Indico rock](https://github.com/canonical/indico-operator/tree/main/indico_rock).
+We use [Rockcraft](https://canonical-rockcraft.readthedocs-hosted.com/en/latest/) to build OCI Images for <charm-name>. 
+The images are defined in [<charm-name> rock](link to rock).
 They are published to [Charmhub](https://charmhub.io/), the official repository of charms.
-This is done by publishing a resource to Charmhub as described in the [Juju SDK How-to guides](https://juju.is/docs/sdk/publishing).
+
+> See more: [How to publish your charm on Charmhub](https://juju.is/docs/sdk/publishing)
 
 ## Containers
 
 Configuration files for the containers can be found in the respective directories that define the rocks, see the section above.
 
-### NGINX
+<!--
+### Container example
 
-This container is the entry point for all web traffic to the pod (on port `8080`). Serves some static files directly and forwards non-static requests to the Indico container (on port `8081`).
+Description of container.
 
-The reason for that is since NGINX provides cache static content, reverse proxy, and load balance among multiple application servers, as well as other features it can be used in front of uWSGI server to significantly reduce server and network load.
+The workload that this container is running is defined in the [<container-name> rock](link to rock).
+-->
 
-The workload that this container is running is defined in the [NGINX rock](https://github.com/canonical/indico-operator/tree/main/nginx_rock/).
-
-### Indico
-
-Indico is a Flask application run by the uWSGI server, one of the most popular servers for these applications.
-
-The uWSGI server is started in HTTP mode (port `8081`) serving Indico Application so NGINX can forward non-static traffic to it.
-
-The workload that this container is running is defined in the [Indico rock](https://github.com/canonical/indico-operator/tree/main/indico_rock).
-
-### Celery
-
-The Celery is used to process tasks asynchronously created by the Indico application such as sending e-mails, survey notifications, event reminders, etc.
-
-Celery runs in the same container as the Indico container, as defined in the [Indico rock](https://github.com/canonical/indico-operator/tree/main/indico_rock).
 
 ## Metrics
 Inside the above mentioned containers, additional Pebble layers are defined in order to provide metrics.
