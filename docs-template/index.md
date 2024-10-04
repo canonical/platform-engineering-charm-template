@@ -16,7 +16,7 @@ The <charm-name> charm allows for deployment on many different Kubernetes platfo
 
 <!-- Finally, a paragraph that describes whom the product is useful for. -->
 
-This charm will make operating < Charm software > simple and straightforward for DevOps or SRE teams through Juju's clean interface. 
+This charm will make operating <charm-software> simple and straightforward for DevOps or SRE teams through Juju's clean interface. 
 
 ## In this documentation
 
