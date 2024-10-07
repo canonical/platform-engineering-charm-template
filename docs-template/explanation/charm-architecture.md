@@ -1,9 +1,9 @@
 # Charm architecture
 
-<!-- Add overview material here:
+Add overview material here:
 1) What kind of application is it? What kind of software does it use?
-2) Describe Pebble services
--->
+2) Describe Pebble services.
+3) Include an architecture diagram.
 
 <!-- Example: Indico
 At its core, [Indico](https://getindico.io/) is a [Flask](https://flask.palletsprojects.com/) application that integrates with [PostgreSQL](https://www.postgresql.org/), [Redis](https://redis.io/), and [Celery](https://docs.celeryq.dev/en/stable/).
