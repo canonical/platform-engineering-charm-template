@@ -9,18 +9,47 @@ Use links instead.
 -->
 
 # is-charms-template
+<!-- Use this space for badges -->
 
-Charmhub package name: operator-template
-More information: https://charmhub.io/is-charms-template
+<!--Describe your charm in 1-2 sentences. Include the software that the charm deploys (if applicable), and the substrate (VM/K8s).-->
 
-Describe your charm in one or two sentences.
+<!-- If this is a bundle, list its components.-->
 
-## Other resources
+<!--Like any Juju charm, this charm supports one-line deployment, configuration, integration, scaling, and more. For Charmed {Name}, this includes:
+list or summary of app-specific features-->
 
-<!-- If your charm is documented somewhere else other than Charmhub, provide a link separately. -->
+For information about how to deploy, integrate, and manage this charm, see the Official [is-charms-template Documentation](external link).
 
-- [Read more](https://example.com)
+## Get started
+<!--Briefly summarize what the user will achieve in this guide.-->
 
-- [Contributing](CONTRIBUTING.md) <!-- or link to other contribution documentation -->
+<!--Indicate software and hardware prerequisites-->
 
-- See the [Juju SDK documentation](https://juju.is/docs/sdk) for more information about developing and improving charms.
+### (Optional) Set up
+<!--Steps for setting up the environment (e.g. via Multipass).-->
+
+### (Optional) Deploy
+<!--Steps for deploying the charm.-->
+
+### Basic operations
+<!--Brief walkthrough of performing standard configurations or operations-->
+
+<!--(Optional) Link to the `charmcraft.yaml` file-->
+
+## (Optional) Integrations
+<!-- Information about particularly relevant interfaces, endpoints or libraries related to the charm. For example, peer relation endpoints required by other charms for integration.--> 
+
+## Learn more
+* <!--Link to the charm's official documentation-->
+* <!--Link to any developer documentation-->
+* <!--(Optional) Link to official webpage/blog/marketing content--> 
+* <!--(Optional) Link to a page or section about troubleshooting/FAQ-->
+
+## Project and community
+* <!--Link to GitHub issues (if applicable)-->
+* <!--Link to Launchpad (if applicable)-->
+* <!--Link to any contribution guides--> 
+* <!--Link to contact info (if applicable), e.g. Matrix channel--> 
+
+## (Optional) Licensing and trademark
+
