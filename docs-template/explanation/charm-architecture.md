@@ -51,7 +51,13 @@ The workload that this container is running is defined in the [<container-name> 
 -->
 
 ## Metrics
-Inside the above mentioned containers, additional Pebble layers are defined in order to provide metrics.
+<! --
+Add a description of the metrics:
+* Are there metrics for containers, non-containerised workloads, snaps, or something else?
+* How are the metrics defined or added?
+
+For example, if the charm uses containers: Inside the above mentioned containers, additional Pebble layers are defined in order to provide metrics.
+-->
 
 <!--
 ### Metrics example
