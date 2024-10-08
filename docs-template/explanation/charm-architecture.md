@@ -38,7 +38,7 @@ They are published to [Charmhub](https://charmhub.io/), the official repository 
 
 > See more: [How to publish your charm on Charmhub](https://juju.is/docs/sdk/publishing)
 
-## Containers
+## (Optional) Containers
 
 Configuration files for the containers can be found in the respective directories that define the rocks.
 
