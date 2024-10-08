@@ -9,18 +9,45 @@ Use links instead.
 -->
 
 # is-charms-template
+<!-- Use this space for badges -->
 
-Charmhub package name: operator-template
-More information: https://charmhub.io/is-charms-template
+Describe your charm in 1-2 sentences. Include the software that the charm deploys (if applicable), and the substrate (VM/K8s).
 
-Describe your charm in one or two sentences.
+Like any Juju charm, this charm supports one-line deployment, configuration, integration, scaling, and more. For Charmed {Name}, this includes:
+* list or summary of app-specific features
 
-## Other resources
+For information about how to deploy, integrate, and manage this charm, see the Official [is-charms-template Documentation](external link).
 
-<!-- If your charm is documented somewhere else other than Charmhub, provide a link separately. -->
+## Get started
+<!--Briefly summarize what the user will achieve in this guide.-->
 
-- [Read more](https://example.com)
+<!--Indicate software and hardware prerequisites-->
 
-- [Contributing](CONTRIBUTING.md) <!-- or link to other contribution documentation -->
+### (Optional) Set up
+<!--Steps for setting up the environment (e.g. via Multipass).-->
 
-- See the [Juju SDK documentation](https://juju.is/docs/sdk) for more information about developing and improving charms.
+### (Optional) Deploy
+<!--Steps for deploying the charm.-->
+
+### Basic operations
+<!--Brief walkthrough of performing standard configurations or operations-->
+
+<!--(Optional) Link to the `charmcraft.yaml` file-->
+
+## (Optional) Integrations
+<!-- Information about particularly relevant interfaces, endpoints or libraries related to the charm. For example, peer relation endpoints required by other charms for integration.--> 
+
+## Learn more
+* [Read more]() <!--Link to the charm's official documentation-->
+* [Developer documentation]() <!--Link to any developer documentation-->
+* [Official webpage]() <!--(Optional) Link to official webpage/blog/marketing content--> 
+* [Troubleshooting]() <!--(Optional) Link to a page or section about troubleshooting/FAQ-->
+
+## Project and community
+* [Issues]() <!--Link to GitHub issues (if applicable)-->
+* [Contributing]() <!--Link to any contribution guides--> 
+* [Matrix]() <!--Link to contact info (if applicable), e.g. Matrix channel-->
+* [Launchpad]() <!--Link to Launchpad (if applicable)-->
+
+## (Optional) Licensing and trademark
+
