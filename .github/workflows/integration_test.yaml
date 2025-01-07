@@ -20,3 +20,4 @@ jobs:
       trivy-image-config: "trivy.yaml"
       self-hosted-runner: true
       self-hosted-runner-label: "edge"
+      juju-channel: '3/stable'
