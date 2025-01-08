@@ -21,3 +21,4 @@ jobs:
       self-hosted-runner: true
       self-hosted-runner-label: "edge"
       juju-channel: '3/stable'
+      channel: '1.32-strict/stable'
