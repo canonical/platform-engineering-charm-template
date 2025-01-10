@@ -28,6 +28,6 @@ Applicable spec: <link>
 - [ ] The documentation is generated using `src-docs`
 - [ ] The documentation for charmhub is updated
 - [ ] The PR is tagged with appropriate label (`urgent`, `trivial`, `senior-review-required`, `documentation`)
-- [ ] The release notes are updated.
+- [ ] The changelog is updated.
 
 <!-- Explanation for any unchecked items above -->
