@@ -15,8 +15,8 @@ from pytest_operator.plugin import OpsTest
 
 logger = logging.getLogger(__name__)
 
-METADATA = yaml.safe_load(Path("./metadata.yaml").read_text(encoding="utf-8"))
-APP_NAME = METADATA["name"]
+CHARMCRAFT_DATA = yaml.safe_load(Path("./charmcraft.yaml").read_text(encoding="utf-8"))
+APP_NAME = CHARMCRAFT_DATA["name"]
 
 
 @pytest.mark.abort_on_fail
@@ -27,7 +27,7 @@ async def test_build_and_deploy(ops_test: OpsTest, pytestconfig: pytest.Config):
     """
     # Deploy the charm and wait for active/idle status
     charm = pytestconfig.getoption("--charm-file")
-    resources = {"httpbin-image": METADATA["resources"]["httpbin-image"]["upstream-source"]}
+    resources = {"httpbin-image": CHARMCRAFT_DATA["resources"]["httpbin-image"]["upstream-source"]}
     assert ops_test.model
     await asyncio.gather(
         ops_test.model.deploy(
