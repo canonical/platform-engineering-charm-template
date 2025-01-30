@@ -1,6 +1,6 @@
 header:
   license:
-    renovate/ops-2.xspdx-id: Apache-2.0
+    spdx-id: Apache-2.0
     copyright-owner: Canonical Ltd.
     content: |
       Copyright [year] [owner]
