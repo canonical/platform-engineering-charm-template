@@ -1,10 +1,13 @@
 header:
   license:
-    spdx-id: Apache-2.0
+    renovate/ops-2.xspdx-id: Apache-2.0
     copyright-owner: Canonical Ltd.
     content: |
       Copyright [year] [owner]
       See LICENSE file for licensing details.
+    pattern: |
+        Copyright \d{4} Canonical Ltd.
+        See LICENSE file for licensing details.
   paths:
     - '**'
   paths-ignore:
