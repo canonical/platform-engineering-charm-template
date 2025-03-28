@@ -32,6 +32,15 @@ When contributing, you must abide by the
 Canonical welcomes contributions to the <charm-name> charm. Please check out our
 [contributor agreement](https://ubuntu.com/legal/contributors) if you're interested in contributing to the solution.
 
+## Releases and versions
+
+This project uses [semantic versioning](https://semver.org/).
+
+Please ensure that any new feature, fix, or significant change is documented by
+adding an entry to the [CHANGELOG.md](link-to-changelog) file.
+
+To learn more about changelog best practices, visit [Keep a Changelog](https://keepachangelog.com/).
+
 ## Submissions
 
 If you want to address an issue or a bug in this project,
