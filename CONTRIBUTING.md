@@ -99,7 +99,7 @@ The sign-off is a simple line at the end of the commit message
 certifying that you wrote it
 or have the right to commit it as an open-source contribution.
 
-To sign off on a commit, use the ``--signoff`` option in ``git commit``.
+To sign off on a commit, follow the [GitHub documentation](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits).
 
 ## Develop
 
