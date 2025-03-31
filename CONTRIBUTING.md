@@ -144,7 +144,7 @@ Use [Rockcraft](https://documentation.ubuntu.com/rockcraft/en/latest/) to create
 OCI image for the <charm-name> app, and then upload the image to a MicroK8s registry,
 which stores OCI archives so they can be downloaded and deployed.
 
-Enable the MicroK8S registry:
+Enable the MicroK8s registry:
 
 ```bash
 microk8s enable registry
