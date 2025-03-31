@@ -51,13 +51,10 @@ also, reference the issue or bug number when you submit the changes.
   our [GitHub repository](link-to-github-repo)
   and add the changes to your fork, properly structuring your commits,
   providing detailed commit messages and signing your commits.
-
 - Make sure the updated project builds and runs without warnings or errors;
   this includes linting, documentation, code and tests.
-
 - Submit the changes as a
   [pull request (PR)](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork).
-
 
 Your changes will be reviewed in due time; if approved, they will be eventually merged.
 
