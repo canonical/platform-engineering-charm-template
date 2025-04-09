@@ -36,7 +36,7 @@ We use [Rockcraft](https://canonical-rockcraft.readthedocs-hosted.com/en/latest/
 The images are defined in [<charm-name> rock](link to rock).
 They are published to [Charmhub](https://charmhub.io/), the official repository of charms.
 
-> See more: [How to publish your charm on Charmhub](https://juju.is/docs/sdk/publishing)
+> See more: [How to publish your charm on Charmhub](https://canonical-charmcraft.readthedocs-hosted.com/en/stable/howto/manage-charms/#publish-a-charm-on-charmhub)
 
 ## (Optional) Containers
 
@@ -51,10 +51,13 @@ The workload that this container is running is defined in the [<container-name> 
 -->
 
 ## Metrics
-<! --
+<!--
 Add a description of the metrics:
 * Are there metrics for containers, non-containerised workloads, snaps, or something else?
 * How are the metrics defined or added?
+* In what container is the metric run? What statistics or values does the metric provide? 
+* How is the container started? 
+* On what port(s) does the metric listen?
 
 For example, if the charm uses containers: Inside the above mentioned containers, additional Pebble layers are defined in order to provide metrics.
 -->
@@ -62,11 +65,7 @@ For example, if the charm uses containers: Inside the above mentioned containers
 <!--
 ### Metrics example
 
-Description of metric. In what container is the metric run? What statistics or values does the metric provide? 
-
-How is the container started? 
-
-On what port(s) does the metric listen?
+Description of metric. 
 
 The workload that this container is running is defined in the [<container-name> rock](link to rock).
 -->
@@ -79,14 +78,15 @@ For this charm, the following Juju events are observed:
 Numbered list of Juju events. Link to describe the event in more detail (either in Juju docs or in a specific charm's docs). When is the event fired? What does the event indicate/mean?
 -->
 
-> See more in the Juju docs: [Event](https://juju.is/docs/sdk/event)
+> See more in the Juju docs: [Hook](https://documentation.ubuntu.com/juju/latest/user/reference/hook/)
 
 ## Charm code overview
 
-The `src/charm.py` is the default entry point for a charm and has the <relevant-charm-class> Python class which inherits from CharmBase. CharmBase is the base class 
-from which all Charms are formed, defined by [Ops](https://juju.is/docs/sdk/ops) (Python framework for developing charms).
+The `src/charm.py` is the default entry point for a charm and has the <relevant-charm-class> Python class which inherits
+from CharmBase. CharmBase is the base class from which all charms are formed, defined
+by [Ops](https://juju.is/docs/sdk/ops) (Python framework for developing charms).
 
-> See more in the Juju docs: [Charm](https://juju.is/docs/sdk/constructs#heading--charm)
+> See more in the Juju docs: [Charm](https://documentation.ubuntu.com/juju/latest/user/reference/charm/)
 
 The `__init__` method guarantees that the charm observes all events relevant to its operation and handles them.
 
