@@ -1,16 +1,21 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
+    "config:recommended",
     "group:allNonMajor"
   ],
-  "regexManagers": [
+  "customManagers": [
     {
-      "fileMatch": ["(^|/)rockcraft.yaml$"],
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/(^|/)rockcraft.yaml$/"
+      ],
       "description": "Update base image references",
       "matchStringsStrategy": "any",
-      "matchStrings": ["# renovate: build-base:\\s+(?<depName>[^:]*):(?<currentValue>[^\\s@]*)(@(?<currentDigest>sha256:[0-9a-f]*))?",
-      "# renovate: base:\\s+(?<depName>[^:]*):(?<currentValue>[^\\s@]*)(@(?<currentDigest>sha256:[0-9a-f]*))?"],
+      "matchStrings": [
+        "# renovate: build-base:\\s+(?<depName>[^:]*):(?<currentValue>[^\\s@]*)(@(?<currentDigest>sha256:[0-9a-f]*))?",
+        "# renovate: base:\\s+(?<depName>[^:]*):(?<currentValue>[^\\s@]*)(@(?<currentDigest>sha256:[0-9a-f]*))?"
+      ],
       "datasourceTemplate": "docker",
       "versioningTemplate": "ubuntu"
     }
@@ -24,10 +29,15 @@
       "pinDigests": true
     },
     {
-      "matchFiles": ["rockcraft.yaml"],
-      "matchUpdateTypes": ["major", "minor", "patch"],
+      "matchFileNames": [
+        "rockcraft.yaml"
+      ],
+      "matchUpdateTypes": [
+        "major",
+        "minor",
+        "patch"
+      ],
       "enabled": false
     }
   ]
 }
-
