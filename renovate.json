@@ -22,6 +22,11 @@
   ],
   "packageRules": [
     {
+      "description": "Automerge non-major updates",
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
       "enabled": true,
       "matchDatasources": [
         "docker"
