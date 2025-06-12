@@ -1,7 +1,8 @@
 # Copyright 2025 Canonical Ltd.
 # See LICENSE file for licensing details.
 # This file configures Charmcraft.
-# See https://juju.is/docs/sdk/charmcraft-config for guidance.
+# See https://canonical-charmcraft.readthedocs-hosted.com/stable/howto/manage-charmcraft/ 
+# for guidance.
 
 type: charm
 name: is-charms-template

@@ -3,7 +3,7 @@
 # Copyright 2025 Canonical Ltd.
 # See LICENSE file for licensing details.
 
-# Learn more at: https://juju.is/docs/sdk
+# Learn more at: https://documentation.ubuntu.com/juju/3.6/howto/manage-charms/#build-a-charm
 
 """Charm the service.
 
@@ -44,7 +44,8 @@ class IsCharmsTemplateCharm(ops.CharmBase):
         Change this example to suit your needs. You'll need to specify the right entrypoint and
         environment configuration for your specific workload.
 
-        Learn more about interacting with Pebble at at https://juju.is/docs/sdk/pebble.
+        Learn more about interacting with Pebble at at
+        https://documentation.ubuntu.com/juju/3.6/reference/pebble/.
 
         Args:
             event: event triggering the handler.
@@ -56,7 +57,7 @@ class IsCharmsTemplateCharm(ops.CharmBase):
         # Make Pebble reevaluate its plan, ensuring any services are started if enabled.
         container.replan()
         # Learn more about statuses in the SDK docs:
-        # https://juju.is/docs/sdk/constructs#heading--statuses
+        # https://documentation.ubuntu.com/juju/latest/reference/status/index.html
         self.unit.status = ops.ActiveStatus()
 
     def _on_config_changed(self, event: ops.ConfigChangedEvent) -> None:
@@ -65,7 +66,8 @@ class IsCharmsTemplateCharm(ops.CharmBase):
         Change this example to suit your needs. If you don't need to handle config, you can remove
         this method.
 
-        Learn more about config at https://juju.is/docs/sdk/config
+        Learn more about config at
+        https://canonical-charmcraft.readthedocs-hosted.com/stable/reference/files/config-yaml-file/
 
         Args:
             event: event triggering the handler.

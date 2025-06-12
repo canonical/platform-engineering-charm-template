@@ -2,7 +2,7 @@
 
 <!-- A single sentence that says what the product is, succinctly and memorably. Add a 1-2 sentence description of what the charm software does. -->
 
-A [Juju](https://juju.is/) [charm](https://juju.is/docs/olm/charmed-operators) deploying and managing <Charm software> on 
+A [Juju](https://juju.is/) [charm](https://documentation.ubuntu.com/juju/3.6/reference/charm/) deploying and managing <Charm software> on 
 Kubernetes. 
 
 <!-- A paragraph of 2-5 short sentences, that describes what the product does and what need the product meets. -->
