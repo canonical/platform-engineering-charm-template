@@ -3,7 +3,8 @@
 # This file defines charm config options, and populates the Configure tab on Charmhub.
 # If your charm does not require configuration options, delete this file entirely.
 #
-# See https://juju.is/docs/config for guidance.
+# See https://canonical-charmcraft.readthedocs-hosted.com/stable/reference/files/config-yaml-file/
+# for guidance.
 
 options:
   # An example config option to customise the log level of the workload
