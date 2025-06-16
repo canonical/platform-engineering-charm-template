@@ -7,7 +7,9 @@ Avoid using this README file for information that is maintained or published els
 
 Use links instead.
 -->
-
+<!--
+NOTE: This template has the documentation under the `docs-template` due with issues with discourse-gatekeeper. The `docs-template` directory must be changed to `docs` after using this template to ensure discourse-gatekeeper correctly identifies the documentation changes.
+-->
 # platform-engineering-charm-template
 <!-- Use this space for badges -->
 
