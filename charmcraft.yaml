@@ -9,7 +9,7 @@ name: is-charms-template
 title: Charm Template
 summary: A very short one-line summary of the charm.
 links:
-  documentation: https://discourse.charmhub.io/t/is-charms-template-documentation/18072
+  documentation: https://discourse.charmhub.io/t/is-charms-template-documentation-overview/18072
   issues: https://github.com/canonical/is-charms-template-repo/issues
   source: https://github.com/canonical/is-charms-template-repo
   contact: https://launchpad.net/~canonical-is-devops
