@@ -1,7 +1,8 @@
 # Copyright 2025 Canonical Ltd.
 # See LICENSE file for licensing details.
 # This file configures Charmcraft.
-# See https://juju.is/docs/sdk/charmcraft-config for guidance.
+# See https://canonical-charmcraft.readthedocs-hosted.com/stable/howto/manage-charmcraft/ 
+# for guidance.
 
 type: charm
 name: is-charms-template
@@ -49,3 +50,16 @@ resources:
     # so the integration testing suite knows which image to deploy during testing. This field
     # is also used by the 'canonical/charming-actions' Github action for automated releasing.
     upstream-source: kennethreitz/httpbin
+
+# See https://canonical-charmcraft.readthedocs-hosted.com/stable/reference/files/config-yaml-file/
+# for guidance.
+config:
+  options:
+    # An example config option to customise the log level of the workload
+    log-level:
+      description: |
+        Configures the log level of gunicorn. 
+
+        Acceptable values are: "info", "debug", "warning", "error" and "critical"
+      default: "info"
+      type: string
