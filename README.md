@@ -40,9 +40,12 @@ This section could be structured in the following way:
 ### Basic operations
 <!--Brief walkthrough of performing standard configurations or operations.
 
+Use this section is to emphasize features or capabilities of the charm.
+Link to any relevant how-to guides here.
+
 Use this section to provide information on important actions, required configurations, or
 other operations the user should know about. You don’t need to list every action or configuration.
-Use this section to link the Charmhub documentation for actions and configurations.
+Link the Charmhub documentation for actions and configurations if you write about them.
 
 You may also want to link to the `charmcraft.yaml` file here.
 -->
@@ -63,13 +66,13 @@ include a link to the relevant Matrix channel.
 -->
 
 * [Read more]() <!--Link to the charm's official documentation-->
-* [Developer documentation]() <!--Link to any developer documentation-->
+* [Developer documentation]() <!--Link to any developer documentation (could be upstream)-->
 * [Official webpage]() <!--(Optional) Link to official upstream webpage/blog/marketing content--> 
 * [Troubleshooting]() <!--(Optional) Link to a page or section about troubleshooting/FAQ-->
 
 ## Project and community
 * [Issues]() <!--Link to GitHub issues (if applicable)-->
-* [Contributing]() <!--Link to any contribution guides--> 
+* [Contributing]() <!--Link to any contribution guides, preferably for the source code--> 
 * [Matrix]() <!--Link to contact info (if applicable), e.g. Matrix channel-->
 * [Launchpad]() <!--Link to Launchpad (if applicable)-->
 
