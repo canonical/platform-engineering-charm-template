@@ -1,0 +1,10 @@
+# --- Release notes artifact ----
+
+charm_name: ""
+release_condition: "" # Revision/Date
+changes:
+  - author: ""
+    title: ""
+    type: ""
+    description: ""
+    url: ""
