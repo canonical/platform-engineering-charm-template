@@ -7,6 +7,12 @@ variable "app_name" {
   default     = "<charm-name>"
 }
 
+variable "base" {
+  description = "The operating system on which to deploy"
+  type        = string
+  default     = "ubuntu@24.04"
+}
+
 variable "channel" {
   description = "The channel to use when deploying a charm."
   type        = string
@@ -28,7 +34,6 @@ variable "constraints" {
 variable "model" {
   description = "Reference to a `juju_model`."
   type        = string
-  default     = ""
 }
 
 variable "revision" {
@@ -37,10 +42,10 @@ variable "revision" {
   default     = null
 }
 
-variable "base" {
-  description = "The operating system on which to deploy"
-  type        = string
-  default     = "ubuntu@24.04"
+variable "storage" {
+  description = "Map of storage used by the application."
+  type        = map(string)
+  default     = {}
 }
 
 variable "units" {
