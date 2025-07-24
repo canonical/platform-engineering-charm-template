@@ -6,13 +6,14 @@ resource "juju_application" "charm_name" {
   model = var.model
 
   charm {
-    name     = "<charm-name>"
+    name     = "<charm_name>"
     channel  = var.channel
     revision = var.revision
     base     = var.base
   }
 
-  config      = var.config
-  constraints = var.constraints
-  units       = var.units
+  config             = var.config
+  constraints        = var.constraints
+  units              = var.units
+  storage_directives = var.storage
 }
