@@ -28,6 +28,6 @@ module "charm_name" {
   source   = "./.."
   app_name = "charm_name"
   channel  = var.channel
-  model       = "prod-charm_name-example"
-  revision    = var.revision
+  model    = "prod-charm_name-example"
+  revision = var.revision
 }

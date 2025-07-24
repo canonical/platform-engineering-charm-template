@@ -8,6 +8,6 @@ output "app_name" {
 
 output "endpoints" {
   value = {
-    ingress            = "ingress"
+    ingress = "ingress"
   }
 }
