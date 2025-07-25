@@ -1,17 +1,13 @@
 <!-- Remember to update this file for your charm -- replace <charm-name> with the appropriate name,
 specify the track the release notes will follow, and include a link on how to upgrade. -->
 
-# Release notes and upgrade instructions
+# Release notes
 
 Release notes for the <main> track of <charm name>, summarizing new features,
 bug fixes and backwards-incompatible changes in each revision.
 
 For upgrading the charm, see [How to upgrade](link to upgrade documentation).
 For instructions on a specific release, see the corresponding release notes.
-
-## Releases
-
-<Add a list of releases here, with links to the individual release notes.>
 
 ## Release policy and schedule
 
@@ -23,3 +19,6 @@ Please adopt one of the following release patterns:
 - Release notes published when there’s a need (maintenance, bug fixes, etc.)
 -->
 
+## Releases
+
+<Add a list of releases here, with links to the individual release notes.>
