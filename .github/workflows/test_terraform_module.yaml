@@ -23,7 +23,8 @@ jobs:
     - uses: actions/checkout@@v4.2.2
     - uses: charmed-kubernetes/actions-operator@main
       with:
-        provider: "microk8s"
+        provider: "k8s"
+        use-canonical-k8s: true
         channel: 1.28-strict/stable
         juju-channel: 3.4/stable
     - name: Prepare juju tf provider environment
