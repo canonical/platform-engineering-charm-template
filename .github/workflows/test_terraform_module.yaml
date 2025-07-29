@@ -25,7 +25,7 @@ jobs:
       with:
         provider: "k8s"
         use-canonical-k8s: true
-        channel: 1.28-strict/stable
+        channel: 1.33-classic/stable
         juju-channel: 3.6/stable
     - name: Prepare juju tf provider environment
       run: |
