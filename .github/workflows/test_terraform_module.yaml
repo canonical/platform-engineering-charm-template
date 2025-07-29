@@ -26,7 +26,7 @@ jobs:
         provider: "k8s"
         use-canonical-k8s: true
         channel: 1.28-strict/stable
-        juju-channel: 3.4/stable
+        juju-channel: 3.6/stable
     - name: Prepare juju tf provider environment
       run: |
         CONTROLLER=$(juju whoami | yq .Controller)
