@@ -13,8 +13,6 @@ permissions:
 
 jobs:
   validate:
-    # remove this condition for enabling the workflow
-    if: false 
     name: Validate terraform configuration files
     runs-on: ubuntu-latest
     env:
