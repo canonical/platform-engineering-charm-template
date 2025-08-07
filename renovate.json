@@ -38,6 +38,11 @@
         "patch"
       ],
       "enabled": false
+    },
+    {
+      "matchDatasources": ["terraform-provider"],
+      "matchPackageNames": ["juju/juju"],
+      "enabled": true
     }
   ]
 }

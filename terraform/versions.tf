@@ -4,9 +4,8 @@
 terraform {
   required_providers {
     juju = {
-      source                = "juju/juju"
-      version               = ">= 0.17.1"
-      configuration_aliases = [juju.charm_db]
+      source  = "juju/juju"
+      version = ">= 0.20.0"
     }
   }
 }
