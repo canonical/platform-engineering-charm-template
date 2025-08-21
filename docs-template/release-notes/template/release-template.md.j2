@@ -6,8 +6,17 @@ These release notes cover new features and changes in {{ charm_name }} for revis
 {{ earliest_revision }}-{{ latest_revision }} between the dates of {{ earliest_date }} and {{ latest_date }}.
 
 Main features:
+
 {% for feat in changes -%}
 {%- if feat.highlight == true and (feat.visibility == "public" or (feat.visibility == "internal" and show_internal == true) ) and (feat.type == "major" or feat.type == "minor") -%}
+* {{ feat.title }}.
+{% endif -%}
+{% endfor %}
+
+Main breaking changes:
+
+{% for feat in changes -%}
+{%- if feat.highlight == true and (feat.visibility == "public" or (feat.visibility == "internal" and show_internal == true) ) and (feat.type == "breaking") -%}
 * {{ feat.title }}.
 {% endif -%}
 {% endfor %}
@@ -51,7 +60,6 @@ The following major and minor features were added in this release.
 
 {% for feat in changes %}
 {%- if (feat.type == "major" or feat.type == "minor") and (feat.visibility == "public" or (feat.visibility == "internal" and show_internal == true) ) -%}
-
 ### {{ feat.title }}
 {{ feat.description }}
 <Add more context and information about the entry>
@@ -68,21 +76,17 @@ Relevant links:
 {% endif -%}
 {% endfor %}
 
-## Bug fixes
-
+{% set break = False %}
 {% for feat in changes -%}
-{%- if feat.type == "bugfix" and (feat.visibility == "public" or (feat.visibility == "internal" and show_internal == true) ) -%}
-* {{ feat.title }} ([PR]({{ feat.urls.pr }})).
-{% endif -%}
-{% endfor %}
-
+{% if not break -%}
+{%- if feat.type == "breaking" and (feat.visibility == "public" or (feat.visibility == "internal" and show_internal == true) ) -%}
 ## Breaking changes
 
-<!--
-If there are no breaking changes in this release, keep the section and write "No breaking changes".
--->
-
 The following backwards-incompatible changes are included in this release.
+{% set break = True %}
+{% endif -%}
+{% endif -%}
+{% endfor -%}
 
 {% for feat in changes -%}
 {%- if feat.type == "breaking" and (feat.visibility == "public" or (feat.visibility == "internal" and show_internal == true) ) -%}
@@ -102,13 +106,25 @@ Relevant links:
 {% endif -%}
 {% endfor %}
 
+## Bug fixes
+
+{% for feat in changes -%}
+{%- if feat.type == "bugfix" and (feat.visibility == "public" or (feat.visibility == "internal" and show_internal == true) ) -%}
+* {{ feat.title }} ([PR]({{ feat.urls.pr }})).
+{% endif -%}
+{% endfor %}
+
+{% set break = False %}
+{% for feat in changes -%}
+{% if not break -%}
+{%- if feat.type == "deprecated" and (feat.visibility == "public" or (feat.visibility == "internal" and show_internal == true) ) -%}
 ## Deprecated
 
-<!--
-If there are no deprecated features in this release, keep the section and write "No deprecated features".
--->
-
 The following features have been deprecated.
+{% set break = True %}
+{% endif -%}
+{% endif -%}
+{% endfor -%}
 
 {% for feat in changes -%}
 {%- if feat.type == "deprecated" and (feat.visibility == "public" or (feat.visibility == "internal" and show_internal == true) ) -%}
