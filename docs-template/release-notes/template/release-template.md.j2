@@ -8,7 +8,7 @@ These release notes cover new features and changes in {{ charm_name }} for revis
 Main features:
 
 {% for feat in changes -%}
-{%- if feat.highlight == true and (feat.visibility == "public" or (feat.visibility == "internal" and show_internal == true) ) and (feat.type == "major" or feat.type == "minor") -%}
+{%- if feat.highlight == true and (feat.visibility == "public" or (feat.visibility == "internal" and show_internal == true) ) and (feat.type in ["major", "minor"]) -%}
 * {{ feat.title }}.
 {% endif -%}
 {% endfor %}
@@ -59,7 +59,7 @@ The table below shows the required or supported versions of the software necessa
 The following major and minor features were added in this release.
 
 {% for feat in changes %}
-{%- if (feat.type == "major" or feat.type == "minor") and (feat.visibility == "public" or (feat.visibility == "internal" and show_internal == true) ) -%}
+{%- if (feat.type in ["major", "minor"]) and (feat.visibility == "public" or (feat.visibility == "internal" and show_internal == true) ) -%}
 ### {{ feat.title }}
 {{ feat.description }}
 <Add more context and information about the entry>
