@@ -23,4 +23,5 @@ header:
     - 'trivy.yaml'
     - 'pyproject.toml'
     - 'zap_rules.tsv'
+    - '**/*.md.j2'
   comment: on-failure
