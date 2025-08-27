@@ -43,7 +43,7 @@ notify in advance the people involved to avoid confusion;
 also, reference the issue or bug number when you submit the changes.
 
 - [Fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks)
-  our [GitHub repository](link to github repo)
+  our [GitHub repository](link to GitHub repository)
   and add the changes to your fork, properly structuring your commits,
   providing detailed commit messages and signing your commits.
 - Make sure the updated project builds and runs without warnings or errors;
