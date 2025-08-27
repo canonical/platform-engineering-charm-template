@@ -32,7 +32,7 @@ When contributing, you must abide by the
 This project uses [semantic versioning](https://semver.org/).
 
 Please ensure that any new feature, fix, or significant change is documented by
-adding an entry to the [CHANGELOG.md](link-to-changelog) file.
+adding an entry to the [CHANGELOG.md](link to changelog) file.
 
 To learn more about changelog best practices, visit [Keep a Changelog](https://keepachangelog.com/).
 
@@ -43,7 +43,7 @@ notify in advance the people involved to avoid confusion;
 also, reference the issue or bug number when you submit the changes.
 
 - [Fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks)
-  our [GitHub repository](link-to-github-repo)
+  our [GitHub repository](link to github repo)
   and add the changes to your fork, properly structuring your commits,
   providing detailed commit messages and signing your commits.
 - Make sure the updated project builds and runs without warnings or errors;
