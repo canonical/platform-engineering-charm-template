@@ -1,0 +1,2 @@
+# For the redirection, the stdout of cron is chosen, as /proc/1/fd/2 is a not working link (probably in the host machine), and the pts number in /dev/pts does not look like constant
+*/5 * * * * root PEBBLE_SOCKET=/charm/container/pebble.socket pebble exec --user=_daemon_ -w=/django/app --context=django -- /bin/python3 manage.py syncdatasource --all >> "/proc/$(pgrep cron -U 0 -P 1)/fd/2" 2>&1

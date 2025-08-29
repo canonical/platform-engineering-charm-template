@@ -1,0 +1,65 @@
+# This file configures Charmcraft.
+# See https://juju.is/docs/sdk/charmcraft-config for guidance.
+
+name: netbox
+
+type: charm
+
+bases:
+  - build-on:
+    - name: ubuntu
+      channel: "22.04"
+    run-on:
+    - name: ubuntu
+      channel: "22.04"
+
+summary: NetBox.
+
+description: |
+    NetBox is the go-to solution for modeling and documenting network
+    infrastructure for thousands of organizations worldwide. As a successor
+    to legacy IPAM and DCIM applications, NetBox provides a cohesive,
+    extensive, and accessible data model for all things networked.
+
+links:
+  documentation: https://discourse.charmhub.io/t/netbox-documentation-overview/13564
+  issues: https://github.com/canonical/netbox/issues
+  source: https://github.com/canonical/netbox
+  website:
+    - https://github.com/canonical/netbox
+
+extensions:
+  - django-framework
+
+requires:
+  postgresql:
+    interface: postgresql_client
+    limit: 1
+  s3:
+    interface: s3
+    limit: 1
+  redis:
+    interface: redis
+    limit: 1
+  saml:
+    interface: saml
+    limit: 1
+    optional: true
+
+config:
+  options:
+    saml-sp-entity-id:
+      description: |-
+        SAML SP entity id.
+      type: string
+    saml-username:
+      description: |-
+        SAML attribute used for both the social uid and the username.
+        NameID can be used setting this config to 'name.
+      type: string
+      default: 'name'
+    saml-email:
+      description: |-
+        SAML attribute used for the email.
+      type: string
+
