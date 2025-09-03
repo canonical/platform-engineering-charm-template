@@ -1,24 +1,25 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended",
-    "group:allNonMajor"
-  ],
+  "automerge": true,
   "customManagers": [
     {
       "customType": "regex",
+      "datasourceTemplate": "docker",
+      "description": "Update base image references",
       "managerFilePatterns": [
         "/(^|/)rockcraft.yaml$/"
       ],
-      "description": "Update base image references",
-      "matchStringsStrategy": "any",
       "matchStrings": [
         "# renovate: build-base:\\s+(?<depName>[^:]*):(?<currentValue>[^\\s@]*)(@(?<currentDigest>sha256:[0-9a-f]*))?",
         "# renovate: base:\\s+(?<depName>[^:]*):(?<currentValue>[^\\s@]*)(@(?<currentDigest>sha256:[0-9a-f]*))?"
       ],
-      "datasourceTemplate": "docker",
+      "matchStringsStrategy": "any",
       "versioningTemplate": "ubuntu"
     }
+  ],
+  "extends": [
+    "config:recommended",
+    "group:allNonMajor"
   ],
   "packageRules": [
     {
@@ -29,6 +30,7 @@
       "pinDigests": true
     },
     {
+      "enabled": false,
       "matchFileNames": [
         "rockcraft.yaml"
       ],
@@ -36,13 +38,16 @@
         "major",
         "minor",
         "patch"
-      ],
-      "enabled": false
+      ]
     },
     {
-      "matchDatasources": ["terraform-provider"],
-      "matchPackageNames": ["juju/juju"],
-      "enabled": true
+      "enabled": true,
+      "matchDatasources": [
+        "terraform-provider"
+      ],
+      "matchPackageNames": [
+        "juju/juju"
+      ]
     }
   ]
 }
