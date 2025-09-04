@@ -1,0 +1,11 @@
+ignore_files:
+  - netbox
+  - docs
+rules:
+  # Ignore "master" - While https://github.com/canonical/redis-k8s-operator/pull/78
+  # is not merged
+  - name: master
+  # Ignore "grandfathered" used by SAML configuration.
+  - name: grandfathered
+  # Ignore "whitelist" used by NetBox.
+  - name: whitelist

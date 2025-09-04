@@ -1,0 +1,36 @@
+--- ./netbox/netbox/netbox/settings.py	2025-08-12 20:15:08.000000000 +0300
++++ ./netbox/netbox/netbox/settings.py	2025-08-20 15:40:33.000000000 +0300
+@@ -11,7 +11,7 @@
+ from django.core.validators import URLValidator
+ from django.utils.module_loading import import_string
+ from django.utils.translation import gettext_lazy as _
+-
++from urllib.parse import urlparse
+ from core.exceptions import IncompatiblePluginError
+ from netbox.config import PARAMS as CONFIG_PARAMS
+ from netbox.constants import RQ_QUEUE_DEFAULT, RQ_QUEUE_HIGH, RQ_QUEUE_LOW
+@@ -456,6 +456,7 @@
+     'django.contrib.messages.middleware.MessageMiddleware',
+     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+     'django.middleware.security.SecurityMiddleware',
++    'whitenoise.middleware.WhiteNoiseMiddleware',
+     'django_htmx.middleware.HtmxMiddleware',
+     'netbox.middleware.RemoteUserMiddleware',
+     'netbox.middleware.CoreMiddleware',
+@@ -909,3 +910,16 @@
+     _UNSUPPORTED_SETTINGS = True
+ except ImportError:
+     pass
++
++# This is also required for Traefik k8s charm to work in routing mode
++# path. The reason is that when the proxied url is something like
++# http://url/path, the url called by the ingress is really
++# http://service/, without the path.  See also
++# https://github.com/evansd/whitenoise/issues/271
++base_url = os.environ.get('DJANGO_BASE_URL', '/')
++parsed_base_url = urlparse(base_url)
++
++WHITENOISE_STATIC_PREFIX = STATIC_URL
++STATIC_URL = f"{parsed_base_url.path}/{STATIC_URL}"
++FORCE_SCRIPT_NAME = f"{parsed_base_url.path}"
++MEDIA_URL = f"{parsed_base_url.path}/{MEDIA_URL}"

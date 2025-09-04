@@ -1,0 +1,162 @@
+# Copyright 2025 Canonical Ltd.
+# See LICENSE file for licensing details.
+
+# Easiest way to deploy NetBox. The only requirement is multipass.
+
+# To deploy:
+# multipass launch  -vvvv --cloud-init cloudinit-juju-3.6.yaml --timeout 1800 --name netbox --memory 4G --cpus 3 --disk 30G 22.04
+# Or from the cloud init in the repo (main branch):
+# multipass launch  -vvvv --cloud-init https://raw.githubusercontent.com/canonical/netbox/main/charm/cloudinit-juju-3.6.yaml --timeout 1800 --name netbox --memory 4G --cpus 3 --disk 30G 22.04
+
+# After deploying, you can get the url for NetBox, that will work in the host computer with:
+# multipass exec netbox -- juju run traefik-k8s/0 show-proxied-endpoints --format=yaml
+# It will be something like http://<IP of the VM>/netbox-netbox
+
+# And you can create an admin user with:
+# multipass exec netbox -- juju run netbox/leader create-superuser username=admin email=netbox@example.com
+# The response will include the password. You can now login into NetBox with that user.
+
+# When you are finished, you can delete the multipass VM with:
+# multipass delete netbox --purge
+
+# To debug possible problems, you can inspect the next log files:
+# multipass exec netbox -- tail -f /var/log/cloud-init-output.log -f
+# multipass exec netbox -- tail -f /var/log/cloud-init.log -f
+
+package_update: true
+
+packages:
+- jq
+- gnome-keyring
+- sshfs
+- docker.io
+
+snap:
+  commands:
+  - snap install juju --channel=3.6/stable
+  - snap install microk8s --channel 1.31-strict/stable
+  - snap alias microk8s.kubectl kubectl
+  - snap alias microk8s.kubectl k
+  - snap install yq
+  - snap install multipass-sshfs
+
+runcmd:
+
+- |
+  # disable swap
+  sysctl -w vm.swappiness=0
+  echo "vm.swappiness = 0" | tee -a /etc/sysctl.conf
+  swapoff -a
+
+- |
+  # disable unnecessary services
+  systemctl disable man-db.timer man-db.service --now
+  systemctl disable apport.service apport-autoreport.service  --now
+  systemctl disable apt-daily.service apt-daily.timer --now
+  systemctl disable apt-daily-upgrade.service apt-daily-upgrade.timer --now
+  systemctl disable unattended-upgrades.service --now
+  systemctl disable motd-news.service motd-news.timer --now
+  systemctl disable bluetooth.target --now
+  systemctl disable ua-messaging.service ua-messaging.timer --now
+  systemctl disable ua-timer.timer ua-timer.service --now
+  systemctl disable systemd-tmpfiles-clean.timer --now
+
+  # Disable IPv6
+  echo "net.ipv6.conf.all.disable_ipv6=1" | tee -a /etc/sysctl.conf
+  echo "net.ipv6.conf.default.disable_ipv6=1" | tee -a /etc/sysctl.conf
+  echo "net.ipv6.conf.lo.disable_ipv6=1" | tee -a /etc/sysctl.conf
+  sysctl -p
+
+- |
+  # setup charmcraft
+  lxd init --auto
+  adduser ubuntu lxd
+
+- |
+  # setup microk8s and bootstrap
+  adduser ubuntu snap_microk8s
+
+- |
+  # prepare docker user
+  adduser ubuntu docker
+
+- |
+  sudo -u ubuntu mkdir -p /home/ubuntu/.kube
+  sudo -u ubuntu mkdir -p /home/ubuntu/.local/share/juju
+  microk8s status --wait-ready
+
+  microk8s.enable metrics-server
+  microk8s.kubectl rollout status deployments/metrics-server -n kube-system -w --timeout=600s
+
+  # The dns addon will restart the api server so you may see a blip in the availability
+  # Separating addons to avoid errors such as
+  # dial tcp 127.0.0.1:16443: connect: connection refused
+  microk8s.enable rbac
+  microk8s.enable dns
+  microk8s.kubectl rollout status deployments/coredns -n kube-system -w --timeout=600s
+
+  microk8s.enable hostpath-storage
+  # wait for storage to become available
+  microk8s.kubectl rollout status deployments/hostpath-provisioner -n kube-system -w --timeout=600s
+
+  sudo -u ubuntu juju bootstrap microk8s microk8s
+
+  # dump microk8s config
+  microk8s config | sudo -u ubuntu tee /home/ubuntu/.kube/config > /dev/null
+
+- |
+  # Install NetBox
+  echo Install NetBox 
+  sudo -u ubuntu bash <<'EOF'
+    set -x
+
+    IPADDR=$(ip -4 -j route get 2.2.2.2 | jq -r '.[] | .prefsrc')
+    # Run docker minio
+    mkdir -p ${HOME}/minio/data
+    docker run -d -p 9000:9000 -p 9001:9001 --user $(id -u):$(id -g) --name minio -e "MINIO_ROOT_USER=minioadmin" -e "MINIO_ROOT_PASSWORD=minioadmin" -v ${HOME}/minio/data:/data quay.io/minio/minio server /data --console-address ":9001"
+
+    export AWS_ACCESS_KEY_ID=minio
+    export AWS_SECRET_ACCESS_KEY=supersuperkey
+
+    sudo microk8s enable metallb:$IPADDR-$IPADDR
+    
+    NETBOX_HOSTNAME=netbox.internal
+
+    juju switch microk8s
+    juju add-model netbox
+    juju switch netbox
+    juju model-config update-status-hook-interval=100s
+    juju model-config "logging-config=<root>=INFO;unit=DEBUG"
+
+    # Deploy everything together to try to speed up the process
+    juju deploy postgresql-k8s --channel 14/stable --trust
+    juju deploy netbox --channel latest/edge
+    juju deploy redis-k8s --channel=latest/edge
+    juju deploy traefik-k8s --channel edge --trust
+    juju deploy s3-integrator --channel edge
+
+    
+    juju config netbox django-allowed-hosts='*'
+    juju integrate redis-k8s netbox
+    juju integrate postgresql-k8s netbox
+
+    juju config traefik-k8s routing_mode=path
+    juju integrate traefik-k8s netbox
+
+    juju config s3-integrator endpoint="http://${IPADDR}:9000" bucket=netbox path=/ region=us-west-1 s3-uri-style=path
+    juju wait-for application s3-integrator --query='name=="s3-integrator" && (status=="active" || status=="blocked")'
+    juju run s3-integrator/leader sync-s3-credentials access-key=${AWS_ACCESS_KEY_ID} secret-key=${AWS_SECRET_ACCESS_KEY}
+    juju integrate s3-integrator netbox
+
+    # No need for S3 working at this point.
+    juju wait-for application netbox
+
+    # configure MINIO acces-key/secret-key and create bucket
+    docker exec minio mc config host add minio http://127.0.0.1:9000 minioadmin minioadmin
+    docker exec minio mc admin user svcacct add --access-key "${AWS_ACCESS_KEY_ID}" --secret-key "${AWS_SECRET_ACCESS_KEY}" minio minioadmin
+    docker exec minio mc mb minio/netbox
+    docker exec minio mc ls minio
+  EOF
+
+
+final_message: "The system is finally up, after $UPTIME seconds"

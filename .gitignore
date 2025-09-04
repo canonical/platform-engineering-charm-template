@@ -6,8 +6,9 @@ build/
 __pycache__/
 *.py[cod]
 .idea
-.vscode
-.mypy_cache
-*.egg-info/
-*/*.rock
-terraform/tests/.terraform
+.vscode/
+
+!netbox/rockcraft.yaml
+netbox/*
+*.tar.gz*
+lib/
