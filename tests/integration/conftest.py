@@ -236,7 +236,7 @@ def minio_app_fixture(juju: jubilant.Juju, s3_netbox_credentials):
 
     juju.deploy(
         MINIO_APP_NAME,
-        channel="edge",
+        channel="ckf-1.10/stable",
         config=s3_netbox_credentials,
         trust=True,
     )
