@@ -11,5 +11,5 @@ jobs:
     uses: canonical/operator-workflows/.github/workflows/publish_charm.yaml@main
     secrets: inherit
     with:
-      channel: 4/edge
+      channel: latest/edge
       resource-mapping: '{"netbox": "django-app-image"}'
