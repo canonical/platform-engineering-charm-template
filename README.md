@@ -10,7 +10,7 @@ Use links instead.
 <!--
 NOTE: This template has the documentation under the `docs-template` due with issues with discourse-gatekeeper. The `docs-template` directory must be changed to `docs` after using this template to ensure discourse-gatekeeper correctly identifies the documentation changes.
 -->
-# platform-engineering-charm-template
+# Platform engineering charm template
 <!-- Use this space for badges -->
 
 Describe your charm in 1-2 sentences. Include the software that the charm deploys (if applicable), and the substrate (VM/K8s).
@@ -50,7 +50,7 @@ Link the Charmhub documentation for actions and configurations if you write abou
 You may also want to link to the `charmcraft.yaml` file here.
 -->
 
-## (Optional) Integrations
+## Integrations (optional)
 <!-- Information about particularly relevant interfaces, endpoints or libraries related to the
 charm. For example, peer relation endpoints required by other charms for integration.
 
@@ -76,5 +76,5 @@ include a link to the relevant Matrix channel.
 * [Matrix]() <!--Link to contact info (if applicable), e.g. Matrix channel-->
 * [Launchpad]() <!--Link to Launchpad (if applicable)-->
 
-## (Optional) Licensing and trademark
+## Licensing and trademark (optional)
 
