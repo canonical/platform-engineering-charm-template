@@ -11,7 +11,7 @@ This document explains the processes and practices recommended for contributing 
 - If you would like to chat with us about your use-cases or proposed implementation, you can reach
   us at [Canonical Matrix public channel](https://matrix.to/#/#charmhub-charmdev:ubuntu.com)
   or [Discourse](https://discourse.charmhub.io/).
-- Familiarizing yourself with the [Juju documentation](https://canonical-juju.readthedocs-hosted.com/en/latest/user/howto/manage-charms/)
+- Familiarizing yourself with the [Juju documentation](https://documentation.ubuntu.com/juju/3.6/howto/manage-charms/)
   will help you a lot when working on new features or bug fixes.
 - All enhancements require review before being merged. Code review typically examines
   - code quality
@@ -32,7 +32,7 @@ When contributing, you must abide by the
 This project uses [semantic versioning](https://semver.org/).
 
 Please ensure that any new feature, fix, or significant change is documented by
-adding an entry to the [CHANGELOG.md](link-to-changelog) file.
+adding an entry to the [CHANGELOG.md](link to changelog) file.
 
 To learn more about changelog best practices, visit [Keep a Changelog](https://keepachangelog.com/).
 
@@ -43,7 +43,7 @@ notify in advance the people involved to avoid confusion;
 also, reference the issue or bug number when you submit the changes.
 
 - [Fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks)
-  our [GitHub repository](link-to-github-repo)
+  our [GitHub repository](link to GitHub repository)
   and add the changes to your fork, properly structuring your commits,
   providing detailed commit messages and signing your commits.
 - Make sure the updated project builds and runs without warnings or errors;
@@ -134,10 +134,12 @@ that can be used for linting and formatting code when you're preparing contribut
 * ``tox -e fmt``: Runs formatting using ``black`` and ``isort``.
 * ``tox -e lint``: Runs a range of static code analysis to check the code.
 * ``tox -e static``: Runs other checks such as ``bandit`` for security issues.
+* ``tox -e unit``: Runs the unit tests.
+* ``tox -e integration``: Runs the integration tests.
 
 ### Build the rock and charm
 
-Use [Rockcraft](https://documentation.ubuntu.com/rockcraft/en/latest/) to create an
+Use [Rockcraft](https://documentation.ubuntu.com/rockcraft/stable/) to create an
 OCI image for the <charm-name> app, and then upload the image to a MicroK8s registry,
 which stores OCI archives so they can be downloaded and deployed.
 
