@@ -27,12 +27,11 @@ This document explains the processes and practices recommended for contributing 
 When contributing, you must abide by the
 [Ubuntu Code of Conduct](https://ubuntu.com/community/ethos/code-of-conduct).
 
-## Releases and versions
-
-This project uses [semantic versioning](https://semver.org/).
+## Changelog
 
 Please ensure that any new feature, fix, or significant change is documented by
-adding an entry to the [CHANGELOG.md](link to changelog) file.
+adding an entry to the [CHANGELOG.md](link to changelog) file. Use the date of the
+contribution as the header for new entries.
 
 To learn more about changelog best practices, visit [Keep a Changelog](https://keepachangelog.com/).
 
