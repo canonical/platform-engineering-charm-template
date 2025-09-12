@@ -5,16 +5,20 @@
 
 import logging
 import os.path
+import subprocess
 from collections.abc import Generator
 from typing import cast
 
 import jubilant
 import kubernetes
 import pytest
+import requests
 from minio import Minio
 from pytest import Config
 from requests import HTTPError
+from requests.adapters import HTTPAdapter
 from saml_test_helper import SamlK8sTestHelper
+from urllib3.util.retry import Retry
 
 from tests.conftest import NETBOX_IMAGE_PARAM
 from tests.integration.types import App
@@ -435,3 +439,50 @@ def netbox_app_fixture(
     )
 
     return App(netbox_barebones.name)
+
+
+@pytest.fixture(scope="module", name="identity_bundle")
+def deploy_identity_bundle_fixture(juju: jubilant.Juju) -> None:
+    """Deploy Canonical identity bundle."""
+    if juju.status().apps.get("hydra"):
+        logger.info("identity-platform is already deployed")
+        return
+    juju.deploy("identity-platform", channel="latest/edge", trust=True)
+    juju.remove_application("kratos-external-idp-integrator")
+    juju.config("kratos", {"enforce_mfa": False})
+
+
+@pytest.fixture(scope="session")
+def browser_context_manager() -> None:
+    """
+    A session-scoped fixture that installs the Playwright browser.
+    This ensures the browser is installed only for oauth test.
+    """
+    try:
+        subprocess.run(
+            ["python", "-m", "playwright", "install", "chromium"],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+    except subprocess.CalledProcessError as e:
+        pytest.fail(f"Failed to install Playwright browser: {e.stderr}")
+
+
+@pytest.fixture(scope="function", name="http")
+def fixture_http_client() -> Generator[requests.Session]:
+    """Return the --test-flask-image test parameter."""
+    retry_strategy = Retry(
+        total=5,
+        connect=5,
+        read=5,
+        other=5,
+        backoff_factor=5,
+        status_forcelist=[429, 500, 502, 503, 504],
+        allowed_methods=["HEAD", "POST", "GET", "OPTIONS"],
+        raise_on_status=False,
+    )
+    adapter = HTTPAdapter(max_retries=retry_strategy)
+    with requests.Session() as http:
+        http.mount("http://", adapter)
+        yield http

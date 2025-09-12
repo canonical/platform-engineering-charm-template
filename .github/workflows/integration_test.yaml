@@ -12,7 +12,7 @@ jobs:
         [
           "test_charm.py",
           "test_s3.py",
-          "test_saml.py"
+          "test_oauth.py"
         ]
       load-test-enabled: false
       trivy-fs-enabled: true
@@ -21,3 +21,4 @@ jobs:
       channel: 1.31-strict/stable
       pre-build-script: |
         -c './download_netbox.sh'
+      microk8s-addons: "dns ingress rbac storage metallb:10.64.140.43-10.64.140.49"

@@ -30,6 +30,10 @@ links:
 extensions:
   - django-framework
 
+charm-libs:
+- lib: hydra.oauth
+  version: '0'
+
 requires:
   postgresql:
     interface: postgresql_client
@@ -44,18 +48,18 @@ requires:
     interface: saml
     limit: 1
     optional: true
+  oidc:
+    interface: oauth
+    optional: True
+    limit: 1
 
 config:
   options:
-    saml-sp-entity-id:
-      description: SAML SP entity id.
+    oidc-redirect-path:
       type: string
-    saml-username:
-      description: |-
-        SAML attribute used for both the social uid and the username.
-        NameID can be used setting this config to 'name.
+      description: The path that the user will be redirected upon completing login.
+      default: /oauth/complete/oidc/
+    oidc-scopes:
       type: string
-      default: name
-    saml-email:
-      description: SAML attribute used for the email.
-      type: string
+      description: List of scopes separated by spaces.
+      default: "openid profile email"

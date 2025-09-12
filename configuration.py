@@ -267,45 +267,18 @@ SHORT_DATETIME_FORMAT = 'Y-m-d H:i'
 
 # Remote authentication support
 REMOTE_AUTH_ENABLED = False
-if "SAML_ENTITY_ID" in os.environ:
+if "DJANGO_OIDC_CLIENT_ID" in os.environ:
     REMOTE_AUTH_ENABLED = True
-    REMOTE_AUTH_BACKEND = 'social_core.backends.saml.SAMLAuth'
+    REMOTE_AUTH_BACKEND = 'social_core.backends.open_id_connect.OpenIdConnectAuth'
 
-    SOCIAL_AUTH_SAML_SP_ENTITY_ID = os.environ.get("DJANGO_SAML_SP_ENTITY_ID")
-    SOCIAL_AUTH_SAML_ENABLED_IDPS = {
-        "saml": {
-            "entity_id": os.environ.get("SAML_ENTITY_ID"),
-            "url": os.environ.get("SAML_SINGLE_SIGN_ON_REDIRECT_URL"),
-            "x509cert": os.environ.get("SAML_SIGNING_CERTIFICATE"),
-            "attr_user_permanent_id": os.environ.get("DJANGO_SAML_USERNAME"),
-            "attr_username": os.environ.get("DJANGO_SAML_USERNAME"),
-        }
-    }
-    if os.environ.get("DJANGO_SAML_EMAIL"):
-        SOCIAL_AUTH_SAML_ENABLED_IDPS["saml"]["attr_email"] = os.environ["DJANGO_SAML_EMAIL"]
+    SOCIAL_AUTH_LOGIN_URL = os.environ.get("DJANGO_OIDC_REDIRECT_PATH")
+    SOCIAL_AUTH_OIDC_ENDPOINT = os.environ.get("DJANGO_OIDC_API_BASE_URL")
+    SOCIAL_AUTH_OIDC_KEY = os.environ.get("DJANGO_OIDC_CLIENT_ID")
+    SOCIAL_AUTH_OIDC_SCOPE = os.environ.get("DJANGO_OIDC_SCOPES").split(",") if os.environ.get("OIDC_SCOPES") else ["openid", "profile", "email"]
+    SOCIAL_AUTH_OIDC_SECRET = os.environ.get("DJANGO_OIDC_CLIENT_SECRET")
+    SOCIAL_AUTH_OIDC_USERNAME_KEY="email"
+    SOCIAL_AUTH_VERIFY_SSL = False
 
-    # The next variables are mandatory. They are set to an arbitrary value so SAML does not fail.
-    SOCIAL_AUTH_SAML_ORG_INFO = {
-        "en-US": {
-            "name": "example",
-            "displayname": "Example Inc.",
-            "url": "http://netbox.example.com"
-        }
-    }
-    SOCIAL_AUTH_SAML_TECHNICAL_CONTACT = {
-        "givenName": "Tech Gal",
-        "emailAddress": "technical@example.com"
-    }
-    SOCIAL_AUTH_SAML_SUPPORT_CONTACT = {
-        "givenName": "Support Guy",
-        "emailAddress": "support@example.com"
-    }
-
-    # SAML SP certificates (AuthnRequestsSigned) not implemented for the charm.
-    # It is necessary to have SOCIAL_AUTH_SAML_SP_PUBLIC_CERT and_AUTH_SAML_SP_PRIVATE_KEY
-    # defined as strings, otherwise the saml library will fail.
-    SOCIAL_AUTH_SAML_SP_PUBLIC_CERT = ""
-    SOCIAL_AUTH_SAML_SP_PRIVATE_KEY = ""
 
 REMOTE_AUTH_AUTO_CREATE_USER = True
 REMOTE_AUTH_DEFAULT_GROUPS = []
