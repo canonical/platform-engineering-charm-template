@@ -15,5 +15,6 @@ def pytest_addoption(parser: Parser) -> None:
         parser: Pytest parser.
     """
     parser.addoption(NETBOX_IMAGE_PARAM, action="store", help="NetBox app image to be deployed")
+    parser.addoption("--kube-config", action="store", default="~/.kube/config")
     parser.addoption("--charm-file", action="store", help="Charm file to be deployed")
     parser.addoption("--localstack-address", action="store")

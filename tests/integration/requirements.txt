@@ -5,4 +5,4 @@ juju == 3.6.1.2
 minio == 7.2.14
 pytest-operator >= 0.32.0
 tenacity == 9.0.0
-playwright == 1.53.0
+pytest-playwright == 0.7.1

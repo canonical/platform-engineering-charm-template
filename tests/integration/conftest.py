@@ -30,7 +30,7 @@ logger = logging.getLogger(__name__)
 
 MINIO_APP_NAME = "minio"
 NETBOX_APP_NAME = "netbox-k8s"
-NGINX_APP_NAME = "nginx-ingress-integrator"
+GATEWAY_APP_NAME = "gateway-api-integrator"
 POSTGRESQL_APP_NAME = "postgresql-k8s"
 REDIS_APP_NAME = "redis-k8s"
 SAML_APP_NAME = "saml-integrator"
@@ -216,13 +216,6 @@ def juju(request: pytest.FixtureRequest) -> Generator[jubilant.Juju, None, None]
         show_debug_log(juju)
         return
 
-    model = request.config.getoption("--model")
-    if model:
-        juju = jubilant.Juju(model=model)
-        yield juju
-        show_debug_log(juju)
-        return
-
     keep_models = cast(bool, request.config.getoption("--keep-models"))
     with jubilant.temp_model(keep=keep_models) as juju:
         juju.wait_timeout = 10 * 60
@@ -240,7 +233,7 @@ def minio_app_fixture(juju: jubilant.Juju, s3_netbox_credentials):
 
     juju.deploy(
         MINIO_APP_NAME,
-        channel="edge",
+        channel="ckf-1.10/stable",
         config=s3_netbox_credentials,
         trust=True,
     )
@@ -249,35 +242,35 @@ def minio_app_fixture(juju: jubilant.Juju, s3_netbox_credentials):
     return App(MINIO_APP_NAME)
 
 
-@pytest.fixture(scope="module", name="nginx_app")
-def nginx_app_fixture(
+@pytest.fixture(scope="module", name="gateway_app")
+def gateway_app_fixture(
     juju: jubilant.Juju,
 ) -> App:
-    """Deploy nginx."""
-    if juju.status().apps.get(NGINX_APP_NAME):
-        logger.info("%s already deployed", NGINX_APP_NAME)
-        return App(NGINX_APP_NAME)
+    """Deploy gateway-api-integrator."""
+    if juju.status().apps.get(GATEWAY_APP_NAME):
+        logger.info("%s already deployed", GATEWAY_APP_NAME)
+        return App(GATEWAY_APP_NAME)
 
-    juju.deploy(NGINX_APP_NAME, channel="latest/edge", revision=99, trust=True)
-    return App(NGINX_APP_NAME)
+    juju.deploy(GATEWAY_APP_NAME, base="ubuntu@24.04", channel="latest/edge", trust=True)
+    return App(GATEWAY_APP_NAME)
 
 
-@pytest.fixture(scope="module", name="netbox_nginx_integration")
-def netbox_nginx_integration_fixture(
+@pytest.fixture(scope="module", name="netbox_ingress_integration")
+def netbox_ingress_integration_fixture(
     juju: jubilant.Juju,
-    nginx_app: App,
+    gateway_app: App,
     netbox_app: App,
     netbox_hostname: str,
 ):
-    """Integrate NetBox and Nginx for ingress integration."""
+    """Integrate NetBox and gateway-api-integrator for ingress integration."""
     juju.config(
-        nginx_app.name,
-        {"service-hostname": netbox_hostname, "path-routes": "/"},
+        gateway_app.name,
+        {"external-hostname": netbox_hostname, "path-routes": "/", "gateway-class": "cilium"},
     )
     try:
         juju.integrate(
             netbox_app.name,
-            nginx_app.name,
+            f"{gateway_app.name}:gateway",
         )
     except jubilant.CLIError as e:
         if "already exists" in str(e):
@@ -291,7 +284,7 @@ def netbox_nginx_integration_fixture(
     yield netbox_app
     juju.remove_relation(
         f"{netbox_app.name}:ingress",
-        f"{nginx_app.name}:ingress",
+        f"{gateway_app.name}:ingress",
     )
 
 
@@ -442,7 +435,7 @@ def netbox_app_fixture(
 
 
 @pytest.fixture(scope="module", name="identity_bundle")
-def deploy_identity_bundle_fixture(juju: jubilant.Juju) -> None:
+def deploy_identity_bundle_fixture(juju: jubilant.Juju) -> Generator[None]:
     """Deploy Canonical identity bundle."""
     if juju.status().apps.get("hydra"):
         logger.info("identity-platform is already deployed")
@@ -450,6 +443,18 @@ def deploy_identity_bundle_fixture(juju: jubilant.Juju) -> None:
     juju.deploy("identity-platform", channel="latest/edge", trust=True)
     juju.remove_application("kratos-external-idp-integrator")
     juju.config("kratos", {"enforce_mfa": False})
+
+    yield
+
+    _cleanup(juju)
+
+
+def _cleanup(juju: jubilant.Juju):
+    """Remove the test artifacts created during the test."""
+    status = juju.status()
+
+    for app in status.apps:
+        juju.remove_application(app, force=True, destroy_storage=True)
 
 
 @pytest.fixture(scope="session")
@@ -461,6 +466,12 @@ def browser_context_manager() -> None:
     try:
         subprocess.run(
             ["python", "-m", "playwright", "install", "chromium"],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        subprocess.run(
+            ["python", "-m", "playwright", "install-deps"],
             check=True,
             capture_output=True,
             text=True,

@@ -5,7 +5,7 @@ name: netbox
 # see https://documentation.ubuntu.com/rockcraft/en/1.13.0/explanation/bases/
 # for more information about bases and using 'bare' bases for chiselled rocks
 base: ubuntu@24.04 # the base environment for this Django application
-version: "4.3.6.8" # just for humans. Semantic versioning is recommended
+version: "4.3.6" # just for humans. Semantic versioning is recommended
 summary: A summary of your Django application # 79 char long summary
 description: |
   This is netbox's description. You have a paragraph or two to tell the
