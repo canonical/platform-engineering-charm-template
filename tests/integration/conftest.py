@@ -497,3 +497,92 @@ def fixture_http_client() -> Generator[requests.Session]:
     with requests.Session() as http:
         http.mount("http://", adapter)
         yield http
+
+
+@pytest.fixture(scope="module", name="prometheus_app_name")
+def prometheus_app_name_fixture() -> str:
+    """Return the name of the prometheus application deployed for tests."""
+    return "prometheus-k8s"
+
+@pytest.fixture(scope="module", name="loki_app_name")
+def loki_app_name_fixture() -> str:
+    """Return the name of the prometheus application deployed for tests."""
+    return "loki-k8s"
+
+
+@pytest.fixture(scope="module", name="grafana_app_name")
+def grafana_app_name_fixture() -> str:
+    """Return the name of the grafana application deployed for tests."""
+    return "grafana-k8s"
+
+@pytest.fixture(scope="module", name="prometheus_app")
+def deploy_prometheus_fixture(
+    juju: jubilant.Juju,
+    prometheus_app_name: str,
+) -> App:
+    """Deploy prometheus."""
+    if not juju.status().apps.get(prometheus_app_name):
+        juju.deploy(
+            prometheus_app_name,
+            channel="1/stable",
+            revision=129,
+            base="ubuntu@20.04",
+            trust=True,
+        )
+    juju.wait(
+        lambda status: status.apps[prometheus_app_name].is_active,
+        error=jubilant.any_blocked,
+        timeout=6 * 60,
+    )
+    return App(prometheus_app_name)
+
+
+@pytest.fixture(scope="module", name="loki_app")
+def deploy_loki_fixture(
+    juju: jubilant.Juju,
+    loki_app_name: str,
+) -> App:
+    """Deploy loki."""
+    if not juju.status().apps.get(loki_app_name):
+        juju.deploy(loki_app_name, channel="1/stable", trust=True)
+    juju.wait(
+        lambda status: status.apps[loki_app_name].is_active,
+        error=jubilant.any_blocked,
+    )
+    return App(loki_app_name)
+
+
+@pytest.fixture(scope="module", name="cos_apps")
+def deploy_cos_fixture(
+    juju: jubilant.Juju,
+    loki_app,
+    prometheus_app,
+    grafana_app_name: str,
+) -> dict[str:App]:
+    """Deploy the cos applications."""
+    if not juju.status().apps.get(grafana_app_name):
+        juju.deploy(
+            grafana_app_name,
+            channel="1/stable",
+            revision=82,
+            base="ubuntu@20.04",
+            trust=True,
+        )
+        juju.wait(
+            lambda status: jubilant.all_active(
+                status, loki_app.name, prometheus_app.name, grafana_app_name
+            )
+        )
+        juju.integrate(
+            f"{prometheus_app.name}:grafana-source",
+            f"{grafana_app_name}:grafana-source",
+        )
+        juju.integrate(
+            f"{loki_app.name}:grafana-source",
+            f"{grafana_app_name}:grafana-source",
+        )
+    return {
+        "loki_app": loki_app,
+        "prometheus_app": prometheus_app,
+        "grafana_app": App(grafana_app_name),
+    }
