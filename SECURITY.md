@@ -8,8 +8,8 @@ database or the system.
 
 ## Reporting a vulnerability
 
-The easiest way to report a security issue is through GitHub
-[Privately reporting a security
+The easiest way to report a security issue is through GitHub.
+See [Privately reporting a security
 vulnerability](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability#privately-reporting-a-security-vulnerability)
 for instructions.
 
