@@ -52,7 +52,7 @@ resource "juju_integration" "<charm_name>-loki" {
 
 The complete list of available integrations can be found [in the Integrations tab][<charm_name>-integrations].
 
-[Terraform]: https://www.terraform.io/
+[Terraform]: https://developer.hashicorp.com/terraform
 [Terraform Juju provider]: https://registry.terraform.io/providers/juju/juju/latest
 [Juju]: https://juju.is
 [<charm_name>-integrations]: https://charmhub.io/<charm_name>/integrations
