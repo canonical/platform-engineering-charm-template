@@ -23,13 +23,15 @@ description: |
 
   Finally, a paragraph that describes whom the charm is useful for.
 
-bases:
-  - build-on:
-    - name: ubuntu
-      channel: "22.04"
-    run-on:
-    - name: ubuntu
-      channel: "22.04"
+
+base: ubuntu@24.04
+platforms:
+  amd64:
+
+parts:
+  charm:
+    plugin: charm
+    source: .
 
 # The containers and resources metadata apply to Kubernetes charms only.
 # Remove them if not required.
