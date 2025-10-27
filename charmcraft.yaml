@@ -37,21 +37,21 @@ parts:
 # Remove them if not required.
 
 # Your workload’s containers.
-# containers:
-#   httpbin:
-#     resource: httpbin-image
+containers:
+  httpbin:
+    resource: httpbin-image
 
 # This field populates the Resources tab on Charmhub.
-# resources:
+resources:
   # An OCI image resource for each container listed above.
   # You may remove this if your charm will run without a workload sidecar container.
-  # httpbin-image:
-    # type: oci-image
-    # description: OCI image for httpbin
+  httpbin-image:
+    type: oci-image
+    description: OCI image for httpbin
     # The upstream-source field is ignored by Juju. It is included here as a reference
     # so the integration testing suite knows which image to deploy during testing. This field
     # is also used by the 'canonical/charming-actions' Github action for automated releasing.
-    # upstream-source: kennethreitz/httpbin
+    upstream-source: kennethreitz/httpbin
 
 # See https://canonical-charmcraft.readthedocs-hosted.com/stable/reference/files/config-yaml-file/
 # for guidance.

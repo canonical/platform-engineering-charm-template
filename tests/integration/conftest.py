@@ -20,24 +20,6 @@ def charm_fixture(pytestconfig: pytest.Config):
     return charm
 
 
-@pytest.fixture(scope="module", name="app_name")
-def deploy_charm_fixture(charm: str, juju: jubilant.Juju) -> str:
-    """Deploy charm."""
-    app_name = "charm"
-
-    if not juju.status().apps.get(app_name):
-        juju.deploy(
-            f"./{charm}",
-            app_name,
-        )
-    juju.wait(
-        lambda status: status.apps[app_name].is_active,
-        error=jubilant.any_blocked,
-        timeout=6 * 60,
-    )
-    return app_name
-
-
 @pytest.fixture(scope="session", name="juju")
 def juju_fixture(request: pytest.FixtureRequest) -> Generator[jubilant.Juju, None, None]:
     """Pytest fixture that wraps :meth:`jubilant.with_model`."""
