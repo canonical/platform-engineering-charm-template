@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 
 @pytest.mark.abort_on_fail
-def test_simple_relay(juju: jubilant.Juju, app_name: str):
+def test_charm(juju: jubilant.Juju, app_name: str):
     """
     arrange:
     act:
