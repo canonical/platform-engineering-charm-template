@@ -20,5 +20,5 @@ def test_charm(juju: jubilant.Juju):
     act:
     assert:
     """
-    status = juju.status()
+    _ = juju.status()
     assert True
