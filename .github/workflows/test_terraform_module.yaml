@@ -55,4 +55,3 @@ jobs:
         set -e  # Exit on error
         terraform test || { echo "Terraform test failed"; exit 1; }
       working-directory: ${{env.WORKING_DIR}}
-      
