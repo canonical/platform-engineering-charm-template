@@ -40,7 +40,7 @@ def test_active_on_httpbin_pebble_ready():
 def test_config_changed_invalid():
     """
     arrange: State with the container httpbin. The config option log-level is invalid.
-    act: Run config_ready hook.
+    act: Run config_changed hook.
     assert: The unit is blocked.
     """
     context = ops.testing.Context(
