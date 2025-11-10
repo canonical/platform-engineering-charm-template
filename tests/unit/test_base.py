@@ -22,7 +22,7 @@ def test_active_on_httpbin_pebble_ready():
     context = ops.testing.Context(
         charm_type=IsCharmsTemplateCharm,
     )
-    container = ops.testing.Container(name="httpbin", can_connect=True)
+    container = ops.testing.Container(name="httpbin", can_connect=True)  # type: ignore[call-arg]
     base_state: dict[str, typing.Any] = {
         "config": {"log-level": "info"},
         "containers": {container},
@@ -46,7 +46,7 @@ def test_config_changed_invalid():
     context = ops.testing.Context(
         charm_type=IsCharmsTemplateCharm,
     )
-    container = ops.testing.Container(name="httpbin", can_connect=True)
+    container = ops.testing.Container(name="httpbin", can_connect=True)  # type: ignore[call-arg]
     base_state: dict[str, typing.Any] = {
         "config": {"log-level": "foobar"},
         "containers": {container},
