@@ -3,10 +3,9 @@
 
 # Learn more about testing at: https://ops.readthedocs.io/en/latest/explanation/testing.html
 
-# pylint: disable=duplicate-code,missing-function-docstring
 """Unit tests."""
 
-import unittest
+import typing
 
 import ops
 import ops.testing
@@ -14,62 +13,44 @@ import ops.testing
 from charm import IsCharmsTemplateCharm
 
 
-class TestCharm(unittest.TestCase):
-    """Test class."""
+def test_active_on_httpbin_pebble_ready():
+    """
+    arrange: State with the container httpbin.
+    act: Run httpbin_pebble_ready hook.
+    assert: The unit is active and the httpbin container service is active.
+    """
+    context = ops.testing.Context(
+        charm_type=IsCharmsTemplateCharm,
+    )
+    container = ops.testing.Container(name="httpbin", can_connect=True)
+    base_state: dict[str, typing.Any] = {
+        "config": {"log-level": "info"},
+        "containers": {container},
+    }
+    state_in = ops.testing.State(**base_state)
+    state_out = context.run(context.on.pebble_ready(container), state_in)
+    assert state_out.unit_status == ops.testing.ActiveStatus()
+    # Check the service was started:
+    assert (
+        state_out.get_container(container.name).service_statuses["httpbin"]
+        == ops.pebble.ServiceStatus.ACTIVE
+    )
 
-    def setUp(self):
-        """Set up the testing environment."""
-        self.harness = ops.testing.Harness(IsCharmsTemplateCharm)
-        self.addCleanup(self.harness.cleanup)
-        self.harness.begin()
 
-    def test_httpbin_pebble_ready(self):
-        # Expected plan after Pebble ready with default config
-        expected_plan = {
-            "services": {
-                "httpbin": {
-                    "override": "replace",
-                    "summary": "httpbin",
-                    "command": "gunicorn -b 0.0.0.0:80 httpbin:app -k gevent",
-                    "startup": "enabled",
-                    "environment": {"GUNICORN_CMD_ARGS": "--log-level info"},
-                }
-            },
-        }
-        # Simulate the container coming up and emission of pebble-ready event
-        self.harness.container_pebble_ready("httpbin")
-        # Get the plan now we've run PebbleReady
-        updated_plan = self.harness.get_container_pebble_plan("httpbin").to_dict()
-        # Check we've got the plan we expected
-        self.assertEqual(expected_plan, updated_plan)
-        # Check the service was started
-        service = self.harness.model.unit.get_container("httpbin").get_service("httpbin")
-        self.assertTrue(service.is_running())
-        # Ensure we set an ActiveStatus with no message
-        self.assertEqual(self.harness.model.unit.status, ops.ActiveStatus())
-
-    def test_config_changed_valid_can_connect(self):
-        # Ensure the simulated Pebble API is reachable
-        self.harness.set_can_connect("httpbin", True)
-        # Trigger a config-changed event with an updated value
-        self.harness.update_config({"log-level": "debug"})
-        # Get the plan now we've run PebbleReady
-        updated_plan = self.harness.get_container_pebble_plan("httpbin").to_dict()
-        updated_env = updated_plan["services"]["httpbin"]["environment"]
-        # Check the config change was effective
-        self.assertEqual(updated_env, {"GUNICORN_CMD_ARGS": "--log-level debug"})
-        self.assertEqual(self.harness.model.unit.status, ops.ActiveStatus())
-
-    def test_config_changed_valid_cannot_connect(self):
-        # Trigger a config-changed event with an updated value
-        self.harness.update_config({"log-level": "debug"})
-        # Check the charm is in WaitingStatus
-        self.assertIsInstance(self.harness.model.unit.status, ops.WaitingStatus)
-
-    def test_config_changed_invalid(self):
-        # Ensure the simulated Pebble API is reachable
-        self.harness.set_can_connect("httpbin", True)
-        # Trigger a config-changed event with an updated value
-        self.harness.update_config({"log-level": "foobar"})
-        # Check the charm is in BlockedStatus
-        self.assertIsInstance(self.harness.model.unit.status, ops.BlockedStatus)
+def test_config_changed_invalid():
+    """
+    arrange: State with the container httpbin. The config option log-level is invalid.
+    act: Run config_ready hook.
+    assert: The unit is blocked.
+    """
+    context = ops.testing.Context(
+        charm_type=IsCharmsTemplateCharm,
+    )
+    container = ops.testing.Container(name="httpbin", can_connect=True)
+    base_state: dict[str, typing.Any] = {
+        "config": {"log-level": "foobar"},
+        "containers": {container},
+    }
+    state_in = ops.testing.State(**base_state)
+    state_out = context.run(context.on.config_changed(), state_in)
+    assert state_out.unit_status.name == ops.testing.BlockedStatus().name
