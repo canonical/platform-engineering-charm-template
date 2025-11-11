@@ -26,7 +26,12 @@ VALID_LOG_LEVELS = ["info", "debug", "warning", "error", "critical"]
 
 
 class IsCharmsTemplateCharm(ops.CharmBase):
-    """Charm the service."""
+    """Charm implementing holistic reconciliation pattern.
+
+    The holistic pattern centralizes all state reconciliation logic into a single
+    reconcile method that is called from all event handlers. This ensures consistency
+    and reduces code duplication.
+    """
 
     def __init__(self, *args: typing.Any):
         """Construct.
@@ -38,62 +43,48 @@ class IsCharmsTemplateCharm(ops.CharmBase):
         self.framework.observe(self.on.httpbin_pebble_ready, self._on_httpbin_pebble_ready)
         self.framework.observe(self.on.config_changed, self._on_config_changed)
 
+    def reconcile(self) -> None:
+        """Holistic reconciliation method.
+
+        This method contains all the logic needed to reconcile the charm state.
+        It is idempotent and can be called from any event handler.
+        """
+        # Validate configuration
+        log_level = str(self.model.config["log-level"]).lower()
+        if log_level not in VALID_LOG_LEVELS:
+            self.unit.status = ops.BlockedStatus(f"invalid log level: '{log_level}'")
+            return
+
+        # Get container
+        container = self.unit.get_container("httpbin")
+        if not container.can_connect():
+            self.unit.status = ops.WaitingStatus("waiting for Pebble API")
+            return
+
+        # Configure and ensure workload is running
+        container.add_layer("httpbin", self._pebble_layer, combine=True)
+        container.replan()
+
+        logger.debug("Workload reconciled with log level: %s", log_level)
+        self.unit.status = ops.ActiveStatus()
+
     def _on_httpbin_pebble_ready(self, event: ops.PebbleReadyEvent) -> None:
-        """Define and start a workload using the Pebble API.
-
-        Change this example to suit your needs. You'll need to specify the right entrypoint and
-        environment configuration for your specific workload.
-
-        Learn more about interacting with Pebble at at
-        https://documentation.ubuntu.com/juju/3.6/reference/pebble/.
+        """Handle httpbin pebble ready event.
 
         Args:
             event: event triggering the handler.
         """
-        # Get a reference the container attribute on the PebbleReadyEvent
-        container = event.workload
-        # Add initial Pebble config layer using the Pebble API
-        container.add_layer("httpbin", self._pebble_layer, combine=True)
-        # Make Pebble reevaluate its plan, ensuring any services are started if enabled.
-        container.replan()
-        # Learn more about statuses in the SDK docs:
-        # https://documentation.ubuntu.com/juju/latest/reference/status/index.html
-        self.unit.status = ops.ActiveStatus()
+        # pylint: disable=unused-argument
+        self.reconcile()
 
     def _on_config_changed(self, event: ops.ConfigChangedEvent) -> None:
         """Handle changed configuration.
 
-        Change this example to suit your needs. If you don't need to handle config, you can remove
-        this method.
-
-        Learn more about config at
-        https://canonical-charmcraft.readthedocs-hosted.com/stable/reference/files/config-yaml-file/
-
         Args:
             event: event triggering the handler.
         """
-        # Fetch the new config value
-        log_level = str(self.model.config["log-level"]).lower()
-
-        # Do some validation of the configuration option
-        if log_level in VALID_LOG_LEVELS:
-            # The config is good, so update the configuration of the workload
-            container = self.unit.get_container("httpbin")
-            # Verify that we can connect to the Pebble API in the workload container
-            if container.can_connect():
-                # Push an updated layer with the new config
-                container.add_layer("httpbin", self._pebble_layer, combine=True)
-                container.replan()
-
-                logger.debug("Log level for gunicorn changed to '%s'", log_level)
-                self.unit.status = ops.ActiveStatus()
-            else:
-                # We were unable to connect to the Pebble API, so we defer this event
-                event.defer()
-                self.unit.status = ops.WaitingStatus("waiting for Pebble API")
-        else:
-            # In this case, the config option is bad, so block the charm and notify the operator.
-            self.unit.status = ops.BlockedStatus("invalid log level: '{log_level}'")
+        # pylint: disable=unused-argument
+        self.reconcile()
 
     @property
     def _pebble_layer(self) -> pebble.LayerDict:
