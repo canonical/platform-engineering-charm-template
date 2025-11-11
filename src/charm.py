@@ -48,6 +48,9 @@ class IsCharmsTemplateCharm(ops.CharmBase):
 
         This method contains all the logic needed to reconcile the charm state.
         It is idempotent and can be called from any event handler.
+
+        Learn more about interacting with Pebble at
+        https://documentation.ubuntu.com/juju/3.6/reference/pebble/
         """
         # Validate configuration
         log_level = str(self.model.config["log-level"]).lower()
@@ -66,24 +69,16 @@ class IsCharmsTemplateCharm(ops.CharmBase):
         container.replan()
 
         logger.debug("Workload reconciled with log level: %s", log_level)
+        # Learn more about statuses in the SDK docs:
+        # https://documentation.ubuntu.com/juju/latest/reference/status/index.html
         self.unit.status = ops.ActiveStatus()
 
-    def _on_httpbin_pebble_ready(self, event: ops.PebbleReadyEvent) -> None:
-        """Handle httpbin pebble ready event.
-
-        Args:
-            event: event triggering the handler.
-        """
-        # pylint: disable=unused-argument
+    def _on_httpbin_pebble_ready(self, _: ops.PebbleReadyEvent) -> None:
+        """Handle httpbin pebble ready event."""
         self.reconcile()
 
-    def _on_config_changed(self, event: ops.ConfigChangedEvent) -> None:
-        """Handle changed configuration.
-
-        Args:
-            event: event triggering the handler.
-        """
-        # pylint: disable=unused-argument
+    def _on_config_changed(self, _: ops.ConfigChangedEvent) -> None:
+        """Handle changed configuration."""
         self.reconcile()
 
     @property
