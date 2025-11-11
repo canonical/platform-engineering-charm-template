@@ -6,7 +6,7 @@ Add overview material here:
 2. Describe Pebble services.
 
 <!-- Example text
-At its core, the <charm-name> charm is <software> that does <brief description>.
+At its core, the __charm_name__ charm is <software> that does <brief description>.
 
 The charm design leverages the [sidecar](https://kubernetes.io/blog/2015/06/the-distributed-system-toolkit-patterns/#example-1-sidecar-containers) pattern to allow multiple containers in each pod with [Pebble](https://documentation.ubuntu.com/juju/3.6/reference/pebble/) running as the workload container’s entrypoint.
 
@@ -19,19 +19,19 @@ Pebble `services` are configured through [layers](https://github.com/canonical/p
 3. And so on.
 
 
-As a result, if you run a `kubectl get pods` on a namespace named for the Juju model you've deployed the <charm-name> charm into, you'll see something like the following:
+As a result, if you run a `kubectl get pods` on a namespace named for the Juju model you've deployed the __charm_name__ charm into, you'll see something like the following:
 
 ```bash
 NAME                             READY   STATUS    RESTARTS   AGE
-<charm-name>-0                   N/N     Running   0         6h4m
+__charm_name__-0                   N/N     Running   0         6h4m
 ```
 
 This shows there are <NUMBER> containers - <describe what the containers are>.
 -->
 
-## High-level overview of <charm-name> deployment
+## High-level overview of __charm_name__ deployment
 
-The following diagram shows a typical deployment of the <charm-name> charm.
+The following diagram shows a typical deployment of the __charm_name__ charm.
 <!-- 
     Provide a brief description of the deployment here. Is it a Kubernetes cloud, a VM, or both?
     What other charms are included in this deployment? 
@@ -47,7 +47,7 @@ The following diagram shows a typical deployment of the <charm-name> charm.
 
 ## Charm architecture
 
-The following diagram shows the architecture of the <charm-name> charm:
+The following diagram shows the architecture of the __charm_name__ charm:
 
 <!-- Include a Mermaid diagram of the charm here. 
      Limit the scope of this diagram to the charm only.
@@ -68,8 +68,8 @@ The workload that this container is running is defined in the [<container-name> 
 
 ## OCI images
 
-We use [Rockcraft](https://canonical-rockcraft.readthedocs-hosted.com/en/latest/) to build OCI Images for <charm-name>.
-The images are defined in [<charm-name> rock](link to rock).
+We use [Rockcraft](https://canonical-rockcraft.readthedocs-hosted.com/en/latest/) to build OCI Images for __charm_name__.
+The images are defined in [__charm_name__ rock](link to rock).
 They are published to [Charmhub](https://charmhub.io/), the official repository of charms.
 
 > See more: [How to publish your charm on Charmhub](https://canonical-charmcraft.readthedocs-hosted.com/en/stable/howto/manage-charms/#publish-a-charm-on-charmhub)

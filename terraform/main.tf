@@ -1,12 +1,12 @@
 # Copyright 2025 Canonical Ltd.
 # See LICENSE file for licensing details.
 
-resource "juju_application" "<charm_name>" {
+resource "juju_application" "__charm_name__" {
   name  = var.app_name
   model = var.model
 
   charm {
-    name     = "<charm_name>"
+    name     = "__charm_name__"
     channel  = var.channel
     revision = var.revision
     base     = var.base
