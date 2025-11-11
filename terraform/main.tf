@@ -1,7 +1,7 @@
 # Copyright 2025 Canonical Ltd.
 # See LICENSE file for licensing details.
 
-resource "juju_application" "charm_name" {
+resource "juju_application" "<charm_name>" {
   name  = var.app_name
   model = var.model
 

@@ -3,7 +3,7 @@ specify the track the release notes will follow, and include a link on how to up
 
 # Release notes
 
-Release notes for the <main> track of <charm name>, summarizing new features,
+Release notes for the <main> track of <charm-name>, summarizing new features,
 bug fixes and backwards-incompatible changes in each revision.
 
 For upgrading the charm, see [How to upgrade](link to upgrade documentation).

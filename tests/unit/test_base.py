@@ -10,7 +10,7 @@ import typing
 import ops
 import ops.testing
 
-from charm import IsCharmsTemplateCharm
+from charm import TemplateCharm
 
 
 def test_active_on_httpbin_pebble_ready():
@@ -20,7 +20,7 @@ def test_active_on_httpbin_pebble_ready():
     assert: The unit is active and the httpbin container service is active.
     """
     context = ops.testing.Context(
-        charm_type=IsCharmsTemplateCharm,
+        charm_type=TemplateCharm,
     )
     container = ops.testing.Container(name="httpbin", can_connect=True)  # type: ignore[call-arg]
     base_state: dict[str, typing.Any] = {
@@ -44,7 +44,7 @@ def test_config_changed_invalid():
     assert: The unit is blocked.
     """
     context = ops.testing.Context(
-        charm_type=IsCharmsTemplateCharm,
+        charm_type=TemplateCharm,
     )
     container = ops.testing.Container(name="httpbin", can_connect=True)  # type: ignore[call-arg]
     base_state: dict[str, typing.Any] = {
