@@ -10,6 +10,6 @@ variables {
 run "basic_deploy" {
   assert {
     condition     = module.__charm_name__.app_name == "__charm_name__"
-    error_message = "__charm_name__ app_name did not match expectedy"
+    error_message = "__charm_name__ app_name did not match expected"
   }
 }
