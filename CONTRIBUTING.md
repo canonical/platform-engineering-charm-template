@@ -1,8 +1,8 @@
-<!-- Remember to update this file for your charm -- replace <charm-name> with the appropriate name. -->
+<!-- Remember to update this file for your charm -- replace __charm_name__ with the appropriate name. -->
 
 # Contributing
 
-This document explains the processes and practices recommended for contributing enhancements to the <charm-name> charm.
+This document explains the processes and practices recommended for contributing enhancements to the __charm_name__ charm.
 
 ## Overview
 
@@ -90,7 +90,7 @@ we use the [Canonical contributor license agreement](https://assets.ubuntu.com/v
 
 #### Canonical contributor agreement
 
-Canonical welcomes contributions to the <charm-name> charm. Please check out our
+Canonical welcomes contributions to the __charm_name__ charm. Please check out our
 [contributor agreement](https://ubuntu.com/legal/contributors) if you're interested in contributing to the solution.
 
 The CLA sign-off is simple line at the
@@ -111,7 +111,7 @@ To make contributions to this charm, you'll need a working
 The code for this charm can be downloaded as follows:
 
 ```
-git clone https://github.com/canonical/<charm-name>
+git clone https://github.com/canonical/__charm_name__
 ```
 
 You can create an environment for development with `python3-venv`.
@@ -139,7 +139,7 @@ that can be used for linting and formatting code when you're preparing contribut
 ### Build the rock and charm
 
 Use [Rockcraft](https://documentation.ubuntu.com/rockcraft/stable/) to create an
-OCI image for the <charm-name> app, and then upload the image to a MicroK8s registry,
+OCI image for the __charm_name__ app, and then upload the image to a MicroK8s registry,
 which stores OCI archives so they can be downloaded and deployed.
 
 Enable the MicroK8s registry:
@@ -171,7 +171,7 @@ juju add-model charm-dev
 # Enable DEBUG logging
 juju model-config logging-config="<root>=INFO;unit=DEBUG"
 # Deploy the charm
-juju deploy ./<charm-name>.charm 
+juju deploy ./__charm_name__.charm 
 ```
 
 

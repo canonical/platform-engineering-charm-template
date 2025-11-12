@@ -3,13 +3,13 @@
 
 variables {
   channel = "latest/edge"
-  # renovate: depName="charm_name"
+  # renovate: depName="__charm_name__"
   revision = 1
 }
 
 run "basic_deploy" {
   assert {
-    condition     = module.charm_name.app_name == "charm_name"
-    error_message = "charm_name app_name did not match expected"
+    condition     = module.__charm_name__.app_name == "__charm_name__"
+    error_message = "__charm_name__ app_name did not match expected"
   }
 }

@@ -9,7 +9,7 @@ Elaborate on topics such as common risks, good practices, built-in protection, e
 
 Are there upstream security docs that we can point to? If so, include a
 sentence like:
-For details regarding upstream <charm-name> configuration and broader security
+For details regarding upstream __charm_name__ configuration and broader security
 considerations, please refer to the [official <software> documentation](link-to-upstream-docs).
 
 ## Risks

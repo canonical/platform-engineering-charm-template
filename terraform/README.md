@@ -1,7 +1,8 @@
-<!-- Remember to update this file for your charm -- replace <charm_name> with the appropriate name. -->
-# <charm_name> Terraform module
+<!-- Remember to update this file for your charm -- replace __charm_name__ with the appropriate name. -->
 
-This folder contains a base [Terraform][Terraform] module for the <charm_name> charm.
+# __charm_name__ Terraform module
+
+This folder contains a base [Terraform][Terraform] module for the __charm_name__ charm.
 
 The module uses the [Terraform Juju provider][Terraform Juju provider] to model the charm
 deployment onto any Kubernetes environment managed by [Juju][Juju].
@@ -16,9 +17,9 @@ deployment onto any Kubernetes environment managed by [Juju][Juju].
   the Juju application name.
 - **versions.tf** - Defines the Terraform provider version.
 
-## Using <charm_name> base module in higher level modules
+## Using __charm_name__ base module in higher level modules
 
-If you want to use `<charm_name>` base module as part of your Terraform module, import it
+If you want to use `__charm_name__` base module as part of your Terraform module, import it
 like shown below:
 
 ```text
@@ -26,8 +27,8 @@ data "juju_model" "my_model" {
   name = var.model
 }
 
-module "<charm_name>" {
-  source = "git::https://github.com/canonical/<charm_name>-operator//terraform"
+module "__charm_name__" {
+  source = "git::https://github.com/canonical/__charm_name__-operator//terraform"
   
   model = juju_model.my_model.name
   # (Customize configuration variables here if needed)
@@ -37,11 +38,11 @@ module "<charm_name>" {
 Create integrations, for instance:
 
 ```text
-resource "juju_integration" "<charm_name>-loki" {
+resource "juju_integration" "__charm_name__-loki" {
   model = juju_model.my_model.name
   application {
-    name     = module.<charm_name>.app_name
-    endpoint = module.<charm_name>.endpoints.logging
+    name     = module.__charm_name__.app_name
+    endpoint = module.__charm_name__.endpoints.logging
   }
   application {
     name     = "loki-k8s"
@@ -50,9 +51,9 @@ resource "juju_integration" "<charm_name>-loki" {
 }
 ```
 
-The complete list of available integrations can be found [in the Integrations tab][<charm_name>-integrations].
+The complete list of available integrations can be found [in the Integrations tab][__charm_name__-integrations].
 
 [Terraform]: https://developer.hashicorp.com/terraform
 [Terraform Juju provider]: https://registry.terraform.io/providers/juju/juju/latest
 [Juju]: https://juju.is
-[<charm_name>-integrations]: https://charmhub.io/<charm_name>/integrations
+[__charm_name__-integrations]: https://charmhub.io/__charm_name__/integrations
