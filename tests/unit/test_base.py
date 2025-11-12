@@ -10,7 +10,7 @@ import typing
 import ops
 import ops.testing
 
-from charm import IsCharmsTemplateCharm
+from charm import Charm
 
 
 def test_reconcile_on_pebble_ready():
@@ -20,7 +20,7 @@ def test_reconcile_on_pebble_ready():
     assert: The unit is active and the httpbin container service is active.
     """
     context = ops.testing.Context(
-        charm_type=IsCharmsTemplateCharm,
+        charm_type=Charm,
     )
     container = ops.testing.Container(name="httpbin", can_connect=True)  # type: ignore[call-arg]
     base_state: dict[str, typing.Any] = {
@@ -63,7 +63,7 @@ def test_reconcile_on_config_changed_invalid():
     assert: The unit is blocked due to invalid configuration.
     """
     context = ops.testing.Context(
-        charm_type=IsCharmsTemplateCharm,
+        charm_type=Charm,
     )
     container = ops.testing.Container(name="httpbin", can_connect=True)  # type: ignore[call-arg]
     base_state: dict[str, typing.Any] = {

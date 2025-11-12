@@ -25,7 +25,7 @@ logger = logging.getLogger(__name__)
 VALID_LOG_LEVELS = ["info", "debug", "warning", "error", "critical"]
 
 
-class IsCharmsTemplateCharm(ops.CharmBase):
+class Charm(ops.CharmBase):
     """Charm implementing holistic reconciliation pattern.
 
     The holistic pattern centralizes all state reconciliation logic into a single
@@ -102,4 +102,4 @@ class IsCharmsTemplateCharm(ops.CharmBase):
 
 
 if __name__ == "__main__":  # pragma: nocover
-    ops.main(IsCharmsTemplateCharm)
+    ops.main(Charm)
