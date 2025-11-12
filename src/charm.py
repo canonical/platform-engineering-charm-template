@@ -25,7 +25,7 @@ logger = logging.getLogger(__name__)
 VALID_LOG_LEVELS = ["info", "debug", "warning", "error", "critical"]
 
 
-class TemplateCharm(ops.CharmBase):
+class Charm(ops.CharmBase):
     """Charm the service."""
 
     def __init__(self, *args: typing.Any):
@@ -116,4 +116,4 @@ class TemplateCharm(ops.CharmBase):
 
 
 if __name__ == "__main__":  # pragma: nocover
-    ops.main(TemplateCharm)
+    ops.main(Charm)
