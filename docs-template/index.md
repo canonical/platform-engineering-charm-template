@@ -1,5 +1,5 @@
 <!-- vale Canonical.007-Headings-sentence-case = NO -->
-# __charm_name__ Operator
+# __charm_name__ operator
 <!-- vale Canonical.007-Headings-sentence-case = YES -->
 
 <!-- A single sentence that says what the product is, succinctly and memorably. Add a 1-2 sentence description of what the charm software does. -->
