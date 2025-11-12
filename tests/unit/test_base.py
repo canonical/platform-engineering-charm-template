@@ -44,7 +44,7 @@ def test_reconcile_on_config_changed_valid():
     assert: The unit is active and configuration is applied.
     """
     context = ops.testing.Context(
-        charm_type=IsCharmsTemplateCharm,
+        charm_type=Charm,
     )
     container = ops.testing.Container(name="httpbin", can_connect=True)  # type: ignore[call-arg]
     base_state: dict[str, typing.Any] = {
@@ -82,7 +82,7 @@ def test_reconcile_container_not_ready():
     assert: The unit is waiting for Pebble API.
     """
     context = ops.testing.Context(
-        charm_type=IsCharmsTemplateCharm,
+        charm_type=Charm,
     )
     container = ops.testing.Container(name="httpbin", can_connect=False)  # type: ignore[call-arg]
     base_state: dict[str, typing.Any] = {
