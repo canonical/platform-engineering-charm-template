@@ -4,7 +4,7 @@
 variable "app_name" {
   description = "Name of the application in the Juju model."
   type        = string
-  default     = "<charm-name>"
+  default     = "__charm_name__"
 }
 
 variable "base" {
@@ -20,7 +20,7 @@ variable "channel" {
 }
 
 variable "config" {
-  description = "Application config. Details about available options can be found at https://charmhub.io/<charm-name>/configurations."
+  description = "Application config. Details about available options can be found at https://charmhub.io/__charm_name__/configurations."
   type        = map(string)
   default     = {}
 }
