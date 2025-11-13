@@ -17,7 +17,6 @@ import logging
 import typing
 
 import ops
-from ops import pebble
 
 # Log messages can be retrieved using juju debug-log
 logger = logging.getLogger(__name__)
@@ -40,17 +39,15 @@ class Charm(ops.CharmBase):
             args: Arguments passed to the CharmBase parent constructor.
         """
         super().__init__(*args)
-        self.framework.observe(self.on.httpbin_pebble_ready, self._on_httpbin_pebble_ready)
+        self.framework.observe(self.on.install, self._on_install)
         self.framework.observe(self.on.config_changed, self._on_config_changed)
+        self.framework.observe(self.on.start, self._on_start)
 
     def reconcile(self) -> None:
         """Holistic reconciliation method.
 
         This method contains all the logic needed to reconcile the charm state.
         It is idempotent and can be called from any event handler.
-
-        Learn more about interacting with Pebble at
-        https://documentation.ubuntu.com/juju/3.6/reference/pebble/
         """
         # Validate configuration
         log_level = str(self.model.config["log-level"]).lower()
@@ -58,47 +55,35 @@ class Charm(ops.CharmBase):
             self.unit.status = ops.BlockedStatus(f"invalid log level: '{log_level}'")
             return
 
-        # Get container
-        container = self.unit.get_container("httpbin")
-        if not container.can_connect():
-            self.unit.status = ops.WaitingStatus("waiting for Pebble API")
-            return
+        # Configure logging based on charm config
+        numeric_level = getattr(logging, log_level.upper(), None)
+        if numeric_level is not None:
+            logger.setLevel(numeric_level)
 
-        # Configure and ensure workload is running
-        container.add_layer("httpbin", self._pebble_layer, combine=True)
-        container.replan()
+        logger.info("Charm reconciliation started with log level: %s", log_level)
 
-        logger.debug("Workload reconciled with log level: %s", log_level)
+        # Add your charm logic here:
+        # For Kubernetes charms: interact with Pebble to manage containers
+        # For machine charms: manage systemd services, install packages, configure files
+        # For charms with relations: process relation data and configure integrations
+
+        logger.debug("Charm reconciliation completed successfully")
+
         # Learn more about statuses in the SDK docs:
         # https://documentation.ubuntu.com/juju/latest/reference/status/index.html
         self.unit.status = ops.ActiveStatus()
 
-    def _on_httpbin_pebble_ready(self, _: ops.PebbleReadyEvent) -> None:
-        """Handle httpbin pebble ready event."""
+    def _on_install(self, _: ops.InstallEvent) -> None:
+        """Handle install event."""
+        self.reconcile()
+
+    def _on_start(self, _: ops.StartEvent) -> None:
+        """Handle start event."""
         self.reconcile()
 
     def _on_config_changed(self, _: ops.ConfigChangedEvent) -> None:
         """Handle changed configuration."""
         self.reconcile()
-
-    @property
-    def _pebble_layer(self) -> pebble.LayerDict:
-        """Return a dictionary representing a Pebble layer."""
-        return {
-            "summary": "httpbin layer",
-            "description": "pebble config layer for httpbin",
-            "services": {
-                "httpbin": {
-                    "override": "replace",
-                    "summary": "httpbin",
-                    "command": "gunicorn -b 0.0.0.0:80 httpbin:app -k gevent",
-                    "startup": "enabled",
-                    "environment": {
-                        "GUNICORN_CMD_ARGS": f"--log-level {self.model.config['log-level']}"
-                    },
-                }
-            },
-        }
 
 
 if __name__ == "__main__":  # pragma: nocover
