@@ -1,1 +1,3 @@
-placeholder
+github
+repo
+uv
