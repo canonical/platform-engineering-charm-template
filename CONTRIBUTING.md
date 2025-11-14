@@ -114,6 +114,29 @@ The code for this charm can be downloaded as follows:
 git clone https://github.com/canonical/__charm_name__
 ```
 
+Make sure to install [uv](https://docs.astral.sh/uv/). For example, you can install `uv` on Ubuntu using:
+
+```sh
+sudo snap install astral-uv --classic
+```
+
+For other systems, follow the [uv installation guide](https://docs.astral.sh/uv/getting-started/installation/).
+
+Then install `tox` with its extensions, and install a range of Python versions:
+
+```sh
+uv python install
+uv tool install tox --with tox-uv
+uv tool update-shell
+```
+
+To create a development environment, run:
+
+```sh
+uv sync --all-groups
+source venv/bin/activate
+```
+
 You can create an environment for development with `python3-venv`.
 We will also install `tox` inside the virtual environment for testing:
 
