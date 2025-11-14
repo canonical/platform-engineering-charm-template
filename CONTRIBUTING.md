@@ -116,7 +116,7 @@ git clone https://github.com/canonical/__charm_name__
 
 Make sure to install [uv](https://docs.astral.sh/uv/). For example, you can install `uv` on Ubuntu using:
 
-```sh
+```bash
 sudo snap install astral-uv --classic
 ```
 
@@ -124,7 +124,7 @@ For other systems, follow the [uv installation guide](https://docs.astral.sh/uv/
 
 Then install `tox` with its extensions, and install a range of Python versions:
 
-```sh
+```bash
 uv python install
 uv tool install tox --with tox-uv
 uv tool update-shell
@@ -132,10 +132,12 @@ uv tool update-shell
 
 To create a development environment, run:
 
-```sh
+```bash
 uv sync --all-groups
 source .venv/bin/activate
 ```
+
+On Windows, replace the `source .venv/bin/activate` command with `.venv\Scripts\Activate.ps1` or `.venv\Scripts\activate.bat` (no `source`), depending on whether you are using PowerShell or cmd.exe.
 
 ### Test
 
