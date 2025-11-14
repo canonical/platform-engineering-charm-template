@@ -1,11 +1,6 @@
 version = 1
 revision = 3
 requires-python = ">=3.12"
-conflicts = [[
-    { package = "platform-engineering-charm-template", group = "integration" },
-    { package = "platform-engineering-charm-template", group = "integration-juju3" },
-    { package = "platform-engineering-charm-template", group = "lint" },
-]]
 
 [[package]]
 name = "allure-pytest"
@@ -81,7 +76,7 @@ name = "bandit"
 version = "1.8.6"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "colorama", marker = "sys_platform == 'win32' or (extra == 'group-35-platform-engineering-charm-template-integration' and extra == 'group-35-platform-engineering-charm-template-integration-juju3') or (extra == 'group-35-platform-engineering-charm-template-integration' and extra == 'group-35-platform-engineering-charm-template-lint') or (extra == 'group-35-platform-engineering-charm-template-integration-juju3' and extra == 'group-35-platform-engineering-charm-template-lint')" },
+    { name = "colorama", marker = "sys_platform == 'win32'" },
     { name = "pyyaml" },
     { name = "rich" },
     { name = "stevedore" },
@@ -1002,7 +997,7 @@ fmt = [{ name = "ruff" }]
 integration = [
     { name = "allure-pytest", specifier = ">=2.8.18" },
     { name = "allure-pytest-collection-report", git = "https://github.com/canonical/data-platform-workflows?subdirectory=python%2Fpytest_plugins%2Fallure_pytest_collection_report&rev=v24.0.0" },
-    { name = "jubilant", specifier = "==1.4.0" },
+    { name = "jubilant", specifier = "==1.4" },
     { name = "juju", specifier = "==3.6.*" },
     { name = "pytest" },
     { name = "pytest-asyncio" },
@@ -1010,7 +1005,7 @@ integration = [
 ]
 lint = [
     { name = "codespell" },
-    { name = "jubilant", specifier = "==1.4.0" },
+    { name = "jubilant", specifier = "==1.4" },
     { name = "mypy" },
     { name = "pep8-naming" },
     { name = "pytest" },
@@ -1206,7 +1201,7 @@ name = "pytest"
 version = "9.0.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "colorama", marker = "sys_platform == 'win32' or (extra == 'group-35-platform-engineering-charm-template-integration' and extra == 'group-35-platform-engineering-charm-template-integration-juju3') or (extra == 'group-35-platform-engineering-charm-template-integration' and extra == 'group-35-platform-engineering-charm-template-lint') or (extra == 'group-35-platform-engineering-charm-template-integration-juju3' and extra == 'group-35-platform-engineering-charm-template-lint')" },
+    { name = "colorama", marker = "sys_platform == 'win32'" },
     { name = "iniconfig" },
     { name = "packaging" },
     { name = "pluggy" },

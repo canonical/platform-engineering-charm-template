@@ -45,7 +45,6 @@ integration = [
 
 [tool.uv]
 package = false
-conflicts = [ [ { group = "integration-juju3" }, { group = "integration" }, { group = "lint" } ] ]
 
 [tool.ruff]
 target-version = "py310"
