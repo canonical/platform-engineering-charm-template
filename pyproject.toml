@@ -23,8 +23,6 @@ lint = [
   "mypy",
   "pep8-naming",
   "pytest",
-  "pytest-asyncio",
-  "pytest-operator",
   "requests",
   "ruff",
   "types-pyyaml",
@@ -37,10 +35,7 @@ integration = [
   "allure-pytest>=2.8.18",
   "allure-pytest-collection-report @ git+https://github.com/canonical/data-platform-workflows@v24.0.0#subdirectory=python/pytest_plugins/allure_pytest_collection_report",
   "jubilant==1.4",
-  "juju==3.6.*",
   "pytest",
-  "pytest-asyncio",
-  "pytest-operator",
 ]
 
 [tool.uv]
