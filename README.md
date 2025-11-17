@@ -6,9 +6,9 @@ Avoid using this README file for information that is maintained or published els
 * detailed contribution guide > documentation or CONTRIBUTING.md
 
 Use links instead.
--->
-<!--
-NOTE: This template has the documentation under the `docs-template` due with issues with discourse-gatekeeper. The `docs-template` directory must be changed to `docs` after using this template to ensure discourse-gatekeeper correctly identifies the documentation changes.
+
+See https://canonical-platform-engineering.readthedocs-hosted.com/latest/engineering-practices/charm-development/charm-creation/
+for more information.
 -->
 # Platform engineering charm template
 <!-- Use this space for badges -->
