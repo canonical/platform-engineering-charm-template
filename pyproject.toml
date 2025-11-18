@@ -13,10 +13,14 @@ classifiers = [
   "Programming Language :: Python :: 3.13",
   "Programming Language :: Python :: 3.14",
 ]
-dependencies = [ "ops==3.3.1" ]
+dependencies = [
+  "ops==3.3.1",
+]
 
 [dependency-groups]
-fmt = [ "ruff" ]
+fmt = [
+  "ruff",
+]
 lint = [
   "codespell",
   "jubilant==1.4",
@@ -28,9 +32,18 @@ lint = [
   "types-pyyaml",
   "types-requests",
 ]
-unit = [ "coverage[toml]", "ops[testing]", "pytest" ]
-coverage-report = [ "coverage[toml]", "pytest" ]
-static = [ "bandit[toml]" ]
+unit = [
+  "coverage[toml]",
+  "ops[testing]",
+  "pytest",
+]
+coverage-report = [
+  "coverage[toml]",
+  "pytest",
+]
+static = [
+  "bandit[toml]",
+]
 integration = [
   "allure-pytest>=2.8.18",
   "allure-pytest-collection-report @ git+https://github.com/canonical/data-platform-workflows@v24.0.0#subdirectory=python/pytest_plugins/allure_pytest_collection_report",
