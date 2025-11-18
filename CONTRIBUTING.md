@@ -137,8 +137,6 @@ uv sync --all-groups
 source .venv/bin/activate
 ```
 
-On Windows, replace the `source .venv/bin/activate` command with `.venv\Scripts\Activate.ps1` or `.venv\Scripts\activate.bat` (no `source`), depending on whether you are using PowerShell or cmd.exe.
-
 ### Test
 
 This project uses `tox` for managing test environments. There are some pre-configured environments
