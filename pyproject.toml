@@ -45,6 +45,20 @@ package = false
 target-version = "py310"
 line-length = 99
 
+# enable ruff linters:
+#   S flake8-bandit
+#   B flake8-bugbear
+#   A flake8-builtins
+# CPY flake8-copyright
+# SIM flake8-simplify
+#  TC flake8-type-checking
+#   I isort
+#   N pep8-naming
+#   D pydocstyle
+#   F Pyflakes
+#  UP pyupgrade
+# RUF Ruff-specific rules
+# E/W pycodestyle
 lint.select = [ "A", "B", "C", "CPY", "D", "E", "F", "I", "N", "RUF", "S", "SIM", "TC", "UP", "W" ]
 lint.ignore = [
   "B904",
