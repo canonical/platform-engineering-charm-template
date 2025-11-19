@@ -31,6 +31,8 @@ class Charm(ops.CharmBase):
     The holistic pattern centralizes all state reconciliation logic into a single
     reconcile method that is called from all event handlers. This ensures consistency
     and reduces code duplication.
+    See https://documentation.ubuntu.com/ops/latest/explanation/holistic-vs-delta-charms/
+    for more information.
     """
 
     def __init__(self, *args: typing.Any):
