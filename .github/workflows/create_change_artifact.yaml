@@ -65,7 +65,7 @@ jobs:
             const highlight = /^true$/i.test(highlight_raw) ? true : (/^false$/i.test(highlight_raw) ? false : highlight_raw);
 
             // Only populate related_issue when it's a full URL (http(s)://...)
-            const relatedIssueUrl = /^https?:\/\//i.test(related_issue || null) ? related_issue.trim() : null;
+            const relatedIssueUrl = /^https?:\/\//i.test(related_issue || '') ? related_issue.trim() : '';
 
             const artifactObj = {
               version_schema: 1,
@@ -89,9 +89,11 @@ jobs:
             // YAML string for suggestion
             let suggestedYaml = yaml.dump(artifactObj, { noRefs: true, lineWidth: -1 });
 
-            // Ensure `related_doc` appears without an explicit empty string or `null` value
+            // Ensure `related_doc` and `related_issue` appear without an explicit empty string or `null` value
             suggestedYaml = suggestedYaml.replace(/\n(\s*)related_doc:\s*(?:''|"")/g, '\n$1related_doc:');
             suggestedYaml = suggestedYaml.replace(/\n(\s*)related_doc:\s*null/g, '\n$1related_doc:');
+            suggestedYaml = suggestedYaml.replace(/\n(\s*)related_issue:\s*(?:''|"")/g, '\n$1related_issue:');
+            suggestedYaml = suggestedYaml.replace(/\n(\s*)related_issue:\s*null/g, '\n$1related_issue:');
 
             // Compute zero-padded filename
             const prNumber = pr.number;
