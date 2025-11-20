@@ -24,4 +24,5 @@ header:
     - 'pyproject.toml'
     - 'zap_rules.tsv'
     - '**/*.md.j2'
+    - 'docs/release-notes/template/change-artifact.yaml'
   comment: on-failure
