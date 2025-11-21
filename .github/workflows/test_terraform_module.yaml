@@ -16,13 +16,13 @@ permissions:
 jobs:
   test-terraform:
     # remove this condition for enabling the workflow
-    if: false 
+    if: false
     name: Test Terraform with Juju
     runs-on: ubuntu-latest
     env:
       WORKING_DIR: 'terraform/tests'
     steps:
-    - uses: actions/checkout@v6.0.0
+    - uses: actions/checkout@v6
     - uses: charmed-kubernetes/actions-operator@main
       with:
         provider: "microk8s"
