@@ -20,19 +20,6 @@ Applicable spec: <link>
 
 <!-- Any changes to charm libraries -->
 
-### Information for the change artifact
-
-<!-- Type options: major, minor, bugfix, deprecated, breaking -->
-Type: 
-<!-- Describe the user-relevant changes in this PR -->
-Description:
-<!-- Leave blank if no related issue -->
-Related GitHub issue: 
-<!-- Visibility options: public, internal, hidden -->
-Visibility: 
-<!-- Highlight options: true, false -->
-Highlight: 
-
 ### Checklist
 
 - [ ] The [charm style guide](https://documentation.ubuntu.com/juju/3.6/reference/charm/charm-development-best-practices/) was applied
