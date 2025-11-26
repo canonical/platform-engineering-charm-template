@@ -14,7 +14,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Check for added or changed artifact in the PR
+      - name: Check for added or changed artifact
         # Only run this step when the PR does NOT have the "artifact opt out" label
         if: ${{ !contains(github.event.pull_request.labels.*.name, 'artifact opt out') }}
         run: |
