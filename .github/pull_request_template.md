@@ -40,6 +40,7 @@ Highlight:
 - [ ] The changes are compliant with [ISD014 - Managing Charm Complexity](https://discourse.charmhub.io/t/specification-isd014-managing-charm-complexity/11619)
 - [ ] The documentation for charmhub is updated
 - [ ] The PR is tagged with appropriate label (`urgent`, `trivial`, `senior-review-required`, `documentation`)
+- [ ] A [change artifact](../docs/release-notes/template/docs/release-notes/template/_change-artifact-template.yaml) was added for user-relevant changes in `docs/release-notes/artifacts`. If no change artifact is necessary, the PR is tagged with the label `artifact opt out`.
 - [ ] The `docs/changelog.md` is updated with user-relevant changes.
 
 <!-- Explanation for any unchecked items above -->
