@@ -1,40 +1,10 @@
-name: Check for release notes artifact
+name: 'Check for release notes artifact'
 
 on:
   pull_request:
 
 jobs:
-  check-release-note-artifact:
-    # run only for PRs not opened by a bot
-    if: ${{ github.event.pull_request.user.type != 'Bot' }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout PR
-        uses: actions/checkout@v5.0.0
-        with:
-          fetch-depth: 0
-
-      - name: Check for added or changed artifact
-        # Only run this step when the PR does NOT have the "artifact opt out" label
-        if: ${{ !contains(github.event.pull_request.labels.*.name, 'artifact opt out') }}
-        run: |
-          set -euo pipefail
-
-          BASE_SHA=${{ github.event.pull_request.base.sha }}
-          HEAD_SHA=${{ github.event.pull_request.head.sha }}
-
-          # List added or modified files between base and head
-          CHANGED_FILES=$(git diff --name-status "${BASE_SHA}" "${HEAD_SHA}" | awk '$1 == "A" || $1 == "M" { print $2 }' || true)
-
-          # Filter for YAML files under docs/release-notes/artifacts/
-          MATCHING=$(printf "%s\n" "${CHANGED_FILES}" | grep -E '^docs/release-notes/artifacts/.*\.yaml$' || true)
-
-          if [ -z "${MATCHING}" ]; then
-            echo "ERROR: No YAML file added or updated under docs/release-notes/artifacts/ in this PR."
-            echo "Please add or update a change artifact file that summarizes your pull request under docs/release-notes/artifacts/."
-            exit 1
-          fi
-
-          echo "Found the following release-notes artifact(s) added or updated in this PR:"
-          printf "%s\n" "${MATCHING}"
+  check-change-artifacts:
+    uses: canonical/release-notes-automation/.github/workflows/pr-compliance.yml@main
+    secrets: inherit
 
