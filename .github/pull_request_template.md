@@ -10,6 +10,7 @@ Fixes #ISSUE_NUMBER
 ### Checklist
 
 - [ ] I followed the [contributing guide](https://github.com/canonical/is-charms-contributing-guide)
+- [ ] I added or updated the documentation (if applicable)
 - [ ] I updated `docs/changelog.md` with user-relevant changes
 - [ ] I added or updated tests as needed (unit and integration)
 - [ ] I verified that the charm/rock deploys or runs successfully (if applicable)
