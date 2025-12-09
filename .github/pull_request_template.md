@@ -14,7 +14,6 @@ Fixes #ISSUE_NUMBER
 - [ ] I followed the [contributing guide](https://github.com/canonical/is-charms-contributing-guide)
 - [ ] I updated `docs/changelog.md` with user-relevant changes
 - [ ] I added or updated tests as needed (unit and integration)
-- [ ] The integration test is added to the integration test workflow list
 - [ ] I verified that the charm/rock deploys or runs successfully (if applicable)
 - [ ] **If this is a Grafana dashboard:** I added a screenshot of the dashboard
 - [ ] **If this is Terraform:** `terraform fmt` passes and `tflint` reports no errors
