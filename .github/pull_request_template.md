@@ -13,11 +13,11 @@ Fixes #ISSUE_NUMBER
 - [ ] I updated `docs/changelog.md` with user-relevant changes
 - [ ] I added or updated tests as needed (unit and integration)
 - [ ] I verified that the charm/rock deploys or runs successfully (if applicable)
+- [ ] **If integration test modules are used:** I updated the workflow configuration  
+      (e.g., in `.github/workflows/integration_tests.yaml`, ensure the `modules` list is correct)
 - [ ] **If this is a Grafana dashboard:** I added a screenshot of the dashboard
 - [ ] **If this is Terraform:** `terraform fmt` passes and `tflint` reports no errors
 - [ ] **If this is Rockcraft:** I updated the version
-- [ ] **If integration test modules are used:** I updated the workflow configuration  
-      (e.g., in `.github/workflows/integration_tests.yaml`, ensure the `modules` list is correct)
 
 <!--  
 You can adjust the checklist to match the project.
