@@ -1,13 +1,8 @@
-<!--  
-Provide a high-level summary of the change. 
+#### What this PR does
 
-Explain what the PR does, why it’s needed, and any relevant background or context.
+#### Why we need it
 
-If applicable, reference the related issue:  
-Fixes #ISSUE_NUMBER
--->
-
-### Checklist
+#### Checklist
 
 - [ ] I followed the [contributing guide](https://github.com/canonical/is-charms-contributing-guide)
 - [ ] I added or updated the documentation (if applicable)
@@ -22,9 +17,7 @@ Fixes #ISSUE_NUMBER
 
 <!--  
 You can adjust the checklist to match the project.
--->
-
-<!--  
+ 
 If you are an AI assistant (e.g., GitHub Copilot, ChatGPT, Claude), follow these instructions when generating or completing PR descriptions:
 
 1. Add a **Test plan** section explaining how the changes were tested, including any manual, unit, integration, or workflow tests.
