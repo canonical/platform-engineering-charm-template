@@ -67,8 +67,36 @@ The following backwards-incompatible changes are included in this release.
 {% endfor -%}
 
 {% for feat in changes -%}
-{%- if feat.type == "breaking" and is_visible(feat.visibility, show_internal) -%}
+{%- if feat.type == "breaking" and is_visible(feat.visibility, show_internal) and feat.visibility != "internal" -%}
 ### {{ feat.title }}
+{{ feat.description }}
+<Add more context and information about the entry>
+
+Relevant links:
+* [PR]({{ feat.urls.pr }})
+{% if feat.urls.related_doc is not none -%}
+* [Related documentation]({{ feat.urls.related_doc }})
+{% endif -%}
+{% if feat.urls.related_issue is not none -%}
+* [Related issue]({{ feat.urls.related_issue }})
+{% endif -%}
+
+{% endif -%}
+{% endfor %}
+
+{% set ns = namespace(has_internal=False) %}
+{% for feat in changes -%}
+{% if not ns.has_internal -%}
+{%- if feat.type == "breaking" and is_visible(feat.visibility, show_internal) and feat.visibility == "internal" -%}
+### Internal breaking changes
+{% set ns.has_internal = True %}
+{% endif -%}
+{% endif -%}
+{% endfor -%}
+
+{% for feat in changes -%}
+{%- if feat.type == "breaking" and is_visible(feat.visibility, show_internal) and feat.visibility == "internal" -%}
+#### {{ feat.title }}
 {{ feat.description }}
 <Add more context and information about the entry>
 
@@ -89,8 +117,36 @@ Relevant links:
 The following major and minor features were added in this release.
 
 {% for feat in changes %}
-{%- if (feat.type in ["major", "minor"]) and is_visible(feat.visibility, show_internal) -%}
+{%- if (feat.type in ["major", "minor"]) and is_visible(feat.visibility, show_internal) and feat.visibility != "internal" -%}
 ### {{ feat.title }}
+{{ feat.description }}
+<Add more context and information about the entry>
+
+Relevant links:
+* [PR]({{ feat.urls.pr }})
+{% if feat.urls.related_doc is not none -%}
+* [Related documentation]({{ feat.urls.related_doc }})
+{% endif -%}
+{% if feat.urls.related_issue is not none -%}
+* [Related issue]({{ feat.urls.related_issue }})
+{% endif %}
+
+{% endif -%}
+{% endfor %}
+
+{% set ns = namespace(has_internal=False) %}
+{% for feat in changes -%}
+{% if not ns.has_internal -%}
+{%- if (feat.type in ["major", "minor"]) and is_visible(feat.visibility, show_internal) and feat.visibility == "internal" -%}
+### Internal updates
+{% set ns.has_internal = True %}
+{% endif -%}
+{% endif -%}
+{% endfor -%}
+
+{% for feat in changes %}
+{%- if (feat.type in ["major", "minor"]) and is_visible(feat.visibility, show_internal) and feat.visibility == "internal" -%}
+#### {{ feat.title }}
 {{ feat.description }}
 <Add more context and information about the entry>
 
