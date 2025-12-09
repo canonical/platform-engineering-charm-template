@@ -1,6 +1,2 @@
-docs/*	@erinecon
-
-# Ignore changelog from codeowner requests
-docs/changelog.md 
-
-# Add relevant CODEOWNERS here
+# TODO: customize with a specific team
+*       @canonical/platform-engineering
