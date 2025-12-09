@@ -28,7 +28,7 @@ Main bug fixes:
 {% endif -%}
 {% endfor %}
 
-See our [Release policy and schedule](landing-page.md).
+See our [Release policy and schedule](docs/release-notes/landing-page.md).
 
 ## Requirements and compatibility
 
@@ -54,14 +54,14 @@ The table below shows the required or supported versions of the software necessa
 | Ubuntu                  | XXXX             |
 | XXXX                    | XXXX             |
 
-{% set break = False %}
+{% set ns = namespace(break=False) %}
 {% for feat in changes -%}
-{% if not break -%}
+{% if not ns.break -%}
 {%- if feat.type == "breaking" and is_visible(feat.visibility, show_internal) -%}
 ## Breaking changes
 
 The following backwards-incompatible changes are included in this release.
-{% set break = True %}
+{% set ns.break = True %}
 {% endif -%}
 {% endif -%}
 {% endfor -%}
@@ -114,14 +114,14 @@ Relevant links:
 {% endif -%}
 {% endfor %}
 
-{% set break = False %}
+{% set ns = namespace(break=False) %}
 {% for feat in changes -%}
-{% if not break -%}
+{% if not ns.break -%}
 {%- if feat.type == "deprecated" and is_visible(feat.visibility, show_internal) -%}
 ## Deprecated
 
 The following features have been deprecated.
-{% set break = True %}
+{% set ns.break = True %}
 {% endif -%}
 {% endif -%}
 {% endfor -%}
