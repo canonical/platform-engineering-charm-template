@@ -8,7 +8,6 @@
 - [ ] I added or updated the documentation (if applicable)
 - [ ] I updated `docs/changelog.md` with user-relevant changes
 - [ ] I added or updated tests as needed (unit and integration)
-- [ ] I verified that the charm/rock deploys or runs successfully (if applicable)
 - [ ] **If integration test modules are used:** I updated the workflow configuration  
       (e.g., in `.github/workflows/integration_tests.yaml`, ensure the `modules` list is correct)
 - [ ] **If this is a Grafana dashboard:** I added a screenshot of the dashboard
