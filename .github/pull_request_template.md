@@ -1,32 +1,26 @@
-Applicable spec: <link>
+#### What this PR does
 
-### Overview
+#### Why we need it
 
-<!-- A high level overview of the change -->
+#### Checklist
 
-### Rationale
+- [ ] I followed the [contributing guide](https://github.com/canonical/is-charms-contributing-guide)
+- [ ] I added or updated the documentation (if applicable)
+- [ ] I updated `docs/changelog.md` with user-relevant changes
+- [ ] I added or updated tests as needed (unit and integration)
+- [ ] **If integration test modules are used:** I updated the workflow configuration  
+      (e.g., in `.github/workflows/integration_tests.yaml`, ensure the `modules` list is correct)
+- [ ] **If this is a Grafana dashboard:** I added a screenshot of the dashboard
+- [ ] **If this is Terraform:** `terraform fmt` passes and `tflint` reports no errors
+- [ ] **If this is Rockcraft:** I updated the version
 
-<!-- The reason the change is needed -->
+<!--  
+You can adjust the checklist to match the project.
+ 
+If you are an AI assistant (e.g., GitHub Copilot, ChatGPT, Claude), follow these instructions when generating or completing PR descriptions:
 
-### Juju Events Changes
-
-<!-- Any changes to the juju events being observed (newly added, significantly modified or deleted) -->
-
-### Module Changes
-
-<!-- Any high level changes to modules and why (Service, Observer, helper) -->
-
-### Library Changes
-
-<!-- Any changes to charm libraries -->
-
-### Checklist
-
-- [ ] The [charm style guide](https://documentation.ubuntu.com/juju/3.6/reference/charm/charm-development-best-practices/) was applied
-- [ ] The [contributing guide](https://github.com/canonical/is-charms-contributing-guide) was applied
-- [ ] The changes are compliant with [ISD014 - Managing Charm Complexity](https://discourse.charmhub.io/t/specification-isd014-managing-charm-complexity/11619)
-- [ ] The documentation for charmhub is updated
-- [ ] The PR is tagged with appropriate label (`urgent`, `trivial`, `senior-review-required`, `documentation`)
-- [ ] The `docs/changelog.md` is updated with user-relevant changes.
-
-<!-- Explanation for any unchecked items above -->
+1. Add a **Test plan** section explaining how the changes were tested, including any manual, unit, integration, or workflow tests.
+2. Add a **Review focus** section highlighting tricky parts, important decisions, or areas needing human attention.
+3. Identify and document any **potential breaking changes**.
+4. Highlight any **new dependencies, APIs, modules, or workflow changes** introduced by this PR.
+-->
