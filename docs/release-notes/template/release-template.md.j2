@@ -73,7 +73,13 @@ The following backwards-incompatible changes are included in this release.
 <Add more context and information about the entry>
 
 Relevant links:
+{% if '\n' in feat.urls.pr %}
+{% for pr_url in feat.urls.pr.strip().split('\n') %}
+* [PR]({{ pr_url.strip() }})
+{% endfor %}
+{% else %}
 * [PR]({{ feat.urls.pr }})
+{% endif %}
 {% if feat.urls.related_doc is not none -%}
 * [Related documentation]({{ feat.urls.related_doc }})
 {% endif -%}
@@ -101,7 +107,13 @@ Relevant links:
 <Add more context and information about the entry>
 
 Relevant links:
+{% if '\n' in feat.urls.pr %}
+{% for pr_url in feat.urls.pr.strip().split('\n') %}
+* [PR]({{ pr_url.strip() }})
+{% endfor %}
+{% else %}
 * [PR]({{ feat.urls.pr }})
+{% endif %}
 {% if feat.urls.related_doc is not none -%}
 * [Related documentation]({{ feat.urls.related_doc }})
 {% endif -%}
@@ -123,7 +135,13 @@ The following major and minor features were added in this release.
 <Add more context and information about the entry>
 
 Relevant links:
+{% if '\n' in feat.urls.pr %}
+{% for pr_url in feat.urls.pr.strip().split('\n') %}
+* [PR]({{ pr_url.strip() }})
+{% endfor %}
+{% else %}
 * [PR]({{ feat.urls.pr }})
+{% endif %}
 {% if feat.urls.related_doc is not none -%}
 * [Related documentation]({{ feat.urls.related_doc }})
 {% endif -%}
@@ -151,7 +169,13 @@ Relevant links:
 <Add more context and information about the entry>
 
 Relevant links:
+{% if '\n' in feat.urls.pr %}
+{% for pr_url in feat.urls.pr.strip().split('\n') %}
+* [PR]({{ pr_url.strip() }})
+{% endfor %}
+{% else %}
 * [PR]({{ feat.urls.pr }})
+{% endif %}
 {% if feat.urls.related_doc is not none -%}
 * [Related documentation]({{ feat.urls.related_doc }})
 {% endif -%}
@@ -189,7 +213,13 @@ The following features have been deprecated.
 <Add more context and information about the entry>
 
 Relevant links:
+{% if '\n' in feat.urls.pr %}
+{% for pr_url in feat.urls.pr.strip().split('\n') %}
+* [PR]({{ pr_url.strip() }})
+{% endfor %}
+{% else %}
 * [PR]({{ feat.urls.pr }})
+{% endif %}
 {% if feat.urls.related_doc is not none -%}
 * [Related documentation]({{ feat.urls.related_doc }})
 {% endif -%}
