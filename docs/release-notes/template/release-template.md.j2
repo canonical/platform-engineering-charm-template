@@ -28,7 +28,7 @@ Main bug fixes:
 {% endif -%}
 {% endfor %}
 
-See our [Release policy and schedule](link to release notes landing page).
+See our [Release policy and schedule](docs/release-notes/landing-page.md).
 
 ## Requirements and compatibility
 
@@ -73,12 +73,12 @@ The following backwards-incompatible changes are included in this release.
 <Add more context and information about the entry>
 
 Relevant links:
-{% if '\n' in feat.urls.pr %}
-{% for pr_url in feat.urls.pr.strip().split('\n') %}
-* [PR]({{ pr_url.strip() }})
-{% endfor %}
-{% else %}
+{% if feat.urls.pr is string %}
 * [PR]({{ feat.urls.pr }})
+{% else %}
+{% for pr_url in feat.urls.pr %}
+* [PR]({{ pr_url }})
+{% endfor %}
 {% endif %}
 {% if feat.urls.related_doc is not none -%}
 * [Related documentation]({{ feat.urls.related_doc }})
@@ -107,12 +107,12 @@ Relevant links:
 <Add more context and information about the entry>
 
 Relevant links:
-{% if '\n' in feat.urls.pr %}
-{% for pr_url in feat.urls.pr.strip().split('\n') %}
-* [PR]({{ pr_url.strip() }})
-{% endfor %}
-{% else %}
+{% if feat.urls.pr is string %}
 * [PR]({{ feat.urls.pr }})
+{% else %}
+{% for pr_url in feat.urls.pr %}
+* [PR]({{ pr_url }})
+{% endfor %}
 {% endif %}
 {% if feat.urls.related_doc is not none -%}
 * [Related documentation]({{ feat.urls.related_doc }})
@@ -135,12 +135,12 @@ The following major and minor features were added in this release.
 <Add more context and information about the entry>
 
 Relevant links:
-{% if '\n' in feat.urls.pr %}
-{% for pr_url in feat.urls.pr.strip().split('\n') %}
-* [PR]({{ pr_url.strip() }})
-{% endfor %}
-{% else %}
+{% if feat.urls.pr is string %}
 * [PR]({{ feat.urls.pr }})
+{% else %}
+{% for pr_url in feat.urls.pr %}
+* [PR]({{ pr_url }})
+{% endfor %}
 {% endif %}
 {% if feat.urls.related_doc is not none -%}
 * [Related documentation]({{ feat.urls.related_doc }})
@@ -169,12 +169,12 @@ Relevant links:
 <Add more context and information about the entry>
 
 Relevant links:
-{% if '\n' in feat.urls.pr %}
-{% for pr_url in feat.urls.pr.strip().split('\n') %}
-* [PR]({{ pr_url.strip() }})
-{% endfor %}
-{% else %}
+{% if feat.urls.pr is string %}
 * [PR]({{ feat.urls.pr }})
+{% else %}
+{% for pr_url in feat.urls.pr %}
+* [PR]({{ pr_url }})
+{% endfor %}
 {% endif %}
 {% if feat.urls.related_doc is not none -%}
 * [Related documentation]({{ feat.urls.related_doc }})
@@ -213,12 +213,12 @@ The following features have been deprecated.
 <Add more context and information about the entry>
 
 Relevant links:
-{% if '\n' in feat.urls.pr %}
-{% for pr_url in feat.urls.pr.strip().split('\n') %}
-* [PR]({{ pr_url.strip() }})
-{% endfor %}
-{% else %}
+{% if feat.urls.pr is string %}
 * [PR]({{ feat.urls.pr }})
+{% else %}
+{% for pr_url in feat.urls.pr %}
+* [PR]({{ pr_url }})
+{% endfor %}
 {% endif %}
 {% if feat.urls.related_doc is not none -%}
 * [Related documentation]({{ feat.urls.related_doc }})

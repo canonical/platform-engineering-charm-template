@@ -1,5 +1,5 @@
 # Version of the artifact schema
-version_schema: 1
+version_schema: 2
 
 # The key holding the change(s)
 changes:
@@ -9,6 +9,7 @@ changes:
   description: 
   urls:
     pr: 
+      - ""
     related_doc: 
     related_issue: 
   visibility: 
