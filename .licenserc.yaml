@@ -24,5 +24,6 @@ header:
   - 'pyproject.toml'
   - 'zap_rules.tsv'
   - '**/*.md.j2'
+  - 'docs/release-notes/template/*.yaml'
   - 'uv.lock'
   comment: on-failure
