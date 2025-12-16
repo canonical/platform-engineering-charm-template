@@ -4,7 +4,7 @@ version_schema: 2
 # The key holding the change(s)
 changes:
 - title: # Use past tense; keep it concise and specific
-  author: # GitHub profile (no emails)
+  author: # GitHub profile (no emails, no @)
   type: # options: major, minor, bugfix, breaking, deprecated
   description: # Use past tense; describe how the change will affect users
   urls:
