@@ -79,7 +79,7 @@ your pull request must provide the following details:
   - The [contributing guide](https://github.com/canonical/is-charms-contributing-guide) was applied
   - The changes are compliant with [ISD054 - Managing Charm Complexity](https://discourse.charmhub.io/t/specification-isd014-managing-charm-complexity/11619)
   - The documentation is updated
-  - The PR is tagged with appropriate label (trivial, senior-review-required)
+  - The PR is tagged with appropriate label (`trivial`, `senior-review-required`)
   - The changelog has been updated
 
 ### Signing commits
@@ -106,7 +106,7 @@ To add signatures on your commits, follow the
 ## Develop
 
 To make contributions to this charm, you'll need a working
-[development setup](https://documentation.ubuntu.com/juju/latest/user/howto/manage-your-deployment/manage-your-deployment-environment/).
+[development setup](https://documentation.ubuntu.com/juju/latest/howto/manage-your-juju-deployment/set-up-your-juju-deployment-local-testing-and-development/).
 
 The code for this charm can be downloaded as follows:
 
