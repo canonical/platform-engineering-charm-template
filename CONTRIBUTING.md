@@ -52,36 +52,6 @@ also, reference the issue or bug number when you submit the changes.
 
 Your changes will be reviewed in due time; if approved, they will be eventually merged.
 
-### Describing pull requests
-
-To be properly considered, reviewed and merged,
-your pull request must provide the following details:
-
-- **Title**: Summarize the change in a short, descriptive title.
-
-- **Overview**: Describe the problem that your pull request solves.
-  Mention any new features, bug fixes or refactoring.
-
-- **Rationale**: Explain why the change is needed.
-
-- **Juju Events Changes**: Describe any changes made to Juju events, or
-  "None" if the pull request does not change any Juju events.
-
-- **Module Changes**: Describe any changes made to the module, or "None"
-  if your pull request does not change the module.
-
-- **Library Changes**: Describe any changes made to the library,
-  or "None" is the library is not affected.
-
-- **Checklist**: Complete the following items:
-
-  - The [charm style guide](https://documentation.ubuntu.com/juju/3.6/reference/charm/charm-development-best-practices/) was applied
-  - The [contributing guide](https://github.com/canonical/is-charms-contributing-guide) was applied
-  - The changes are compliant with [ISD054 - Managing Charm Complexity](https://discourse.charmhub.io/t/specification-isd014-managing-charm-complexity/11619)
-  - The documentation is updated
-  - The PR is tagged with appropriate label (`trivial`, `senior-review-required`)
-  - The changelog has been updated
-
 ### Signing commits
 
 To improve contribution tracking,
