@@ -76,7 +76,7 @@ To add signatures on your commits, follow the
 ## Develop
 
 To make contributions to this charm, you'll need a working
-[development setup](https://documentation.ubuntu.com/juju/latest/user/howto/manage-your-deployment/manage-your-deployment-environment/).
+[development setup](https://documentation.ubuntu.com/juju/latest/howto/manage-your-juju-deployment/set-up-your-juju-deployment-local-testing-and-development/).
 
 The code for this charm can be downloaded as follows:
 
