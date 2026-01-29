@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   test-terraform:
-    # remove this condition for enabling the workflow
+    # remove this condition when creating your repo
     if: github.repository != 'canonical/platform-engineering-charm-template'
     name: Test Terraform with Juju
     runs-on: ubuntu-latest
