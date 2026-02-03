@@ -23,7 +23,7 @@ jobs:
       matrix:
         working_dir: ["terraform/tests", "terraform-product/tests"]
     steps:
-    - uses: actions/checkout@v6.0.1
+    - uses: actions/checkout@v6.0.2
     - name: Prepare juju tf provider environment
       run: |
         sudo apt-get remove -y docker-ce docker-ce-cli containerd.io
