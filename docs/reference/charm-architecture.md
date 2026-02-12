@@ -1,4 +1,9 @@
-# Charm deployment and architecture
+# Charm architecture
+
+<!-- Include a Mermaid diagram of the charm here. Include here if the diagram is not included in explanation/charm-architecture.md
+     Limit the scope of this diagram to the charm only.
+     How is the charm containerized? Include those separate pieces in this diagram.
+-->
 
 Add overview material here:
 
@@ -27,29 +32,6 @@ __charm_name__-0                   N/N     Running   0         6h4m
 ```
 
 This shows there are <NUMBER> containers - <describe what the containers are>.
--->
-
-## High-level overview of __charm_name__ deployment
-
-The following diagram shows a typical deployment of the __charm_name__ charm.
-<!-- 
-    Provide a brief description of the deployment here. Is it a Kubernetes cloud, a VM, or both?
-    What other charms are included in this deployment? 
--->
-
-<!-- Include a Mermaid diagram of the charm deployment here. 
-     Use one container per charm; the point of this high-level overview is to show
-     a typical deployment and not provide a detailed breakdown of any of the charms.
-     Provide a brief description of the relations (for instance, "provides connection",
-     "caches storage", or "provides database"). More information on how to create mermaid diagrams
-     can be found in https://canonical-platform-engineering.readthedocs-hosted.com/en/latest/engineering-practices/documentation/architecture-diagram-guidance/
--->
-
-## Charm architecture
-
-<!-- Include a Mermaid diagram of the charm here. Include here if the diagram is not included in explanation/charm-architecture.md
-     Limit the scope of this diagram to the charm only.
-     How is the charm containerized? Include those separate pieces in this diagram.
 -->
 
 ### Containers
@@ -84,13 +66,7 @@ See [metrics](link-to-metrics-document) for more information.
 
 ## Juju events
 
-For this charm, the following Juju events are observed:
-
-<!--
-Numbered list of Juju events. Link to describe the event in more detail (either in Juju docs or in a specific charm's docs). When is the event fired? What does the event indicate/mean?
--->
-
-> See more in the Juju docs: [Hook](https://documentation.ubuntu.com/juju/latest/user/reference/hook/)
+See [Juju events](juju-events.md).
 
 ## Charm code overview
 

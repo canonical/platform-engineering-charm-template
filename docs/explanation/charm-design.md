@@ -1,4 +1,4 @@
-# Charm architecture
+# Charm design
 
 <!-- 
 This document should offer perspective and opinion about the charm was designed,
