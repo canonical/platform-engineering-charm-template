@@ -9,7 +9,7 @@ Release notes
 Release notes for the <main> track of __charm_name__, summarizing new features,
 bug fixes and backwards-incompatible changes in each revision.
 
-For upgrading the charm, see (link to upgrade documentation).
+For upgrading the charm, see :ref:`How to upgrade <how_to_upgrade>`.
 For instructions on a specific release, see the corresponding release notes.
 
 Release policy and schedule
@@ -25,4 +25,5 @@ Release policy and schedule
 Releases
 --------
 
-<Add a list of releases here, with links to the individual release notes.>
+.. TODO: Add a list of releases here, with links to the individual release notes.
+         Use a toctree directive

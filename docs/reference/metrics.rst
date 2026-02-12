@@ -3,7 +3,7 @@
 Metrics
 =======
 
-.. 
+.. TODO: Fill in this information or remove if not applicable.
    Remember to update this file for your charm!! 
    If applicable, use this placeholder to include information on the alerting
    and monitoring metrics that exist for this charm. 
