@@ -7,13 +7,13 @@ __charm_name__ operator
 
 .. vale Canonical.007-Headings-sentence-case = YES
 
-.. A single sentence that says what the product is, succinctly and memorably.
+.. TODO: A single sentence that says what the product is, succinctly and memorably.
    Add a 1-2 sentence description of what the charm software does.
 
 A `Juju <https://juju.is/>`_ `charm <https://documentation.ubuntu.com/juju/3.6/reference/charm/>`_
 deploying and managing <Charm software> on <Kubernetes, VMs, or both>. 
 
-.. A paragraph of 2-5 short sentences, that describes what the product does
+.. TODO: A paragraph of 2-5 short sentences, that describes what the product does
    and what need the product meets.
 
 Like any Juju charm, this charm supports one-line deployment, configuration, integration,
@@ -26,7 +26,7 @@ The __charm_name__ charm allows for deployment on many different Kubernetes plat
 from `MicroK8s <https://microk8s.io/>`_ to 
 `Charmed Kubernetes <https://ubuntu.com/kubernetes>`_ to public cloud Kubernetes offerings.
 
-.. Finally, a paragraph that describes whom the product is useful for.
+.. TODO: Finally, a paragraph that describes whom the product is useful for.
 
 This charm will make operating <Charm software> simple and straightforward for DevOps or
 SRE teams through Juju's clean interface. 
@@ -48,7 +48,7 @@ Dive deeper
 
 Learn more about operations focused on advanced configurations and security.
 
-.. Note: use the items below as a starting place.
+.. TODO: Use the items below as a starting place.
    You don't need to include all of the items if they're not relevant to the charm
    or if the docs don't exist. Use the "Charm-specific topic" point to highlight any 
    major selling points of the charm.
@@ -57,7 +57,7 @@ Learn more about operations focused on advanced configurations and security.
 - **Charm-specific topic**: Relevant how-to guides • Relevant reference pages
 - **Security**: Overview • Relevant how-to guides • Relevant reference pages
 - **Design**: Architecture • Design
-- **Troubleshooting**: :ref:`How to troubleshoot <how_to_troubleshoot>` • Other relevant how-to guides
+- **Troubleshooting**: :ref:`How to troubleshoot <how_to_troubleshoot>` • Other relevant how-to or reference guides
 
 Develop and contribute
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -75,6 +75,7 @@ This documentation uses the `Diátaxis documentation structure <https://diataxis
 - :ref:`How-to guides <how_to_index>` assume you have basic familiarity with the <Charm software> charm. Learn more about setting up, using, maintaining, and contributing to this charm.
 - :ref:`Reference <reference_index>` provides a guide to actions, configurations, relations, and other technical details.
 - :ref:`Explanation <explanation_index>` includes topic overviews, background and context and detailed discussion.
+- :ref:`Release notes <release_notes_index>` holds all the release notes for the charm, including any system or upgrade requirements.
 
 Contributing to this documentation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
