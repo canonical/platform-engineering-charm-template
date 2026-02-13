@@ -13,7 +13,7 @@ jobs:
   terraform-tests:
     # remove this condition when creating your repo
     if: github.repository != 'canonical/platform-engineering-charm-template'
-    uses: canonical/operator-workflows/.github/workflows/terraform_modules_test.yaml@feat/add_terraform_module_tests-ISD-5149
+    uses: canonical/operator-workflows/.github/workflows/terraform_modules_test.yaml@main
     secrets: inherit
     with:
       terraform-directories: '["terraform", "terraform-product"]'
