@@ -6,7 +6,7 @@
       "defaultRegistryUrlTemplate": "https://api.charmhub.io/v2/charms/info/{{packageName}}?fields=channel-map",
       "format": "json",
       "transformTemplates": [
-        "{\"releases\": [{\"version\": $string($$.(`channel-map`[channel.risk = 'edge' and channel.track = '2' and channel.base.architecture = 'amd64' and channel.base.channel = '22.04'].revision.revision))}]}"
+        "{\"releases\": [{\"version\": $string($$.(`channel-map`[channel.risk = 'edge' and channel.track = 'latest' and channel.base.architecture = 'amd64' and channel.base.channel = '22.04'].revision.revision))}]}"
       ]
     }
   },
