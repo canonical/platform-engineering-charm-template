@@ -70,7 +70,11 @@ Metrics
 Juju events
 -----------
 
+.. vale Canonical.004-Canonical-product-names = NO
+
 See :ref:`reference_juju_events`.
+
+.. vale Canonical.004-Canonical-product-names = YES
 
 Charm code overview
 -------------------

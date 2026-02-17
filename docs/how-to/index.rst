@@ -32,7 +32,7 @@ Update and refresh
 ------------------
 
 The following guides provide instructions on upgrading your deployment,
-including backup and reployment processes.
+including backup and redeployment processes.
 
 .. toctree::
     :hidden:

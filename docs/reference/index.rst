@@ -19,6 +19,8 @@ Charm usage
 The following pages provide more information about the charm's features,
 including actions, configurations, and integrations.
 
+.. vale Canonical.004-Canonical-product-names = NO
+
 .. toctree::
     :hidden:
     :maxdepth: 1
@@ -28,6 +30,8 @@ including actions, configurations, and integrations.
     Relation endpoints <relation-endpoints>
     Juju events <juju-events>
     Metrics <metrics>
+
+.. vale Canonical.004-Canonical-product-names = YES
 
 Architecture and deployments
 ----------------------------
