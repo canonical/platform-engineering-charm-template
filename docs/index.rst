@@ -1,3 +1,6 @@
+.. meta::
+   :description: TBD
+
 .. vale Canonical.007-Headings-sentence-case = NO
 
 .. _index:

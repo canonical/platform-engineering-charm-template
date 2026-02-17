@@ -1,3 +1,6 @@
+.. meta::
+   :description: TBD 
+
 .. _explanation_index:
 
 Explanation
