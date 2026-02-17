@@ -27,7 +27,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": [".*\.tf$"],
+      "fileMatch": [".*.tf$"],
       "matchStrings": ["# renovate: depName=\"(?<packageName>[^\"]+)\"\\s*\\n\\s*(?<fieldName>[a-zA-Z0-9_]+)\\s*=\\s*\"(?<currentValue>[^\"]+)\""],
       "versioningTemplate": "semver-coerced",
       "datasourceTemplate": "custom.charmhub"
