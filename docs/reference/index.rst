@@ -3,7 +3,12 @@
 Reference
 =========
 
-This section contains technical details and information about the charm.
+.. TODO: Update the name of the charm!
+         The following subsections are examples and don't need to be followed exactly.
+         Define themes and subsections based on the charm's unique needs and features.
+         Provide 1-2 sentence introductions for each subsection.
+
+This section contains technical details and information about the __charm_name__ charm.
 
 Charm usage
 -----------
