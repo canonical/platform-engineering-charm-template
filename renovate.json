@@ -6,7 +6,7 @@
       "defaultRegistryUrlTemplate": "https://api.charmhub.io/v2/charms/info/{{packageName}}?fields=channel-map",
       "format": "json",
       "transformTemplates": [
-        "{\"releases\": [{\"version\": $string($$.(`channel-map`[channel.risk = 'edge' and channel.track = 'latest' and channel.base.architecture = 'amd64' and channel.base.channel = '22.04'].revision.revision))}]}"
+        "{\"releases\": [{\"version\": $string($$.(`channel-map`[channel.risk = 'edge' and channel.track = 'latest' and channel.base.architecture = 'amd64' and channel.base.channel = '24.04'].revision.revision))}]}"
       ]
     }
   },
@@ -27,8 +27,8 @@
     },
     {
       "customType": "regex",
-      "fileMatch": [".*.tf$"],
-      "matchStrings": ["# renovate: depName=\"(?<packageName>[^\"]+)\"\\s*\\n\\s*(?<fieldName>[a-zA-Z0-9_]+)\\s*=\\s*\"(?<currentValue>[^\"]+)\""],
+      "fileMatch": ["\\.tftest\\.hcl$", "\\.tf$"],
+      "matchStrings": ["# renovate: depName=\"(?<packageName>[^\"]+)\"\\s*\\n\\s*(?<fieldName>[a-zA-Z0-9_]+)\\s*=\\s*(?<currentValue>\\d+)"],
       "versioningTemplate": "semver-coerced",
       "datasourceTemplate": "custom.charmhub"
     }
@@ -37,6 +37,7 @@
     "config:recommended",
     "group:allNonMajor"
   ],
+  "ignorePaths": [],
   "packageRules": [
     {
       "enabled": true,
@@ -44,6 +45,13 @@
         "docker"
       ],
       "pinDigests": true
+    },
+    {
+      "matchDatasources": [
+          "custom.charmhub"
+      ],
+      "automerge": true,
+      "enabled": true
     },
     {
       "enabled": false,
