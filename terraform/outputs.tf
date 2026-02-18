@@ -3,7 +3,7 @@
 
 output "app_name" {
   description = "Name of the deployed application."
-  value       = juju_application.__charm_name__.name
+  value       = juju_application.netbox-k8s.name
 }
 
 output "endpoints" {
