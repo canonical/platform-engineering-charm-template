@@ -7,7 +7,7 @@ APP_NAME=$2
 
 LOG="/tmp/wait-for-active.$$.log"
 
-if [ -z "$MODEL_UUID" -o -z "$APP_NAME" ]; then
+if [ -z "$MODEL_UUID" ] || [ -z "$APP_NAME" ]; then
 	echo "Usage: $0 <model_uuid|model_name> <app_name>"
 	echo "[$(date)] missing arguments" >> $LOG
 	exit 1
