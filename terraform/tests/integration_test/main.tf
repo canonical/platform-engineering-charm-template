@@ -44,7 +44,7 @@ resource "juju_integration" "redis" {
 
 # tflint-ignore: terraform_unused_declarations
 data "external" "app_status" {
-  program = ["bash", "${path.module}/wait-for-active.sh", var.model_uuid, "netbox-k8s", "1m"]
+  program = ["bash", "${path.module}/wait-for-active.sh", var.model_uuid, "netbox-k8s", "3m"]
 
   depends_on = [
     juju_integration.redis
