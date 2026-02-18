@@ -4,11 +4,12 @@
 
 MODEL_UUID=$1
 APP_NAME=$2
+TIMEOUT=$3
 
 LOG="/tmp/wait-for-active.$$.log"
 
-if [ -z "$MODEL_UUID" ] || [ -z "$APP_NAME" ]; then
-	echo "Usage: $0 <model_uuid|model_name> <app_name>"
+if [ -z "$MODEL_UUID" ] || [ -z "$APP_NAME" ] || [ -z "$TIMEOUT" ]; then
+	echo "Usage: $0 <model_uuid|model_name> <app_name> <timeout, e.g. 5m>"
 	echo "[$(date)] missing arguments" >> $LOG
 	exit 1
 fi
@@ -25,7 +26,9 @@ if ! juju show-application "$APP_NAME" &> /dev/null; then
 	exit
 fi
 
-juju wait-for application "$APP_NAME" --timeout=1m &>> $LOG
+echo "[$(date)] waiting for $APP_NAME in $MODEL_UUID to be active" >> $LOG
+
+juju wait-for application "$APP_NAME" --timeout=$TIMEOUT &>> $LOG
 STATUS=$(juju status "$APP_NAME" --model "$MODEL_UUID" --format=json | jq -r '.applications | to_entries[0].value["application-status"].current')
 
 echo '{"status": "'"$STATUS"'"}'

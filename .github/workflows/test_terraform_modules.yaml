@@ -12,11 +12,9 @@ on:
 
 jobs:
   terraform-tests:
-    # remove this condition when creating your repo
-    if: github.repository != 'canonical/platform-engineering-charm-template'
     uses: canonical/operator-workflows/.github/workflows/terraform_modules_test.yaml@main
     secrets: inherit
     with:
-      #k8s-controller: true
+      k8s-controller: true
       #lxd-controller: true
       terraform-directories: '["terraform"]'
