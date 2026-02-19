@@ -21,6 +21,8 @@ What you'll do
 What you'll need
 ----------------
 
+.. vale Canonical.013-Spell-out-numbers-below-10 = NO
+
 .. SPREAD SKIP
 
 You will need a working station, e.g., a laptop, with AMD64 architecture. Your working station
@@ -51,6 +53,9 @@ Use `Concierge <https://github.com/canonical/concierge>`_ to set up Juju and Mic
 
     sudo snap install --classic concierge
     sudo concierge prepare -p microk8s
+
+.. TODO: If the tutorial requires a LXD controller, update "microk8s" to "machine"
+         Double check that the text below is accurate!
 
 This first command installs Concierge, and the second command uses Concierge to install
 and configure Juju and MicroK8s.

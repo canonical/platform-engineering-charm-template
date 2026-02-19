@@ -19,6 +19,8 @@ Charm usage
 The following pages provide more information about the charm's features,
 including actions, configurations, and integrations.
 
+.. vale Canonical.013-Spell-out-numbers-below-10 = NO
+.. vale Canonical.500-Repeated-words = NO
 .. vale Canonical.004-Canonical-product-names = NO
 
 .. toctree::

@@ -17,6 +17,8 @@ Get started
 
 This tutorial walks through a basic deployment of the charm.
 
+.. vale Canonical.013-Spell-out-numbers-below-10 = NO
+
 .. toctree::
     :hidden:
     :maxdepth: 1

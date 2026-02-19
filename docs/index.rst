@@ -119,6 +119,9 @@ Releases
 Thinking about using the __charm_name__ Operator for your next project? 
 `Get in touch <https://matrix.to/#/#charmhub-charmdev:ubuntu.com>`_!
 
+.. vale Canonical.013-Spell-out-numbers-below-10 = NO
+.. vale Canonical.500-Repeated-words = NO
+
 .. toctree::
     :hidden:
     :maxdepth: 1
