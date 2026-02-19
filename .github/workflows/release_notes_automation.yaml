@@ -17,5 +17,5 @@ jobs:
         release-artifact-dir: docs/release-notes/releases
         common-file: docs/release-notes/common.yaml
         template-dir: docs/release-notes/template
-        template-file-name: release-template.md.j2
+        template-file-name: release-template.rst.j2
 
