@@ -1,6 +1,7 @@
-<!-- Remember to update this file for your charm!! -->
+.. Remember to update this file for your charm!!
 
-# {{ charm_name }} release notes – {{ release_condition }}
+{{ charm_name }} release notes – {{ release_condition }}
+=========================================================
 
 These release notes cover new features and changes in {{ charm_name }} for revisions
 {{ earliest_revision }}-{{ latest_revision }}.
@@ -28,37 +29,47 @@ Main bug fixes:
 {% endif -%}
 {% endfor %}
 
-See our [Release policy and schedule](docs/release-notes/landing-page.md).
+See our (docs/release-notes/landing-page.rst).
 
-## Requirements and compatibility
+Requirements and compatibility
+-------------------------------
 
-<!--
-Specify the workload version; link to the workload's release notes if available.
+..
+   Specify the workload version; link to the workload's release notes if available.
 
-Add information about the requirements for this charm in the table
-below, for instance, a minimum Juju version. 
+   Add information about the requirements for this charm in the table
+   below, for instance, a minimum Juju version. 
 
-If the user will need any specific upgrade instructions for this
-release, include those instructions here.
--->
+   If the user will need any specific upgrade instructions for this
+   release, include those instructions here.
 
 The charm operates {{ workload_with_version }}.
 
 The table below shows the required or supported versions of the software necessary to operate the charm.
 
-| Software                | Required version |
-|-------------------------|------------------|
-| Juju                    | XXXX             |
-| Terraform               | XXXX             |
-| Terraform Juju provider | XXXX             |
-| Ubuntu                  | XXXX             |
-| XXXX                    | XXXX             |
+.. list-table::
+   :header-rows: 1
+   :widths: 50 50
+
+   * - Software
+     - Required version
+   * - Juju
+     - XXXX
+   * - Terraform
+     - XXXX
+   * - Terraform Juju provider
+     - XXXX
+   * - Ubuntu
+     - XXXX
+   * - XXXX
+     - XXXX
 
 {% set ns = namespace(break=False) %}
 {% for feat in changes -%}
 {% if not ns.break -%}
 {%- if feat.type == "breaking" and is_visible(feat.visibility, show_internal) -%}
-## Breaking changes
+Breaking changes
+----------------
 
 The following backwards-incompatible changes are included in this release.
 {% set ns.break = True %}
@@ -68,23 +79,25 @@ The following backwards-incompatible changes are included in this release.
 
 {% for feat in changes -%}
 {%- if feat.type == "breaking" and is_visible(feat.visibility, show_internal) and feat.visibility != "internal" -%}
-### {{ feat.title }}
+{{ feat.title }}
+{% for char in feat.title %}^{% endfor %}
+
 {{ feat.description }}
 <Add more context and information about the entry>
 
 Relevant links:
 {% if feat.urls.pr is string %}
-* [PR]({{ feat.urls.pr }})
+* `PR <{{ feat.urls.pr }}>`_
 {% else %}
 {% for pr_url in feat.urls.pr %}
-* [PR]({{ pr_url }})
+* `PR <{{ pr_url }}>`_
 {% endfor %}
 {% endif %}
 {% if feat.urls.related_doc is not none -%}
-* [Related documentation]({{ feat.urls.related_doc }})
+* `Related documentation <{{ feat.urls.related_doc }}>`_
 {% endif -%}
 {% if feat.urls.related_issue is not none -%}
-* [Related issue]({{ feat.urls.related_issue }})
+* `Related issue <{{ feat.urls.related_issue }}>`_
 {% endif -%}
 
 {% endif -%}
@@ -94,7 +107,8 @@ Relevant links:
 {% for feat in changes -%}
 {% if not ns.has_internal -%}
 {%- if feat.type == "breaking" and is_visible(feat.visibility, show_internal) and feat.visibility == "internal" -%}
-### Internal breaking changes
+Internal breaking changes
+^^^^^^^^^^^^^^^^^^^^^^^^^
 {% set ns.has_internal = True %}
 {% endif -%}
 {% endif -%}
@@ -102,51 +116,56 @@ Relevant links:
 
 {% for feat in changes -%}
 {%- if feat.type == "breaking" and is_visible(feat.visibility, show_internal) and feat.visibility == "internal" -%}
-#### {{ feat.title }}
+{{ feat.title }}
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 {{ feat.description }}
 <Add more context and information about the entry>
 
 Relevant links:
 {% if feat.urls.pr is string %}
-* [PR]({{ feat.urls.pr }})
+* `PR <{{ feat.urls.pr }}>`_
 {% else %}
 {% for pr_url in feat.urls.pr %}
-* [PR]({{ pr_url }})
+* `PR <{{ pr_url }}>`_
 {% endfor %}
 {% endif %}
 {% if feat.urls.related_doc is not none -%}
-* [Related documentation]({{ feat.urls.related_doc }})
+* `Related documentation <{{ feat.urls.related_doc }}>`_
 {% endif -%}
 {% if feat.urls.related_issue is not none -%}
-* [Related issue]({{ feat.urls.related_issue }})
+* `Related issue <{{ feat.urls.related_issue }}>`_
 {% endif -%}
 
 {% endif -%}
 {% endfor %}
 
-## Updates
+Updates
+-------
 
 The following major and minor features were added in this release.
 
 {% for feat in changes %}
 {%- if (feat.type in ["major", "minor"]) and is_visible(feat.visibility, show_internal) and feat.visibility != "internal" -%}
-### {{ feat.title }}
+{{ feat.title }}
+{% for char in feat.title %}^{% endfor %}
+
 {{ feat.description }}
 <Add more context and information about the entry>
 
 Relevant links:
 {% if feat.urls.pr is string %}
-* [PR]({{ feat.urls.pr }})
+* `PR <{{ feat.urls.pr }}>`_
 {% else %}
 {% for pr_url in feat.urls.pr %}
-* [PR]({{ pr_url }})
+* `PR <{{ pr_url }}>`_
 {% endfor %}
 {% endif %}
 {% if feat.urls.related_doc is not none -%}
-* [Related documentation]({{ feat.urls.related_doc }})
+* `Related documentation <{{ feat.urls.related_doc }}>`_
 {% endif -%}
 {% if feat.urls.related_issue is not none -%}
-* [Related issue]({{ feat.urls.related_issue }})
+* `Related issue <{{ feat.urls.related_issue }}>`_
 {% endif %}
 
 {% endif -%}
@@ -156,7 +175,8 @@ Relevant links:
 {% for feat in changes -%}
 {% if not ns.has_internal -%}
 {%- if (feat.type in ["major", "minor"]) and is_visible(feat.visibility, show_internal) and feat.visibility == "internal" -%}
-### Internal updates
+Internal updates
+^^^^^^^^^^^^^^^^
 {% set ns.has_internal = True %}
 {% endif -%}
 {% endif -%}
@@ -164,33 +184,36 @@ Relevant links:
 
 {% for feat in changes %}
 {%- if (feat.type in ["major", "minor"]) and is_visible(feat.visibility, show_internal) and feat.visibility == "internal" -%}
-#### {{ feat.title }}
+{{ feat.title }}
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 {{ feat.description }}
 <Add more context and information about the entry>
 
 Relevant links:
 {% if feat.urls.pr is string %}
-* [PR]({{ feat.urls.pr }})
+* `PR <{{ feat.urls.pr }}>`_
 {% else %}
 {% for pr_url in feat.urls.pr %}
-* [PR]({{ pr_url }})
+* `PR <{{ pr_url }}>`_
 {% endfor %}
 {% endif %}
 {% if feat.urls.related_doc is not none -%}
-* [Related documentation]({{ feat.urls.related_doc }})
+* `Related documentation <{{ feat.urls.related_doc }}>`_
 {% endif -%}
 {% if feat.urls.related_issue is not none -%}
-* [Related issue]({{ feat.urls.related_issue }})
+* `Related issue <{{ feat.urls.related_issue }}>`_
 {% endif %}
 
 {% endif -%}
 {% endfor %}
 
-## Bug fixes
+Bug fixes
+---------
 
 {% for feat in changes -%}
 {%- if feat.type == "bugfix" and is_visible(feat.visibility, show_internal) -%}
-* {{ feat.title }} ([PR]({{ feat.urls.pr }})).
+* {{ feat.title }} (`PR <{{ feat.urls.pr }}>`_).
 {% endif -%}
 {% endfor %}
 
@@ -198,7 +221,8 @@ Relevant links:
 {% for feat in changes -%}
 {% if not ns.break -%}
 {%- if feat.type == "deprecated" and is_visible(feat.visibility, show_internal) -%}
-## Deprecated
+Deprecated
+----------
 
 The following features have been deprecated.
 {% set ns.break = True %}
@@ -208,50 +232,51 @@ The following features have been deprecated.
 
 {% for feat in changes -%}
 {%- if feat.type == "deprecated" and is_visible(feat.visibility, show_internal) -%}
-### {{ feat.title }}
+{{ feat.title }}
+{% for char in feat.title %}^{% endfor %}
+
 {{ feat.description }}
 <Add more context and information about the entry>
 
 Relevant links:
 {% if feat.urls.pr is string %}
-* [PR]({{ feat.urls.pr }})
+* `PR <{{ feat.urls.pr }}>`_
 {% else %}
 {% for pr_url in feat.urls.pr %}
-* [PR]({{ pr_url }})
+* `PR <{{ pr_url }}>`_
 {% endfor %}
 {% endif %}
 {% if feat.urls.related_doc is not none -%}
-* [Related documentation]({{ feat.urls.related_doc }})
+* `Related documentation <{{ feat.urls.related_doc }}>`_
 {% endif -%}
 {% if feat.urls.related_issue is not none -%}
-* [Related issue]({{ feat.urls.related_issue }})
+* `Related issue <{{ feat.urls.related_issue }}>`_
 {% endif -%}
 
 {% endif -%}
 {% endfor %}
 
-## Known issues
+Known issues
+------------
 
-<!--
-Add a bulleted list with links to unresolved issues – the most important/pressing ones,
-the ones being worked on currently, or the ones with the most visibility/traffic.
-You don’t need to add links to all the issues in the repository if there are
-several – a list of 3-5 issues is sufficient. 
-If there are no known issues, keep the section and write "No known issues".
--->
+..
+   Add a bulleted list with links to unresolved issues – the most important/pressing ones,
+   the ones being worked on currently, or the ones with the most visibility/traffic.
+   You don't need to add links to all the issues in the repository if there are
+   several – a list of 3-5 issues is sufficient. 
+   If there are no known issues, keep the section and write "No known issues".
 
-## Thanks to our contributors
+Thanks to our contributors
+---------------------------
 
-<!--
-List of contributors based on PRs/commits. Remove this section if there are no contributors in this release.
--->
+..
+   List of contributors based on PRs/commits. Remove this section if there are no contributors in this release.
 {%- set authors_in_list = [] -%}
 {% for feat in changes %}
-{%- set author_value = '['+feat.author+'](https://github.com/'+feat.author+')' -%}
+{%- set author_value = '`'+feat.author+' <https://github.com/'+feat.author+'>`_' -%}
 {%- if author_value not in authors_in_list -%}
 {{ authors_in_list.append(author_value) or "" }}
 {%- endif -%}
 {% endfor %}
 
 {{ authors_in_list|join(', ') }}
-
