@@ -1,5 +1,5 @@
 .. meta::
-   :description: TBD 
+   :description: How-to guides for operating the __charm_name__ charm, including basic operations and upgrades. 
 
 .. _how_to_index:
 

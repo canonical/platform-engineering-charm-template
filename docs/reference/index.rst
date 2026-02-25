@@ -1,5 +1,5 @@
 .. meta::
-   :description: TBD 
+   :description: Technical reference documentation for the __charm_name__ charm, including actions, configurations, and architecture.
 
 .. _reference_index:
 

@@ -1,3 +1,6 @@
+.. meta::
+   :description: Reference documentation for all actions available in the __charm_name__ charm.
+
 .. _reference_actions:
 
 Actions

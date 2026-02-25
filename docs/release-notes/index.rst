@@ -1,3 +1,6 @@
+.. meta::
+   :description: Release notes for all versions of the __charm_name__ charm, including release policy and schedule.
+
 .. _release_notes_index:
 
 .. Remember to update this file for your charm -- replace __charm_name__ with the appropriate name,

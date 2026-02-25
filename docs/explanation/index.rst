@@ -1,5 +1,5 @@
 .. meta::
-   :description: TBD 
+   :description: Conceptual guides explaining the design and security of the __charm_name__ charm. 
 
 .. _explanation_index:
 

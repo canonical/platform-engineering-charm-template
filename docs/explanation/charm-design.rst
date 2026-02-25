@@ -1,3 +1,6 @@
+.. meta::
+   :description: Understand the architectural design decisions and code structure of the __charm_name__ charm.
+
 .. _explanation_charm_design:
 
 Charm design

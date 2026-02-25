@@ -1,3 +1,6 @@
+.. meta::
+   :description: Technical reference for the Terraform module available for deploying the __charm_name__ charm.
+
 .. _reference_terraform:
 
 Terraform module

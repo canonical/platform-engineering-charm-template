@@ -1,3 +1,6 @@
+.. meta::
+   :description: How to redeploy the __charm_name__ charm after removing it from your environment.
+
 .. _how_to_redeploy:
 
 How to redeploy

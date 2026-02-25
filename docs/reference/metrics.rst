@@ -1,3 +1,6 @@
+.. meta::
+   :description: Reference documentation for the alerting and monitoring metrics provided by the __charm_name__ charm.
+
 .. _reference_metrics:
 
 Metrics

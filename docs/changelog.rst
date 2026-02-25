@@ -1,3 +1,6 @@
+.. meta::
+   :description: View the changelog for the __charm_name__ charm, including all versions and changes.
+
 .. _changelog:
 
 Changelog

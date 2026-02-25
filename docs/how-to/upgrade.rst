@@ -1,3 +1,6 @@
+.. meta::
+   :description: How to upgrade the __charm_name__ charm to a new version.
+
 .. _how_to_upgrade:
 
 How to upgrade

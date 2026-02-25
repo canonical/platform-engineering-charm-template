@@ -1,3 +1,6 @@
+.. meta::
+   :description: Understand the security design, risks, and best practices for the __charm_name__ charm.
+
 .. _explanation_security:
 
 Security overview

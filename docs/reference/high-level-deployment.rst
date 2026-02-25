@@ -1,3 +1,6 @@
+.. meta::
+   :description: A high-level overview of the __charm_name__ charm's deployment topology and relations to other charms.
+
 .. _reference_high_level_deployment:
 
 High-level overview of __charm_name__ deployment
