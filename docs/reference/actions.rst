@@ -6,6 +6,10 @@
 Actions
 =======
 
-See (link to actions page).
+.. TODO: Add link to the Charmhub actions tab.
+
+See Actions.
+
+.. seealso::
 
    Read more about actions in the Juju docs: `Action <https://documentation.ubuntu.com/juju/latest/user/reference/action/>`_

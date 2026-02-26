@@ -1,5 +1,5 @@
 .. meta::
-   :description: An advanced tutorial for deploying the __charm_name__ charm using Terraform or complex integrations.
+   :description: An advanced tutorial for deploying the __charm_name__ charm using Terraform or advanced environmental setup.
 
 .. _tutorial_advanced_deployment:
 

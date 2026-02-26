@@ -1,5 +1,5 @@
 .. meta::
-   :description: Learn how to contribute to the __charm_name__ charm documentation and source code.
+   :description: Learn how to contribute to the __charm_name__ charm documentation.
 
 .. _how_to_contribute:
 
