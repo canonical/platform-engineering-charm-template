@@ -1,5 +1,5 @@
 .. meta::
-   :description: Learn about the __charm_name__ charm, a Juju operator that deploys and manages __charm_name__ on Kubernetes or virtual machines.
+   :description: Discover the __charm_name__ charm, a Juju operator that deploys and manages __charm_name__.
 
 .. vale Canonical.007-Headings-sentence-case = NO
 
