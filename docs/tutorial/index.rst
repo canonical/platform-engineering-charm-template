@@ -1,5 +1,5 @@
 .. meta::
-   :description: TBD 
+   :description: Follow step-by-step tutorials to deploy and operate the __charm_name__ charm. 
 
 .. _tutorial_index:
 

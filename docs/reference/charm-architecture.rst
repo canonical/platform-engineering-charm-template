@@ -1,3 +1,6 @@
+.. meta::
+   :description: A technical overview of the __charm_name__ charm's architecture, containers, and Pebble services.
+
 .. _reference_charm_architecture:
 
 Charm architecture

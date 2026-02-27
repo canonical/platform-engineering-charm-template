@@ -1,3 +1,6 @@
+.. meta::
+   :description: How to deploy and manage the __charm_name__ charm using Terraform modules.
+
 .. _how_to_terraform:
 
 How to use Terraform

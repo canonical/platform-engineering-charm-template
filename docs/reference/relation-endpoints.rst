@@ -1,3 +1,6 @@
+.. meta::
+   :description: Reference documentation for all relation endpoints supported by the __charm_name__ charm.
+
 .. _reference_relation_endpoints:
 
 Relation endpoints

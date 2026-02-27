@@ -1,3 +1,6 @@
+.. meta::
+   :description: A step-by-step tutorial for deploying the __charm_name__ charm for the first time.
+
 .. _tutorial_basic_deployment:
 
 Deploy the __charm_name__ charm for the first time

@@ -1,3 +1,6 @@
+.. meta::
+   :description: Familiarize yourself with contributing to the __charm_name__ charm documentation.
+
 .. _how_to_contribute:
 
 How to contribute
