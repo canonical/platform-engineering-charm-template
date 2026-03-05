@@ -2,14 +2,14 @@
 # See LICENSE file for licensing details.
 
 terraform {
-  required_version = ">= 1.0"
+  required_version = "~> 1.12"
   required_providers {
     external = {
       version = "> 2"
       source  = "hashicorp/external"
     }
     juju = {
-      version = "> 1.1.0"
+      version = "~> 1.0"
       source  = "juju/juju"
     }
   }
