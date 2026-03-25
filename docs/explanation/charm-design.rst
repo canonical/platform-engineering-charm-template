@@ -26,5 +26,3 @@ Charm design
    Limit the scope of this diagram to the charm only.
    How is the charm containerized, and what pieces are of particular interest to the user?
    Include those separate pieces in this diagram.
-   More information on how to create mermaid diagrams
-   can be found in https://canonical-platform-engineering.readthedocs-hosted.com/en/latest/engineering-practices/documentation/architecture-diagram-guidance/

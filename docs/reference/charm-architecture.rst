@@ -6,7 +6,7 @@
 Charm architecture
 ==================
 
-.. Include a Mermaid diagram of the charm here. Include here if the diagram is not included in explanation/charm-architecture.md
+.. Include a Mermaid diagram of the charm here. Include here if the diagram is not included in explanation/charm-design
    Limit the scope of this diagram to the charm only.
    How is the charm containerized? Include those separate pieces in this diagram.
 
@@ -54,11 +54,11 @@ Configuration files for the containers can be found in the respective directorie
 OCI images
 ----------
 
-We use `Rockcraft <https://canonical-rockcraft.readthedocs-hosted.com/en/latest/>`_ to build OCI Images for __charm_name__.
+We use `Rockcraft <https://documentation.ubuntu.com/rockcraft/stable/>`_ to build OCI Images for __charm_name__.
 The images are defined in (link to rock).
 They are published to `Charmhub <https://charmhub.io/>`_, the official repository of charms.
 
-   See more: `How to publish your charm on Charmhub <https://canonical-charmcraft.readthedocs-hosted.com/en/stable/howto/manage-charms/#publish-a-charm-on-charmhub>`_
+See more: `How to publish your charm on Charmhub <https://documentation.ubuntu.com/charmcraft/stable/howto/manage-charms/#publish-a-charm-on-charmhub>`_
 
 Metrics
 -------
