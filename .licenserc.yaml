@@ -28,5 +28,4 @@ header:
   - '**/*.rst.j2'
   - 'docs/release-notes/template/*.yaml'
   - 'uv.lock'
-  - '.lycheeignore'
   comment: on-failure
