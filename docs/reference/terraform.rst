@@ -11,3 +11,4 @@ Terraform module
          You don't necessarily need to copy the Terraform module into this document,
          but you should provide some information about the setup, other charms deployed,
          or other configurations/settings handled by the module.
+         Add a link to any generated README files for Terraform modules in the codebase.
