@@ -39,20 +39,30 @@ In this documentation
 
 .. TODO: Use the table below as a starting place.
    You don't need to include all of the rows if they're not relevant to the charm
-   or if the docs don't exist, but here's the recommended rows to include:
-      - Get started (containing one or more tutorials)
-      - Deployment (containing guides/pages for Day 0 and 1 operations)
-      - Operations (containing guides/pages for Day 2+ operations)
+   or if the docs don't exist.
    
-   Another charm-specific row to consider is "Integrations", especially if the
-   charm is meant to work in the context of a larger deployment.
+   When linking a how-to guide, use a verb to indicate an action/task. When
+   linking reference or explanation material, use gerunds or nouns.
+
+   Use "Get started" to highlight one or more tutorials. This row touches
+   on the "point of entry" domain.
+
+   For Deployment and Operations, place the most important/common use cases first.
+   If there are no meaningful Day 0/1 operations, drop "Deployment" from the table.
+   If there are no meaningful Day 2 operations, drop "Operations" from the table.
+   These rows touch on the domain of "lifecycle".
    
-   Use the "Product-specific feature" point to highlight any 
+   Use the "Product-specific feature" row to highlight any 
    major selling points of the charm -- what's the value proposition of this charm?
+
+   Use the "Design" row to showcase architecture and design-related documentation
+   for this charm. This row touches on the domain of "conceptual or stack layers".
    
-   If possible, include a row that touches on the "quality" domain (security, design, performance).
-   
-   When linking a how-to guide, use a verb to indicate an action/task.
+   If possible, include a row that touches on the "quality" domain (security, performance).
+
+   Another charm-specific row to consider is "Integrations", especially if the
+   charm is meant to work in the context of a larger deployment. The "Integrations"
+   row touches on the domain of "interfaces".
 
 .. list-table::
     :header-rows: 1
@@ -67,10 +77,10 @@ In this documentation
       - Relevant how-to guides and reference pages (examples: integrate with COS, backup/restore, redeploy, upgrade)
     * - Product-specific feature
       - Relevant guides and pages
-    * - Security
-      - :ref:`Overview <explanation_security>` • Relevant how-to guides • Relevant reference pages
     * - Design
       - :ref:`Architecture <reference_charm_architecture>` • :ref:`Design <explanation_charm_design>`
+    * - Security
+      - :ref:`Overview <explanation_security>` • Relevant how-to guides • Relevant reference pages
 
 How this documentation is organized
 ------------------------------------
