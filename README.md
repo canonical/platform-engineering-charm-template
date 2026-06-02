@@ -65,13 +65,13 @@ include a link to the relevant Matrix channel.
 * [Read more](charm docs) <!--Link to the charm's official documentation-->
 * [Developer documentation](developer docs) <!--Link to any developer documentation (could be upstream)-->
 * [Official webpage](official site) <!--(Optional) Link to official upstream webpage/blog/marketing content--> 
-* [Troubleshooting](troubleshooting docs) <!--(Optional) Link to a page or section about troubleshooting/FAQ-->
+* [Troubleshooting](link to troubleshooting docs) <!--(Optional) Link to a page or section about troubleshooting/FAQ-->
 
 ## Project and community
 * [Issues](github issues) <!--Link to GitHub issues (if applicable)-->
 * [Contributing](contribution guide) <!--Link to any contribution guides, preferably for the source code--> 
-* [Matrix](matrix link) <!--Link to contact info (if applicable), e.g. Matrix channel-->
-* [Launchpad](launchpad link) <!--Link to Launchpad (if applicable)-->
+* [Matrix](applicable link) <!--Link to contact info (if applicable), e.g. Matrix channel-->
+* [Launchpad](applicable link) <!--Link to Launchpad (if applicable)-->
 
 ## Licensing and trademark (optional)
 
