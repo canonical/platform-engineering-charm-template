@@ -39,7 +39,7 @@ In this documentation
 
 .. TODO: Use the table below as a starting place.
    You don't need to include all of the rows if they're not relevant to the charm
-   or if the docs don't exist.
+   or if the docs don't exist. Use the vertical line symbol | to separate pages.
    
    When linking a how-to guide, use a verb to indicate an action/task. When
    linking reference or explanation material, use gerunds or nouns.
@@ -70,7 +70,7 @@ In this documentation
     * - 
       - 
     * - Get started
-      - :ref:`Guided tutorial <tutorial_index>` • :ref:`High-level deployment <reference_high_level_deployment>` 
+      - :ref:`Guided tutorial <tutorial_index>` | :ref:`High-level deployment <reference_high_level_deployment>` 
     * - Deployment
       - Relevant how-to guides and reference pages (related to initial setup, configurations, and customization)
     * - Operations
@@ -78,9 +78,9 @@ In this documentation
     * - Product-specific feature
       - Relevant guides and pages
     * - Design
-      - :ref:`Architecture <reference_charm_architecture>` • :ref:`Design <explanation_charm_design>`
+      - :ref:`Architecture <reference_charm_architecture>` | :ref:`Design <explanation_charm_design>`
     * - Security
-      - :ref:`Overview <explanation_security>` • Relevant how-to guides • Relevant reference pages
+      - :ref:`Overview <explanation_security>` | Relevant how-to guides | Relevant reference pages
 
 How this documentation is organized
 ------------------------------------
