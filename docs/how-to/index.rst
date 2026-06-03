@@ -9,11 +9,20 @@ How-to guides
 .. TODO: Update the name of the charm!
          The following subsections are examples and don't need to be followed exactly.
          Define themes and subsections based on the charm's unique needs and features.
+         Avoid subsections that only apply to a single page (creating an "orphan").
+         Select subsections where 2 or more pages apply.
+
          Provide 1-2 sentence introductions for each subsection.
+         Avoid meta-documentation that describes the documentation itself
+         (e.g., "The following guides document..."). Try to focus explanatory
+         text on the purpose or value of the guides listed in the section.
+
          More examples of subsections: Initial setup, Security
 
-The following guides cover key processes and common tasks for managing and
-using the __charm_name__ charm.
+
+Manage the full operations lifecycle of the __charm_name__ charm, from initial deployment
+through production maintenance.
+Each guide assumes that you've already deployed the charm with Juju.
 
 .. vale Canonical.013-Spell-out-numbers-below-10 = NO
 .. vale Canonical.500-Repeated-words = NO
@@ -34,8 +43,9 @@ basic operations you can complete with the charm.
 Update and refresh
 ------------------
 
-The following guides provide instructions on upgrading your deployment,
-including backup and redeployment processes.
+Backups, redeployments, and upgrades ensure the
+__charm_name__ charm stays current and benefits from new features
+and capabilities.
 
 .. toctree::
     :hidden:

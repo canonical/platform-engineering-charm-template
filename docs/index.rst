@@ -37,37 +37,50 @@ SRE teams through Juju's clean interface.
 In this documentation
 ---------------------
 
-Get started
-^^^^^^^^^^^
+.. TODO: Use the table below as a starting place.
+   You don't need to include all of the rows if they're not relevant to the charm
+   or if the docs don't exist. Use the vertical line symbol | to separate pages.
+   
+   When linking a how-to guide, use a verb to indicate an action/task. When
+   linking reference or explanation material, use gerunds or nouns.
 
-Learn about what's in the charm, step through a basic deployment, and perform some common operations.
+   Use "Get started" to highlight one or more tutorials. This row touches
+   on the "point of entry" domain.
 
-- **Learn, try, and plan**: :ref:`Guided tutorial <tutorial_index>` • :ref:`High-level deployment <reference_high_level_deployment>` 
-- **Deploy and configure**: Relevant how-to guides (related to initial setup, configurations, and customization) • :ref:`Relation endpoints <reference_relation_endpoints>`
-- **Observe, maintain, and update**: Relevant how-to guides (examples: integrate with COS, backup/restore, redeploy, upgrade) • :ref:`Metrics <reference_metrics>`
+   For Deployment and Operations, place the most important/common use cases first.
+   If there are no meaningful Day 0/1 operations, drop "Deployment" from the table.
+   If there are no meaningful Day 2 operations, drop "Operations" from the table.
+   These rows touch on the domain of "lifecycle".
+   
+   Use the "Product-specific feature" row to highlight any 
+   major selling points of the charm -- what's the value proposition of this charm?
 
-Dive deeper
-^^^^^^^^^^^
+   Use the "Design" row to showcase architecture and design-related documentation
+   for this charm. This row touches on the domain of "conceptual or stack layers".
+   
+   If possible, include a row that touches on the "quality" domain (security, performance).
 
-Learn more about operations focused on advanced configurations and security.
+   Another charm-specific row to consider is "Integrations", especially if the
+   charm is meant to work in the context of a larger deployment. The "Integrations"
+   row touches on the domain of "interfaces".
 
-.. TODO: Use the items below as a starting place.
-   You don't need to include all of the items if they're not relevant to the charm
-   or if the docs don't exist. Use the "Charm-specific topic" point to highlight any 
-   major selling points of the charm.
+.. list-table::
+    :header-rows: 1
 
-- **Advanced operations**: Relevant how-to guides • Relevant reference pages 
-- **Charm-specific topic**: Relevant how-to guides • Relevant reference pages
-- **Security**: Overview • Relevant how-to guides • Relevant reference pages
-- **Design**: Architecture • Design
-- **Troubleshooting**: :ref:`How to troubleshoot <how_to_troubleshoot>` • Other relevant how-to or reference guides
-
-Develop and contribute
-^^^^^^^^^^^^^^^^^^^^^^^
-
-- **Development**: Terraform-related docs (if applicable) • Developer-related docs (if applicable)
-- **Learn more about the charm**: :ref:`Design <explanation_charm_design>` • :ref:`Releases <release_notes_index>` • :ref:`changelog`
-- Get involved: :ref:`Contribute to the documentation <how_to_contribute>` • Contribute to the source code (link to CONTRIBUTING.md)
+    * - 
+      - 
+    * - Get started
+      - :ref:`Guided tutorial <tutorial_index>` | :ref:`High-level deployment <reference_high_level_deployment>` 
+    * - Deployment
+      - Relevant how-to guides and reference pages (related to initial setup, configurations, and customization)
+    * - Operations
+      - Relevant how-to guides and reference pages (examples: integrate with COS, backup/restore, redeploy, upgrade)
+    * - Product-specific feature
+      - Relevant guides and pages
+    * - Design
+      - :ref:`Architecture <reference_charm_architecture>` | :ref:`Design <explanation_charm_design>`
+    * - Security
+      - :ref:`Overview <explanation_security>` | Relevant how-to guides | Relevant reference pages
 
 How this documentation is organized
 ------------------------------------

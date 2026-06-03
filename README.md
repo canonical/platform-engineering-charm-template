@@ -62,16 +62,16 @@ exhaustive or always relevant for every charm. If there is no official troublesh
 include a link to the relevant Matrix channel.
 -->
 
-* [Read more]() <!--Link to the charm's official documentation-->
-* [Developer documentation]() <!--Link to any developer documentation (could be upstream)-->
-* [Official webpage]() <!--(Optional) Link to official upstream webpage/blog/marketing content--> 
-* [Troubleshooting]() <!--(Optional) Link to a page or section about troubleshooting/FAQ-->
+* [Read more](charm docs) <!--Link to the charm's official documentation-->
+* [Developer documentation](developer docs) <!--Link to any developer documentation (could be upstream)-->
+* [Official webpage](official site) <!--(Optional) Link to official upstream webpage/blog/marketing content--> 
+* [Troubleshooting](link to troubleshooting docs) <!--(Optional) Link to a page or section about troubleshooting/FAQ-->
 
 ## Project and community
-* [Issues]() <!--Link to GitHub issues (if applicable)-->
-* [Contributing]() <!--Link to any contribution guides, preferably for the source code--> 
-* [Matrix]() <!--Link to contact info (if applicable), e.g. Matrix channel-->
-* [Launchpad]() <!--Link to Launchpad (if applicable)-->
+* [Issues](github issues) <!--Link to GitHub issues (if applicable)-->
+* [Contributing](contribution guide) <!--Link to any contribution guides, preferably for the source code--> 
+* [Matrix](applicable link) <!--Link to contact info (if applicable), e.g. Matrix channel-->
+* [Launchpad](applicable link) <!--Link to Launchpad (if applicable)-->
 
 ## Licensing and trademark (optional)
 
