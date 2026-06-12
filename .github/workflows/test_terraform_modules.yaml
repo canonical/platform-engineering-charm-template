@@ -13,6 +13,8 @@ on:
 jobs:
   terraform-tests:
     uses: canonical/operator-workflows/.github/workflows/terraform_modules_test.yaml@main
+    permissions:
+      contents: read
     secrets: inherit
     with:
       k8s-controller: true
