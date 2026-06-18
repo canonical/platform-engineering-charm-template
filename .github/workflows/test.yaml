@@ -14,3 +14,4 @@ jobs:
       self-hosted-runner: false
       runs-on-base: ubuntu-24.04
       with-uv: true
+      python-version: 3.12
