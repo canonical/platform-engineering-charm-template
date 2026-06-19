@@ -68,6 +68,11 @@
         "minor",
         "patch"
       ]
+    },
+    {
+      "matchManagers": ["pip_requirements"],
+      "matchFileNames": ["docs/requirements.txt"],
+      "enabled": false
     }
   ],
   "schedule": [
