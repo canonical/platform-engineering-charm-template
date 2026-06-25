@@ -24,3 +24,5 @@ integration-suites:
     working-dir: ./
     backends:
     - integration-test
+    pytest-arguments-template: |
+      --use-existing

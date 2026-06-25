@@ -9,6 +9,7 @@ charms:
   resources:
     httpbin-image:
       type: oci-image
+      upstream-source: kennethreitz/httpbin
   platforms:
   - arch: amd64
 snaps: []
