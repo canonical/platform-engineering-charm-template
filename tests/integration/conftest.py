@@ -5,9 +5,14 @@
 
 import typing
 from collections.abc import Generator
+from pathlib import Path
 
 import jubilant
 import pytest
+import yaml
+
+CHARMCRAFT = yaml.safe_load(Path("./charmcraft.yaml").read_text())
+RESOURCES = {name: val["upstream-source"] for name, val in CHARMCRAFT["resources"].items()}
 
 
 @pytest.fixture(scope="session", name="juju")

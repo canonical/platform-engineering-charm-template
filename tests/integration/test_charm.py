@@ -10,15 +10,17 @@ import logging
 import jubilant
 import pytest
 
+from tests.integration.conftest import RESOURCES
+
 logger = logging.getLogger(__name__)
 
 
 @pytest.mark.abort_on_fail
-def test_deploy(juju: jubilant.Juju, charm_path: str, resource_images: dict[str, str]):
+def test_deploy(juju: jubilant.Juju, charm_path: str):
     """
     arrange: A Juju model with MicroK8s.
     act: Deploy the charm with its OCI image resource.
     assert: The charm reaches active status.
     """
-    juju.deploy(charm_path, resources=resource_images)
+    juju.deploy(charm_path, resources=RESOURCES)
     juju.wait(jubilant.all_active)

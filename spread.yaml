@@ -25,4 +25,4 @@ integration-suites:
     backends:
     - integration-test
     pytest-arguments-template: |
-      --use-existing
+      --model testing
