@@ -6,13 +6,16 @@
 """Integration tests."""
 
 import logging
+from pathlib import Path
 
 import jubilant
 import pytest
-
-from tests.integration.conftest import RESOURCES
+import yaml
 
 logger = logging.getLogger(__name__)
+
+CHARMCRAFT = yaml.safe_load(Path("./charmcraft.yaml").read_text())
+RESOURCES = {name: val["upstream-source"] for name, val in CHARMCRAFT["resources"].items()}
 
 
 @pytest.mark.abort_on_fail
