@@ -15,4 +15,4 @@ jobs:
     with:
       integration-workflow-name: integration_test.yaml
     secrets:
-      CHARMHUB_TOKEN: ${{ secrets.CHARMHUB_TOKEN }}
+      CHARMCRAFT_AUTH: ${{ secrets.CHARMCRAFT_AUTH }}
