@@ -6,6 +6,7 @@ rocks: []
 charms:
 - name: platform-engineering-charm-template
   charmcraft-yaml: charmcraft.yaml
+  channel: latest/edge
   resources:
     httpbin-image:
       type: oci-image
