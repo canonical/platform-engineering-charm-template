@@ -1,0 +1,11 @@
+version: 1
+rocks: []
+charms:
+- name: platform-engineering-charm-template
+  charmcraft-yaml: charmcraft.yaml
+  resources:
+    httpbin-image:
+      type: oci-image
+  platforms:
+  - arch: amd64
+snaps: []
