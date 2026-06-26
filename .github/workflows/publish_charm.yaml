@@ -7,12 +7,12 @@ on:
       - main
 
 jobs:
-  publish-to-edge:
-    uses: canonical/operator-workflows/.github/workflows/publish_charm.yaml@main
+  publish:
+    uses: canonical/charm-ci/.github/workflows/publish-artifacts.yml@v0.0.1-alpha.5
     permissions:
-      contents: write
-      packages: write
       actions: read
-    secrets: inherit
+      contents: write
     with:
-      channel: latest/edge
+      integration-workflow-name: integration_test.yaml
+    secrets:
+      CHARMCRAFT_AUTH: ${{ secrets.CHARMCRAFT_AUTH }}
