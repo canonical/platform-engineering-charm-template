@@ -31,7 +31,7 @@ from `MicroK8s <https://microk8s.io/>`_ to
 
 .. TODO: Finally, a paragraph that describes whom the product is useful for.
 
-This charm will make operating <Charm software> simple and straightforward for DevOps or
+This charm will make operating <Charm software> straightforward for DevOps or
 SRE teams through Juju's clean interface. 
 
 In this documentation
