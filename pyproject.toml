@@ -14,7 +14,7 @@ classifiers = [
   "Programming Language :: Python :: 3.14",
 ]
 dependencies = [
-  "ops==3.8.0",
+  "ops==3.8.1",
 ]
 
 [dependency-groups]
@@ -23,7 +23,7 @@ fmt = [
 ]
 lint = [
   "codespell",
-  "jubilant==1.11.0",
+  "jubilant==1.12.0",
   "mypy",
   "pep8-naming",
   "pytest",
@@ -47,7 +47,7 @@ static = [
 integration = [
   "allure-pytest>=2.8.18",
   "allure-pytest-collection-report @ git+https://github.com/canonical/data-platform-workflows@v24.0.0#subdirectory=python/pytest_plugins/allure_pytest_collection_report",
-  "jubilant==1.11.0",
+  "jubilant==1.12.0",
   "opcli @ git+https://github.com/canonical/charm-ci.git@v0.0.1-alpha.5",
   "pytest",
 ]
