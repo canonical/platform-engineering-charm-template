@@ -12,10 +12,10 @@ deployment onto any Kubernetes environment managed by [Juju][Juju].
 - **main.tf** - Defines the Juju application to be deployed.
 - **variables.tf** - Allows customization of the deployment. Also models the charm configuration, 
   except for exposing the deployment options (Juju model name, channel or application name).
-- **output.tf** - Integrates the module with other Terraform modules, primarily
+- **outputs.tf** - Integrates the module with other Terraform modules, primarily
   by defining potential integration endpoints (charm integrations), but also by exposing
-  the Juju application name.
-- **versions.tf** - Defines the Terraform provider version.
+  the deployed Juju application.
+- **terraform.tf** - Defines the Terraform and Juju provider versions.
 
 ## Using __charm_name__ base module in higher level modules
 
@@ -30,7 +30,7 @@ data "juju_model" "my_model" {
 module "__charm_name__" {
   source = "git::https://github.com/canonical/__charm_name__-operator//terraform"
   
-  model = juju_model.my_model.name
+  model_uuid = data.juju_model.my_model.uuid
   # (Customize configuration variables here if needed)
 }
 ```
@@ -39,10 +39,10 @@ Create integrations, for instance:
 
 ```text
 resource "juju_integration" "__charm_name__-loki" {
-  model = juju_model.my_model.name
+  model_uuid = data.juju_model.my_model.uuid
   application {
-    name     = module.__charm_name__.app_name
-    endpoint = module.__charm_name__.endpoints.logging
+    name     = module.__charm_name__.application.name
+    endpoint = module.__charm_name__.requires.logging.endpoint
   }
   application {
     name     = "loki-k8s"
