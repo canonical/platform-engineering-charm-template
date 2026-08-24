@@ -15,5 +15,5 @@ resource "juju_application" "netbox-k8s" {
   config             = var.config
   constraints        = var.constraints
   units              = var.units
-  storage_directives = var.storage
+  storage_directives = var.storage_directives
 }
