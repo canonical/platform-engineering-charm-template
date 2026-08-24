@@ -48,12 +48,16 @@ integration = [
   "allure-pytest>=2.8.18",
   "allure-pytest-collection-report @ git+https://github.com/canonical/data-platform-workflows@v24.0.0#subdirectory=python/pytest_plugins/allure_pytest_collection_report",
   "jubilant==1.12.0",
-  "opcli @ git+https://github.com/canonical/charm-ci.git@v0.0.1-alpha.5",
+  "opcli",
   "pytest",
 ]
 
 [tool.uv]
 package = false
+
+[tool.uv.sources]
+# opcli is published only from the charm-ci git repository, not PyPI.
+opcli = { git = "https://github.com/canonical/charm-ci.git", tag = "v1.0.0" }
 
 [tool.ruff]
 target-version = "py312"
