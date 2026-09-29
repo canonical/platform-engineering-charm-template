@@ -9,6 +9,7 @@ on:
     paths:
       - 'terraform/**'
       - 'terraform-product/**'
+      - '.github/workflows/test_terraform_modules.yaml'
 
 jobs:
   terraform-tests:
