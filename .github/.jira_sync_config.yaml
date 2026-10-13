@@ -21,4 +21,5 @@ settings:
     bug: Bug
     enhancement: Story
 
-  component: <your-component> # Use Jira component name string
+  component:
+  - <your-component> # Use Jira component name string
