@@ -10,7 +10,7 @@ __pycache__/
 .mypy_cache
 *.egg-info/
 */*.rock
-terraform/tests/.terraform
+terraform/charm/tests/.terraform
 
 # BEGIN VALE WORKFLOW IGNORE
 .vale/styles/*

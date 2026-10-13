@@ -1,5 +1,5 @@
 <!-- Remember to update this file for your charm -- replace __charm_name__ with the appropriate name. -->
-<!-- The module under terraform/ is a working example that deploys `netbox-k8s`. Replace that
+<!-- The module under terraform/charm/ is a working example that deploys `netbox-k8s`. Replace that
      charm name in main.tf, variables.tf, outputs.tf and tests/ with your own charm. -->
 
 # __charm_name__ Terraform module
@@ -31,7 +31,7 @@ data "juju_model" "my_model" {
 }
 
 module "__charm_name__" {
-  source = "git::https://github.com/canonical/__charm_name__-operator//terraform?ref=tf-1.0.0"
+  source = "git::https://github.com/canonical/__charm_name__-operator//terraform/charm?ref=tf-1.0.0"
   
   model_uuid = data.juju_model.my_model.uuid
   # (Customize configuration variables here if needed)
