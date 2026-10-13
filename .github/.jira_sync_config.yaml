@@ -11,9 +11,14 @@ settings:
     not_planned: rejected
     
   add_gh_comment: true
+
+  # Avoid "Dependency dashboard" issues to be synced to Jira
+  labels:
+  - bug
+  - enhancement
   
   label_mapping:
     bug: Bug
     enhancement: Story
 
-  component: <your-component> # Use Jira string
+  component: <your-component> # Use Jira component name string
