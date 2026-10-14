@@ -8,7 +8,6 @@ on:
   pull_request:
     paths:
       - 'terraform/**'
-      - 'terraform-product/**'
       - '.github/workflows/test_terraform_modules.yaml'
 
 jobs:
@@ -20,4 +19,4 @@ jobs:
     with:
       k8s-controller: true
       #lxd-controller: true
-      terraform-directories: '["terraform"]'
+      terraform-directories: '["terraform/charm"]'
