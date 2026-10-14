@@ -44,35 +44,39 @@ This tutorial requires the following software to be installed on your working st
 (either locally or in the Multipass VM):
 
 .. TODO: Does this tutorial require a specific version of Juju?
-         Does this tutorial require MicroK8s at all?
+         Does this tutorial require Canonical Kubernetes at all?
          If this is a machine charm, what version of LXD is required?
 
 - Juju 3
-- MicroK8s 1.33
+- Canonical Kubernetes
 
-Use `Concierge <https://github.com/canonical/concierge>`_ to set up Juju and MicroK8s:
+Use `Concierge <https://github.com/canonical/concierge>`_ to set up Juju and
+Canonical Kubernetes:
 
 .. code-block::
 
     sudo snap install --classic concierge
-    sudo concierge prepare -p microk8s
+    sudo concierge prepare -p k8s
 
-.. TODO: If the tutorial requires a LXD controller, update "microk8s" to "machine"
-         Double check that the text below is accurate!
+.. TODO: Canonical Kubernetes is the default for Kubernetes charms. If this project
+         specifically requires MicroK8s, switch the Concierge preset and Juju provider
+         below to "microk8s". For a machine charm or a use case that requires LXD,
+         use Concierge's "machine" preset and the "lxd" Juju provider instead. Update
+         the requirements and surrounding instructions to match, and verify them.
 
 This first command installs Concierge, and the second command uses Concierge to install
-and configure Juju and MicroK8s.
+and configure Juju and Kubernetes.
 
-For this tutorial, Juju must be bootstrapped to a MicroK8s controller. Concierge should
-complete this step for you, and you can verify by checking for
-``msg="Bootstrapped Juju" provider=microk8s``
+For this tutorial, Juju must be bootstrapped to a Kubernetes controller.
+Concierge should complete this step for you, and you can verify by checking for
+``msg="Bootstrapped Juju" provider=k8s``
 in the terminal output and by running ``juju controllers``.
 
 If Concierge did not perform the bootstrap, run:
 
 .. code-block::
 
-    juju bootstrap microk8s tutorial-controller
+    juju bootstrap k8s tutorial-controller
 
 
 To be able to work inside the Multipass VM, log in with the following command:
@@ -91,7 +95,8 @@ Set up the environment
 ----------------------
 
 To manage resources effectively and to separate this tutorial's workload from
-your usual work, create a new model in the MicroK8s controller using the following command:
+your usual work, create a new model in the Kubernetes controller using the following
+command:
 
 .. code-block::
 
