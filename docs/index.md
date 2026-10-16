@@ -9,14 +9,18 @@ myst:
 # __charm_name__ operator
 
 <!-- vale Canonical.007-Headings-sentence-case = YES -->
-% TODO: A single sentence that says what the product is, succinctly and memorably.
-% Add a 1-2 sentence description of what the charm software does.
+<!--
+TODO: A single sentence that says what the product is, succinctly and memorably.
+Add a 1-2 sentence description of what the charm software does.
+-->
 
 A [Juju](https://juju.is/) [charm](https://documentation.ubuntu.com/juju/3.6/reference/charm/)
 deploying and managing \<Charm software> on \<Kubernetes, VMs, or both>.
 
-% TODO: A paragraph of 2-5 short sentences, that describes what the product does
-% and what need the product meets.
+<!--
+TODO: A paragraph of 2-5 short sentences, that describes what the product does
+and what need the product meets.
+-->
 
 Like any Juju charm, this charm supports one-line deployment, configuration, integration,
 scaling, and more.
@@ -28,39 +32,41 @@ The __charm_name__ charm allows for deployment on many different Kubernetes plat
 from [MicroK8s](https://microk8s.io/) to
 [Charmed Kubernetes](https://ubuntu.com/kubernetes) to public cloud Kubernetes offerings.
 
-% TODO: Finally, a paragraph that describes whom the product is useful for.
+<!-- TODO: Finally, a paragraph that describes whom the product is useful for. -->
 
 This charm will make operating \<Charm software> straightforward for DevOps or
 SRE teams through Juju's clean interface.
 
 ## In this documentation
 
-% TODO: Use the table below as a starting place.
-% You don't need to include all of the rows if they're not relevant to the charm
-% or if the docs don't exist. Use the vertical line symbol | to separate pages.
-%
-% When linking a how-to guide, use a verb to indicate an action/task. When
-% linking reference or explanation material, use gerunds or nouns.
-%
-% Use "Get started" to highlight one or more tutorials. This row touches
-% on the "point of entry" domain.
-%
-% For Deployment and Operations, place the most important/common use cases first.
-% If there are no meaningful Day 0/1 operations, drop "Deployment" from the table.
-% If there are no meaningful Day 2 operations, drop "Operations" from the table.
-% These rows touch on the domain of "lifecycle".
-%
-% Use the "Product-specific feature" row to highlight any
-% major selling points of the charm -- what's the value proposition of this charm?
-%
-% Use the "Design" row to showcase architecture and design-related documentation
-% for this charm. This row touches on the domain of "conceptual or stack layers".
-%
-% If possible, include a row that touches on the "quality" domain (security, performance).
-%
-% Another charm-specific row to consider is "Integrations", especially if the
-% charm is meant to work in the context of a larger deployment. The "Integrations"
-% row touches on the domain of "interfaces".
+<!--
+TODO: Use the table below as a starting place.
+You don't need to include all of the rows if they're not relevant to the charm
+or if the docs don't exist. Use the vertical line symbol | to separate pages.
+
+When linking a how-to guide, use a verb to indicate an action/task. When
+linking reference or explanation material, use gerunds or nouns.
+
+Use "Get started" to highlight one or more tutorials. This row touches
+on the "point of entry" domain.
+
+For Deployment and Operations, place the most important/common use cases first.
+If there are no meaningful Day 0/1 operations, drop "Deployment" from the table.
+If there are no meaningful Day 2 operations, drop "Operations" from the table.
+These rows touch on the domain of "lifecycle".
+
+Use the "Product-specific feature" row to highlight any
+major selling points of the charm — what's the value proposition of this charm?
+
+Use the "Design" row to showcase architecture and design-related documentation
+for this charm. This row touches on the domain of "conceptual or stack layers".
+
+If possible, include a row that touches on the "quality" domain (security, performance).
+
+Another charm-specific row to consider is "Integrations", especially if the
+charm is meant to work in the context of a larger deployment. The "Integrations"
+row touches on the domain of "interfaces".
+-->
 
 ```{eval-rst}
 .. list-table::
@@ -102,7 +108,7 @@ See {ref}`How to contribute <how_to_contribute>` for more information.
 If there's a particular area of documentation that you'd like to see that's missing, please
 file a bug.
 
-% TODO: Add link to GitHub issues page for "file a bug"
+<!-- TODO: Add link to GitHub issues page for "file a bug" -->
 
 ## Project and community
 

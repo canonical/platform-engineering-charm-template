@@ -7,7 +7,7 @@ myst:
 (reference_relation_endpoints)=
 # Relation endpoints
 
-% TODO: Use the template below to add information about integrations supported by this charm.
+<!-- TODO: Use the template below to add information about integrations supported by this charm. -->
 
 ## Integration example
 

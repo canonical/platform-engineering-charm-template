@@ -9,12 +9,16 @@ myst:
 
 The following diagram shows a typical deployment of the __charm_name__ charm.
 
-% Provide a brief description of the deployment here. Is it a Kubernetes cloud, a VM, or both?
-% What other charms are included in this deployment?
+<!--
+Provide a brief description of the deployment here. Is it a Kubernetes cloud, a VM, or both?
+What other charms are included in this deployment?
+-->
 
-% Include a Mermaid diagram of the charm deployment here.
-% Use one container per charm; the point of this high-level overview is to show
-% a typical deployment and not provide a detailed breakdown of any of the charms.
-% Provide a brief description of the relations (for instance, "provides connection",
-% "caches storage", or "provides database").
+<!--
+Include a Mermaid diagram of the charm deployment here.
+Use one container per charm; the point of this high-level overview is to show
+a typical deployment and not provide a detailed breakdown of any of the charms.
+Provide a brief description of the relations (for instance, "provides connection",
+"caches storage", or "provides database").
+-->
 

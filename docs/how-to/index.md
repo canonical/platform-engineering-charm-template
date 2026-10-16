@@ -7,18 +7,20 @@ myst:
 (how_to_index)=
 # How-to guides
 
-% TODO: Update the name of the charm!
-% The following subsections are examples and don't need to be followed exactly.
-% Define themes and subsections based on the charm's unique needs and features.
-% Avoid subsections that only apply to a single page (creating an "orphan").
-% Select subsections where 2 or more pages apply.
-%
-% Provide 1-2 sentence introductions for each subsection.
-% Avoid meta-documentation that describes the documentation itself
-% (e.g., "The following guides document..."). Try to focus explanatory
-% text on the purpose or value of the guides listed in the section.
-%
-% More examples of subsections: Initial setup, Security
+<!--
+TODO: Update the name of the charm!
+The following subsections are examples and don't need to be followed exactly.
+Define themes and subsections based on the charm's unique needs and features.
+Avoid subsections that only apply to a single page (creating an "orphan").
+Select subsections where 2 or more pages apply.
+
+Provide 1-2 sentence introductions for each subsection.
+Avoid meta-documentation that describes the documentation itself
+(e.g., "The following guides document..."). Try to focus explanatory
+text on the purpose or value of the guides listed in the section.
+
+More examples of subsections: Initial setup, Security
+-->
 
 Manage the full operations lifecycle of the __charm_name__ charm, from initial deployment
 through production maintenance.

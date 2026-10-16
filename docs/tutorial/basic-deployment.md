@@ -7,24 +7,28 @@ myst:
 (tutorial_basic_deployment)=
 # Deploy the __charm_name__ charm for the first time
 
-% TODO: 1-2 sentences that introduce the charm and outlines what the tutorial will cover.
-% For example, successfully deploying the charm and its required dependencies.
+<!--
+TODO: 1-2 sentences that introduce the charm and outlines what the tutorial will cover.
+For example, successfully deploying the charm and its required dependencies.
+-->
 
 ## What you'll do
 
-% TODO: Add numbered list of steps outlining what happens in this tutorial.
-% Example:
-%
-%  1. Deploy the WordPress K8s charm
-%  2. Deploy and integrate a database
-%  3. Get admin credentials
-%  4. Access the WordPress instance
-%  5. Clean up the environment
+<!--
+TODO: Add numbered list of steps outlining what happens in this tutorial.
+Example:
+
+ 1. Deploy the WordPress K8s charm
+ 2. Deploy and integrate a database
+ 3. Get admin credentials
+ 4. Access the WordPress instance
+ 5. Clean up the environment
+-->
 
 ## What you'll need
 
 <!-- vale Canonical.013-Spell-out-numbers-below-10 = NO -->
-% SPREAD SKIP
+<!-- SPREAD SKIP -->
 
 You will need a working station, e.g., a laptop, with AMD64 architecture. Your working station
 should have at least 4 CPU cores, 8 GB of RAM, and 50 GB of disk space.
@@ -40,9 +44,11 @@ multipass launch 24.04 --name charm-tutorial-vm --cpus 4 --memory 8G --disk 50G
 This tutorial requires the following software to be installed on your working station
 (either locally or in the Multipass VM):
 
-% TODO: Does this tutorial require a specific version of Juju?
-% Does this tutorial require Canonical Kubernetes at all?
-% If this is a machine charm, what version of LXD is required?
+<!--
+TODO: Does this tutorial require a specific version of Juju?
+Does this tutorial require Canonical Kubernetes at all?
+If this is a machine charm, what version of LXD is required?
+-->
 
 - Juju 3
 - Canonical Kubernetes
@@ -55,11 +61,13 @@ sudo snap install --classic concierge
 sudo concierge prepare -p k8s
 ```
 
-% TODO: Canonical Kubernetes is the default for Kubernetes charms. If this project
-% specifically requires MicroK8s, switch the Concierge preset and Juju provider
-% below to "microk8s". For a machine charm or a use case that requires LXD,
-% use Concierge's "machine" preset and the "lxd" Juju provider instead. Update
-% the requirements and surrounding instructions to match, and verify them.
+<!--
+TODO: Canonical Kubernetes is the default for Kubernetes charms. If this project
+specifically requires MicroK8s, switch the Concierge preset and Juju provider
+below to "microk8s". For a machine charm or a use case that requires LXD,
+use Concierge's "machine" preset and the "lxd" Juju provider instead. Update
+the requirements and surrounding instructions to match, and verify them.
+-->
 
 This first command installs Concierge, and the second command uses Concierge to install
 and configure Juju and Kubernetes.
@@ -85,7 +93,7 @@ multipass shell charm-tutorial-vm
 If you're working locally, you don't need to do this step.
 :::
 
-% SPREAD SKIP END
+<!-- SPREAD SKIP END -->
 
 ## Set up the environment
 
@@ -99,31 +107,39 @@ juju add-model wordpress-tutorial
 
 ## Deploy the charm
 
-% TODO: Add instructions on deploying the charm
+<!-- TODO: Add instructions on deploying the charm -->
 
 ## Deploy and integrate dependencies
 
-% TODO: If required, add instructions on deploying and integrating any other required charms
-% Rename the section to something more specific (e.g., "Deploy and integrate database")
+<!--
+TODO: If required, add instructions on deploying and integrating any other required charms
+Rename the section to something more specific (e.g., "Deploy and integrate database")
+-->
 
 Run `juju status` to check the current status of the deployment.
 The output should be similar to the following:
 
-% TODO: Add the output of juju status into a command block, showing a successful deployment.
-% If using the starter pack, use the terminal directive: https://github.com/canonical/sphinx-terminal/blob/main/README.md
+<!--
+TODO: Add the output of juju status into a command block, showing a successful deployment.
+If using the starter pack, use the terminal directive: https://github.com/canonical/sphinx-terminal/blob/main/README.md
+-->
 
 When the status shows "Active" for both the charm, the deployment is considered finished.
 
 ## Perform an action/configuration
 
-% TODO: Provide instructions for running an action or updating a configuration.
-% Choose a common task or operation.
-% Show any terminal output so the user can verify that their attempt was successful.
+<!--
+TODO: Provide instructions for running an action or updating a configuration.
+Choose a common task or operation.
+Show any terminal output so the user can verify that their attempt was successful.
+-->
 
 ## Clean up the environment
 
-% TODO: Add a one-sentence summary about what the user accomplished in the tutorial.
-% If using the starter pack, update the link to use intersphinx.
+<!--
+TODO: Add a one-sentence summary about what the user accomplished in the tutorial.
+If using the starter pack, update the link to use intersphinx.
+-->
 
 Congratulations! You successfully...
 
@@ -132,7 +148,7 @@ You can clean up your environment by following this guide:
 
 ## Next steps
 
-% TODO: Fill in the list below with how-to guides or further reading about the charm.
+<!-- TODO: Fill in the list below with how-to guides or further reading about the charm. -->
 
 You achieved a basic deployment of the charm. If you want to go farther in your deployment
 or learn more about the charm, check out these pages:
