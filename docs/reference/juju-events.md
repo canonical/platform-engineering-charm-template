@@ -4,7 +4,7 @@ myst:
     "description": "Reference documentation for all Juju events observed by the __charm_name__ charm."
 ---
 
-(reference_juju_events)=
+(reference_Juju_events)=
 
 # Juju events
 

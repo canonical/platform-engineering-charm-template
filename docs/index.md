@@ -30,7 +30,7 @@ For __charm_name__, this includes:
 - list or summary of app-specific features
 
 The __charm_name__ charm allows for deployment on many different Kubernetes platforms,
-from [MicroK8s](https://microk8s.io/) to
+from [MicroK8s](https://canonical.com/microk8s) to
 [Charmed Kubernetes](https://ubuntu.com/kubernetes) to public cloud Kubernetes offerings.
 
 <!-- TODO: Finally, a paragraph that describes whom the product is useful for. -->
