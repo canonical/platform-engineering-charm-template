@@ -9,7 +9,7 @@ myst:
 # How-to guides
 
 <!--
-TODO: Update the name of the charm!
+Update the name of the charm!
 The following subsections are examples and don't need to be followed exactly.
 Define themes and subsections based on the charm's unique needs and features.
 Avoid subsections that only apply to a single page (creating an "orphan").

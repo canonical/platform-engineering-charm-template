@@ -8,7 +8,7 @@ myst:
 
 # How to contribute
 
-<!-- TODO: Add link to CONTRIBUTING.md -->
+<!-- Add link to CONTRIBUTING.md -->
 
 ```{note}
 See CONTRIBUTING.md
@@ -16,7 +16,7 @@ for information on contributing to the source code.
 ```
 
 <!--
-TODO: Update the links to point to the correct repo!!
+Update the links to point to the correct repo!!
 Is the documentation hosted on Charmhub or RTD? Include a link
 -->
 
@@ -26,7 +26,7 @@ directly change something you see that's wrong, ask a question, or make a sugges
 about a potential change.
 
 <!--
-TODO: Add link to GitHub page for "source code on GitHub"
+Add link to GitHub page for "source code on GitHub"
 Add link to issues page for "file a bug"
 -->
 

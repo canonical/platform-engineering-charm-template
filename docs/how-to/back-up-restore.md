@@ -9,7 +9,7 @@ myst:
 # How to back up and restore
 
 <!--
-TODO: Remember to update this file for your charm!!
+Remember to update this file for your charm!!
 If applicable, use this placeholder to provide information on how to
 back up and restore the charm. Some questions to answer:
 * Does this charm have a database that needs to be backed up?

@@ -11,7 +11,7 @@ myst:
 
 <!-- vale Canonical.007-Headings-sentence-case = YES -->
 <!--
-TODO: A single sentence that says what the product is, succinctly and memorably.
+A single sentence that says what the product is, succinctly and memorably.
 Add a 1-2 sentence description of what the charm software does.
 -->
 
@@ -19,7 +19,7 @@ A [Juju](https://juju.is/) [charm](https://documentation.ubuntu.com/juju/3.6/ref
 deploying and managing \<Charm software> on \<Kubernetes, VMs, or both>.
 
 <!--
-TODO: A paragraph of 2-5 short sentences, that describes what the product does
+A paragraph of 2-5 short sentences, that describes what the product does
 and what need the product meets.
 -->
 
@@ -33,7 +33,7 @@ The __charm_name__ charm allows for deployment on many different Kubernetes plat
 from [MicroK8s](https://canonical.com/microk8s) to
 [Charmed Kubernetes](https://ubuntu.com/kubernetes) to public cloud Kubernetes offerings.
 
-<!-- TODO: Finally, a paragraph that describes whom the product is useful for. -->
+<!-- Finally, a paragraph that describes whom the product is useful for. -->
 
 This charm will make operating \<Charm software> straightforward for DevOps or
 SRE teams through Juju's clean interface.
@@ -41,7 +41,7 @@ SRE teams through Juju's clean interface.
 ## In this documentation
 
 <!--
-TODO: Use the table below as a starting place.
+Use the table below as a starting place.
 You don't need to include all of the rows if they're not relevant to the charm
 or if the docs don't exist. Use the vertical line symbol | to separate pages.
 
@@ -108,7 +108,7 @@ See {ref}`How to contribute <how_to_contribute>` for more information.
 If there's a particular area of documentation that you'd like to see that's missing, please
 file a bug.
 
-<!-- TODO: Add link to GitHub issues page for "file a bug" -->
+<!-- Add link to GitHub issues page for "file a bug" -->
 
 ## Project and community
 

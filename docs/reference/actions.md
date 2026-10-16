@@ -8,7 +8,7 @@ myst:
 
 # Actions
 
-<!-- TODO: Add link to the Charmhub actions tab. -->
+<!-- Add link to the Charmhub actions tab. -->
 
 See Actions.
 

@@ -9,7 +9,7 @@ myst:
 # Security overview
 
 <!--
-TODO: Remember to update this file for your charm!!
+Remember to update this file for your charm!!
 Elaborate on topics such as common risks, good practices, built-in protection, etc.
 Are there upstream security docs that we can point to? If so, include a
 sentence like:

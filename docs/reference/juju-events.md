@@ -11,7 +11,7 @@ myst:
 For this charm, the following Juju events are observed:
 
 <!--
-TODO: Fill in the information.
+Fill in the information.
 Numbered list of Juju events. Link to describe the event in more detail
 (either in Juju docs or in a specific charm's docs).
 When is the event fired? What does the event indicate/mean?

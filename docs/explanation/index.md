@@ -9,7 +9,7 @@ myst:
 # Explanation
 
 <!--
-TODO: Update the name of the charm!
+Update the name of the charm!
 Note that, if there are less than 5 pages in this section,
 you don't need to split up the pages into different themes
 or subsections.

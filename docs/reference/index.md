@@ -9,7 +9,7 @@ myst:
 # Reference
 
 <!--
-TODO: Update the name of the charm!
+Update the name of the charm!
 The following subsections are examples and don't need to be followed exactly.
 Define themes and subsections based on the charm's unique needs and features.
 Provide 1-2 sentence introductions for each subsection.

@@ -8,7 +8,7 @@ myst:
 
 # Configurations
 
-<!-- TODO: Add link to Charmhub configurations tab -->
+<!-- Add link to Charmhub configurations tab -->
 
 See Configurations.
 

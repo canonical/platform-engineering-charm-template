@@ -8,7 +8,7 @@ myst:
 
 # Relation endpoints
 
-<!-- TODO: Use the template below to add information about integrations supported by this charm. -->
+<!-- Use the template below to add information about integrations supported by this charm. -->
 
 ## Integration example
 

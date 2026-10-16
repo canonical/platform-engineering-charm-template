@@ -31,7 +31,7 @@ Please adopt one of the following release patterns:
 ## Releases
 
 <!--
-TODO: Add a list of releases here, with links to the individual release notes.
+Add a list of releases here, with links to the individual release notes.
 Use a toctree directive
 -->
 

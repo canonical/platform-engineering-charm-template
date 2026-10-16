@@ -9,7 +9,7 @@ myst:
 # Charm design
 
 <!--
-TODO: Remember to update this file for your charm!!
+Remember to update this file for your charm!!
 This document should offer perspective and opinion about the charm was designed,
 and why those design decisions were made.
 
