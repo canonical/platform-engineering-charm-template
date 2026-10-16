@@ -9,10 +9,10 @@ myst:
 
 <!-- TODO: Add link to CONTRIBUTING.md -->
 
-:::{note}
+```{note}
 See CONTRIBUTING.md
 for information on contributing to the source code.
-:::
+```
 
 <!--
 TODO: Update the links to point to the correct repo!!

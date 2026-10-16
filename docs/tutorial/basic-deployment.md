@@ -33,13 +33,13 @@ Example:
 You will need a working station, e.g., a laptop, with AMD64 architecture. Your working station
 should have at least 4 CPU cores, 8 GB of RAM, and 50 GB of disk space.
 
-:::{tip}
+````{tip}
 You can use Multipass to create an isolated environment by running:
 
 ```
 multipass launch 24.04 --name charm-tutorial-vm --cpus 4 --memory 8G --disk 50G
 ```
-:::
+````
 
 This tutorial requires the following software to be installed on your working station
 (either locally or in the Multipass VM):
@@ -89,9 +89,9 @@ To be able to work inside the Multipass VM, log in with the following command:
 multipass shell charm-tutorial-vm
 ```
 
-:::{note}
+```{note}
 If you're working locally, you don't need to do this step.
-:::
+```
 
 <!-- SPREAD SKIP END -->
 
