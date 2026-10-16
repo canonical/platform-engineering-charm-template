@@ -48,8 +48,7 @@ This shows there are <NUMBER> containers - <describe what the containers are>.
 Configuration files for the containers can be found in the respective directories that define the rock.
 
 <!--
-Container example
-^^^^^^^^^^^^^^^^^
+### Container example
 
 Description of container.
 
@@ -58,11 +57,11 @@ The workload that this container is running is defined in the (link to rock).
 
 ## OCI images
 
-We use [Rockcraft](https://documentation.ubuntu.com/rockcraft/stable/) to build OCI Images for __charm_name__.
+We use [Rockcraft](https://ubuntu.com/containers/rockcraft/docs/1/) to build OCI Images for __charm_name__.
 The images are defined in (link to rock).
 They are published to [Charmhub](https://charmhub.io/), the official repository of charms.
 
-See more: [How to publish your charm on Charmhub](https://documentation.ubuntu.com/charmcraft/stable/howto/manage-charms/#publish-a-charm-on-charmhub)
+See more: [How to publish your charm on Charmhub](https://canonical.com/juju/docs/charmcraft/4/howto/manage-charms/#publish-a-charm-on-charmhub)
 
 ## Metrics
 
@@ -86,7 +85,7 @@ The `src/charm.py` is the default entry point for a charm and has the \<relevant
 from CharmBase. CharmBase is the base class from which all charms are formed, defined
 by [Ops](https://ops.readthedocs.io/en/latest/index.html) (Python framework for developing charms).
 
-> See more in the Juju docs: [Charm](https://documentation.ubuntu.com/juju/latest/user/reference/charm/)
+> See more in the Juju docs: [Charm](https://canonical.com/juju/docs/juju-cli/latest/user/reference/charm/)
 
 The `__init__` method guarantees that the charm observes all events relevant to its operation and handles them.
 
