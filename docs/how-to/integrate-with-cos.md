@@ -5,6 +5,7 @@ myst:
 ---
 
 (how_to_integrate_with_cos)=
+
 # How to integrate with COS
 
 <!--

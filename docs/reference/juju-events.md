@@ -5,6 +5,7 @@ myst:
 ---
 
 (reference_juju_events)=
+
 # Juju events
 
 For this charm, the following Juju events are observed:

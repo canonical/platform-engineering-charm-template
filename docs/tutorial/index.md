@@ -5,6 +5,7 @@ myst:
 ---
 
 (tutorial_index)=
+
 # Tutorial
 
 <!-- TODO: Update the charm name, and check that the toctree entries are up-to-date. -->
@@ -18,6 +19,7 @@ provide an end-to-end learning experience as you get started with the charm.
 This tutorial walks through a basic deployment of the charm.
 
 <!-- vale Canonical.013-Spell-out-numbers-below-10 = NO -->
+
 ```{toctree}
 :hidden: true
 :maxdepth: 1

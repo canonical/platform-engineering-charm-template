@@ -6,6 +6,7 @@ myst:
 
 <!-- vale Canonical.007-Headings-sentence-case = NO -->
 (index)=
+
 # __charm_name__ operator
 
 <!-- vale Canonical.007-Headings-sentence-case = YES -->
@@ -134,6 +135,7 @@ Thinking about using the __charm_name__ Operator for your next project?
 
 <!-- vale Canonical.013-Spell-out-numbers-below-10 = NO -->
 <!-- vale Canonical.500-Repeated-words = NO -->
+
 ```{toctree}
 :hidden: true
 :maxdepth: 1

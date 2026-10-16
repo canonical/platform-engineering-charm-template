@@ -5,6 +5,7 @@ myst:
 ---
 
 (how_to_index)=
+
 # How-to guides
 
 <!--
@@ -28,6 +29,7 @@ Each guide assumes that you've already deployed the charm with Juju.
 
 <!-- vale Canonical.013-Spell-out-numbers-below-10 = NO -->
 <!-- vale Canonical.500-Repeated-words = NO -->
+
 ## Basic operations
 
 Once you've finished setting up the charm, now you can perform a number

@@ -5,6 +5,7 @@ myst:
 ---
 
 (reference_charm_architecture)=
+
 # Charm architecture
 
 <!--
@@ -79,6 +80,7 @@ See (link-to-metrics-document) for more information.
 See {ref}`reference_juju_events`.
 
 <!-- vale Canonical.004-Canonical-product-names = YES -->
+
 ## Charm code overview
 
 The `src/charm.py` is the default entry point for a charm and has the \<relevant-charm-class> Python class which inherits

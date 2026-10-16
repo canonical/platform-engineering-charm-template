@@ -5,6 +5,7 @@ myst:
 ---
 
 (reference_high_level_deployment)=
+
 # High-level overview of __charm_name__ deployment
 
 The following diagram shows a typical deployment of the __charm_name__ charm.

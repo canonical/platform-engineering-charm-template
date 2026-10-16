@@ -5,6 +5,7 @@ myst:
 ---
 
 (reference_index)=
+
 # Reference
 
 <!--
@@ -24,6 +25,7 @@ including actions, configurations, and integrations.
 <!-- vale Canonical.013-Spell-out-numbers-below-10 = NO -->
 <!-- vale Canonical.500-Repeated-words = NO -->
 <!-- vale Canonical.004-Canonical-product-names = NO -->
+
 ```{toctree}
 :hidden: true
 :maxdepth: 1
@@ -36,6 +38,7 @@ Metrics <metrics>
 ```
 
 <!-- vale Canonical.004-Canonical-product-names = YES -->
+
 ## Architecture and deployments
 
 The following pages provide more details about the charm architecture and

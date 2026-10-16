@@ -5,6 +5,7 @@ myst:
 ---
 
 (reference_configurations)=
+
 # Configurations
 
 <!-- TODO: Add link to Charmhub configurations tab -->

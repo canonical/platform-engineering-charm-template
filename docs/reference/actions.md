@@ -5,6 +5,7 @@ myst:
 ---
 
 (reference_actions)=
+
 # Actions
 
 <!-- TODO: Add link to the Charmhub actions tab. -->
