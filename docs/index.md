@@ -69,24 +69,23 @@ charm is meant to work in the context of a larger deployment. The "Integrations"
 row touches on the domain of "interfaces".
 -->
 
-```{eval-rst}
-.. list-table::
-    :header-rows: 1
+```{list-table}
+:header-rows: 1
 
-    * -
-      -
-    * - Get started
-      - :ref:`Guided tutorial <tutorial_index>` | :ref:`High-level deployment <reference_high_level_deployment>`
-    * - Deployment
-      - Relevant how-to guides and reference pages (related to initial setup, configurations, and customization)
-    * - Operations
-      - Relevant how-to guides and reference pages (examples: integrate with COS, backup/restore, redeploy, upgrade)
-    * - Product-specific feature
-      - Relevant guides and pages
-    * - Design
-      - :ref:`Architecture <reference_charm_architecture>` | :ref:`Design <explanation_charm_design>`
-    * - Security
-      - :ref:`Overview <explanation_security>` | Relevant how-to guides | Relevant reference pages
+* -
+  -
+* - Get started
+  - {ref}`Guided tutorial <tutorial_index>` | {ref}`High-level deployment <reference_high_level_deployment>`
+* - Deployment
+  - Relevant how-to guides and reference pages (related to initial setup, configurations, and customization)
+* - Operations
+  - Relevant how-to guides and reference pages (examples: integrate with COS, backup/restore, redeploy, upgrade)
+* - Product-specific feature
+  - Relevant guides and pages
+* - Design
+  - {ref}`Architecture <reference_charm_architecture>` | {ref}`Design <explanation_charm_design>`
+* - Security
+  - {ref}`Overview <explanation_security>` | Relevant how-to guides | Relevant reference pages
 ```
 
 ## How this documentation is organized
