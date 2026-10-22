@@ -9,7 +9,7 @@ on:
 
 jobs:
   release-notes:
-    uses: canonical/release-notes-automation/.github/workflows/action.yml@main
+    uses: canonical/release-notes-automation/.github/workflows/action.yml@0fc1135502c4b76d2d7584bac0bcc55faedec272  # main
     secrets: inherit
     with:
         change-artifact-dir: docs/release-notes/artifacts
