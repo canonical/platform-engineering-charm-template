@@ -12,7 +12,7 @@ on:
 
 jobs:
   terraform-tests:
-    uses: canonical/operator-workflows/.github/workflows/terraform_modules_test.yaml@543b9f18f9ccf70d00f3638943c8ca2dc265f129  # main
+    uses: canonical/operator-workflows/.github/workflows/terraform_modules_test.yaml@0c8c3b8ab7c826146cb058bd73b62887e3b31944  # main
     permissions:
       contents: read
     secrets: inherit
