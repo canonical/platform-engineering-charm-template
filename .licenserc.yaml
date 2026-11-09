@@ -19,6 +19,7 @@ header:
   - '.jujuignore'
   - '.gitignore'
   - '.licenserc.yaml'
+  - '.charmkeeper-ci-trigger'
   - 'CODEOWNERS'
   - 'LICENSE'
   - 'trivy.yaml'
