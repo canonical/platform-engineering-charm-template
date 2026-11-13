@@ -1,4 +1,4 @@
-# template-version: 1
+# template-version: 2
 # This file is synced from canonical/platform-engineering-charm-template.
 # Remove this comment block to opt this file out of automatic template propagation.
 # See https://github.com/canonical/gh-jira-sync-bot for config
@@ -12,7 +12,8 @@ settings:
     
   add_gh_comment: true
 
-  # Avoid "Dependency dashboard" issues to be synced to Jira
+  # Only issues with these labels are synced to Jira (this also avoids syncing "Dependency dashboard" issues).
+  # Blank issues are disabled in .github/ISSUE_TEMPLATE/config.yml so that every issue gets one of these labels.
   labels:
   - bug
   - enhancement
