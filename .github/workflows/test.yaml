@@ -5,7 +5,7 @@ on:
 
 jobs:
   unit-tests:
-    uses: canonical/operator-workflows/.github/workflows/test.yaml@95c819190372baf8338f3ed15b80ba76ec881136  # main
+    uses: canonical/operator-workflows/.github/workflows/test.yaml@ee6ae1904efb4732afd72f8f261cddf445ff07fc  # main
     permissions:
       contents: read
       pull-requests: write
