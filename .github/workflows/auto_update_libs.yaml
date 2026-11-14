@@ -6,7 +6,7 @@ on:
 
 jobs:
   auto-update-libs:
-    uses: canonical/operator-workflows/.github/workflows/auto_update_charm_libs.yaml@8c89aed9e2cd37a613b172cd67fd672ae8dc05f6  # main
+    uses: canonical/operator-workflows/.github/workflows/auto_update_charm_libs.yaml@5dbf925ede6288e3b7759114da363bcadada5f1f  # main
     permissions:
       contents: write
       pull-requests: write
