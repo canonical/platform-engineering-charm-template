@@ -12,6 +12,6 @@ on:
 
 jobs:
   terraform-compliance:
-    uses: canonical/operator-workflows/.github/workflows/terraform_modules_compliance.yaml@ee6ae1904efb4732afd72f8f261cddf445ff07fc  # main
+    uses: canonical/operator-workflows/.github/workflows/terraform_modules_compliance.yaml@8c89aed9e2cd37a613b172cd67fd672ae8dc05f6  # main
     with:
       terraform-directories: '["terraform/charm"]'
