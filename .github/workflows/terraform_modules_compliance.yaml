@@ -3,6 +3,8 @@
 
 name: Terraform modules compliance
 
+# Keep the `paths` filters below in sync with `terraform-directories`. For repos with
+# nested `terraform/` directories use `**/terraform/**` or explicit globs instead.
 on:
   workflow_dispatch:
   pull_request:
