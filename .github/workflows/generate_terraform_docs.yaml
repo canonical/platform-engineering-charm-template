@@ -4,11 +4,13 @@
 name: Update Terraform documentation
 
 # Keep the `paths` filters below and the `terraform-directory` input in sync with
-# the directory where the Terraform modules live.
+# the directory where the Terraform modules live. For repos with nested `terraform/`
+# directories use `**/terraform/**` or explicit globs instead.
 on:
   pull_request:
     paths:
       - "terraform/**"
+      - ".github/workflows/generate_terraform_docs.yaml"
   push:
     branches:
       - main

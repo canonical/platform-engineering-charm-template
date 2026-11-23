@@ -2,11 +2,19 @@
 # See LICENSE file for licensing details.
 
 name: Terraform modules release
+
+# Keep the `paths` filters below in sync with the directories where the Terraform
+# modules live (and with `major-version-file`, which defaults to
+# `terraform/MAJOR_VERSION`). For repos with nested `terraform/` directories use
+# `**/terraform/**` or explicit globs instead.
+# The workflow file itself is only listed under `pull_request`: on `push` every run
+# creates a new release tag, so editing the workflow must not trigger a release.
 on:
   workflow_dispatch:
   pull_request:
     paths:
       - "terraform/**"
+      - ".github/workflows/terraform_modules_release.yaml"
   push:
     branches:
       - main
