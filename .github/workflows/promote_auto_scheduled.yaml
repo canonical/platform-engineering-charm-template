@@ -1,0 +1,35 @@
+name: Automatically promote the charm
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 0 9 * * 1 # At 09:00 on Monday
+
+jobs:
+  # To switch back to manual approval (for example, when a fix is needed on candidate),
+  # add required reviewers to the `charmhub-stable-promote` environment in the repository settings.
+  require-approval:
+    environment: charmhub-stable-promote
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Workflow has been approved"
+
+  promote-charm-candidate-to-stable:
+    needs: [require-approval]
+    uses: canonical/operator-workflows/.github/workflows/promote_charm.yaml@1be2f1c4d3f3852a02b9e31582960ee4323f93e5  # main
+    secrets: inherit
+    permissions:
+      contents: write
+    with:
+      origin-channel: latest/candidate
+      destination-channel: latest/stable
+
+  promote-charm-edge-to-candidate:
+    needs: [promote-charm-candidate-to-stable]
+    uses: canonical/operator-workflows/.github/workflows/promote_charm.yaml@1be2f1c4d3f3852a02b9e31582960ee4323f93e5  # main
+    secrets: inherit
+    permissions:
+      contents: write
+    with:
+      origin-channel: latest/edge
+      destination-channel: latest/candidate
