@@ -19,7 +19,7 @@ on:
 
 jobs:
   promote-charm:
-    uses: canonical/operator-workflows/.github/workflows/promote_charm.yaml@948386e20781573f08d9ccab0b9b09a772aa29f1  # main
+    uses: canonical/operator-workflows/.github/workflows/promote_charm.yaml@3046da45237aa86dcdcd83c299e1380842b473cc  # main
     permissions:
       contents: write
     with:
