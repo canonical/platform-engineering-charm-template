@@ -8,7 +8,7 @@ on:
 
 jobs:
   comment-on-pr:
-    uses: canonical/operator-workflows/.github/workflows/comment.yaml@1be2f1c4d3f3852a02b9e31582960ee4323f93e5  # main
+    uses: canonical/operator-workflows/.github/workflows/comment.yaml@948386e20781573f08d9ccab0b9b09a772aa29f1  # main
     permissions:
       pull-requests: write
       actions: read
